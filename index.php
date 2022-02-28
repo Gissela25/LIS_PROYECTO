@@ -55,11 +55,12 @@
                             Sucursales
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">San Salvador</li>
-                            <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="#">San Tecla</a></li>
+                            <li><a class="dropdown-item" href="#">Alemania</a></li>
                             <li><a class="dropdown-item" href="#">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="#">Sitio del Niño</a></li>
+                            <li><a class="dropdown-item" href="#">Opico</a></li>
+                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="#">Aldea</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -68,7 +69,7 @@
     </nav>
     <div class="d-grid gap-3 mt-3 mx-5">
 
-        <div class="col-xs-6 col-xs-offset-3 tamano"> 
+        <div class="col-xs-6 col-xs-offset-3 tamano">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -77,6 +78,8 @@
                         aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
