@@ -36,8 +36,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">Cliente</li>
-                            <li><a class="dropdown-item" href="#">Empleado</a></li>
+                            <li><a class="dropdown-item" href="vistas/cliente/login.php">Cliente</li>
+                            <li><a class="dropdown-item" href="vistas/empleados/login.php">Empleado</a></li>
                         </ul>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -46,8 +46,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">Cliente</li>
-                            <li><a class="dropdown-item" href="#">Empleado</a></li>
+                            <li><a class="dropdown-item" href="vistas/cliente/registrarse.php">Cliente</li>
+                            <li><a class="dropdown-item" href="vistas/empleados/registrarse.php">Empleado</a></li>
                         </ul>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
