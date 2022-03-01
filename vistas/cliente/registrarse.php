@@ -10,9 +10,61 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Estilos/css/index.css">
+    <link rel="stylesheet" href="../../Estilos/css/registro_cliente.css">
 </head>
 <body>
+<div class="row justify-content-center pt-5 mt-5 mr-1">
+            <div class="col-md-4 formulario">
+<div class="row" >
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+  </div>
+</div>
+</div>
+</div>
+<div class="row justify-content-center pt-5 mt-5 mr-1">
+<div class="col-md-4 formulario">
+
+<div class="col">
+    <input type="text" class="form-control" placeholder="Direccion" aria-label="First name">
+  </div>
+  </div>
+  </div>
+  
+
+
+
+  <div class="row justify-content-center pt-5 mt-5 mr-1">
+            <div class="col-md-4 formulario">
+<div class="row" >
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Telefono" aria-label="First name">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="@mail.com" aria-label="Last name">
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="row justify-content-center pt-5 mt-5 mr-1">
+            <div class="col-md-4 formulario">
+<div class="row" >
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Password" aria-label="First name">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Confirmar password" aria-label="Last name">
+  </div>
+</div>
+</div>
+</div>
+
+
     
 </body>
 </html>
