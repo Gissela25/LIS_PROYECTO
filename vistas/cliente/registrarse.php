@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center pt-4 mt-4 mr-1">
+   <div class="row justify-content-center pt-4 mt-4 mr-1">
         <div class="col-md-4 formulario">
             <div class="d-grid gap-2">
                 <button class="btn btn-warning" type="button">INGRESAR</button>
@@ -71,6 +71,16 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center pt-2 mt-2 mr-4">
+        <div class="col-md-2 formulario">
+                        <span class=""><a href="" class="olvide">Olvide mi
+                                contraseña?</a></span>
+                    
+                    
+        </div>
+        </div>
+
+    
 </body>
 
 </html>
