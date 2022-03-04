@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,24 +64,22 @@
             </div>
         </div>
     </div>
-   <div class="row justify-content-center pt-4 mt-4 mr-1">
+    <div class="row justify-content-center pt-4 mt-4 mr-1">
         <div class="col-md-4 formulario">
             <div class="d-grid gap-2">
-                <button class="btn btn-warning" type="button">INGRESAR</button>
+                <button class="btn btn-warning" type="button">Registrarse</button>
 
             </div>
         </div>
     </div>
     <div class="row justify-content-center pt-2 mt-2 mr-4">
-        <div class="col-md-2 formulario">
+    <div class="form-group mx-sm-4 text-right olv">
                         <span class=""><a href="" class="olvide">Olvide mi
                                 contraseña?</a></span>
-                    
-                    
-        </div>
-        </div>
+                    </div>
+    </div>
 
-    
+
 </body>
 
 </html>

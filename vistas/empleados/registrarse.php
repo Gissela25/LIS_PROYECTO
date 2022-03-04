@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<div class="row justify-content-center pt-5 mt-5 mr-1">
+    <div class="row justify-content-center pt-5 mt-5 mr-1">
         <div class="col-md-4 formulario">
             <div class="row">
                 <div class="col">
@@ -76,13 +76,13 @@
         </div>
     </div>
     <div class="row justify-content-center pt-2 mt-2 mr-4">
-        <div class="col-md-2 formulario">
-                        <span class=""><a href="" class="olvide">Olvide mi
-                                contraseña?</a></span>
-                    
-                    
+        <div class="col-md-4">
+            <!-- <div class="form-group mx-sm-4 text-right olv"> -->
+            <span class=""><a href="" class="olvide">Ya tengo una cuenta</a></span>
         </div>
-        </div>
+    </div>
+    </div>
 
 </body>
+
 </html>
