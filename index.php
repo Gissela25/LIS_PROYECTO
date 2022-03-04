@@ -36,7 +36,7 @@
                             <i class="bi bi-person-fill"></i>  Mi Cuenta
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="">Iniciar Sesion</a></li>
+                            <li><a class="dropdown-item" href="Views/login.php">Iniciar Sesion</a></li>
                             <li><a class="dropdown-item" href="#">Registrarse</a></li>
                         </ul>
                     </li>
