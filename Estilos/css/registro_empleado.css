@@ -1,0 +1,12 @@
+body{
+    background-image: url(../img/gris.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+.olvide {
+    text-decoration-style: none;
+    text-decoration-line: none;
+    color: #FFE162;
+}
