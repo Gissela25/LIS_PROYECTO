@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Login</title>
-    <link rel="stylesheet" href="../Assets/css/recover.css">
+    <link rel="stylesheet" href="Assets/css/recover.css">
 </head>
 
 <body>
     <div class="container">
         <div class="row justify-content-center pt-5 mt-5 mr-1">
             <div class="col-md-5 formulario">
-                <form action="" method="POST" role="form"> 
+                <form action="?c=user&a=Recover" method="POST" role="form"> 
                     <div class="form-group text-center">
                         <h1 class="text-light">Recuperar Contraseña</h1>
                     </div>        
@@ -26,7 +26,7 @@
                         <input type="submit" value="Confirmar" name="confirmar" id="confirmar" class="btn btn-block ingresar">
                     </div>
                     <div class="form-group text-center">
-                        <span class=""><a href="login.php" class="olvide1">Regresar</a></span>
+                        <span class=""><a href="?c=user&a=Ingresar" class="olvide1">Regresar</a></span>
                     </div>
                 </form>
             </div>
