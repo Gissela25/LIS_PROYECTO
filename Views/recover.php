@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Login</title>
-    <link rel="stylesheet" href="Assets/css/recover.css">
+    <link rel="stylesheet" href="Assets/css/account.css">
 </head>
 
 <body>
@@ -19,6 +19,19 @@
                     <div class="form-group text-center">
                         <h1 class="text-light">Recuperar Contraseña</h1>
                     </div>        
+                    <?php require 'Tools/procesar-datos-recover.php'?>
+                    <?php
+                    if(count($errores_rec)>0&&isset($_POST['confirmar']))
+                    {
+                        echo "<ul>";
+                        foreach($errores_rec as $error)
+                        {
+                          echo "<li>$error</li>";
+                        }
+                        echo "</ul>";
+
+                    }
+                    ?>
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="text" class="form-control"  placeholder="Ingrese su Email" name="correo" id="correo">
                     </div>
