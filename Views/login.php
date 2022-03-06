@@ -19,7 +19,7 @@
                     <div class="form-group text-center">
                         <h1 class="text-light">Iniciar Sesión</h1>
                     </div>
-                    <?php require_once 'Tools/procesar-datos-log.php';?>
+                    <?php require 'Tools/procesar-datos-log.php';?>
                     <?php
                      if(count($errores_log)>0&&isset($_POST['ingresar']))
                      {
