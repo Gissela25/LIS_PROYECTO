@@ -18,4 +18,9 @@ require_once "Models/user.php";
         {
             require_once "Views/recover.php";
         }
+
+        public function Activar()
+        {
+            require_once "Views/active.php";
+        }
     }

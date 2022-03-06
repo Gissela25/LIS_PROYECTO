@@ -10,9 +10,7 @@
         }
         if(isMail($correo))
         {
-            $modelo = new User();
-            $modelo->setEmail($correo);
-            $modelo->Recover();
+            
         }
       
     }
