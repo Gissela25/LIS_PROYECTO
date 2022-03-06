@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Recuperar Cuenta</title>
-    <link rel="stylesheet" href="Assets/css/account.css">
+    <link rel="stylesheet" href="Assets/css/active.css">
 </head>
 
 <body>
     <div class="container">
         <div class="row justify-content-center pt-5 mt-5 mr-1">
             <div class="col-md-5 formulario">
-                <form action="?c=user&a=Recover" method="POST" role="form"> 
+                <form action="?c=user&a=Activar" method="POST" role="form"> 
                     <div class="form-group text-center">
-                        <h1 class="text-light">Recuperar Contraseña</h1>
+                        <h1 class="text-light">Activar Cuenta</h1>
                     </div>        
-                    <?php require 'Tools/procesar-datos-recover.php'?>
+                    <?php require 'Tools/procesar-datos-active.php'?>
                     <?php
                     if(count($errores_rec)>0&&isset($_POST['confirmar']))
                     {
@@ -39,7 +39,7 @@
                         <input type="submit" value="Confirmar" name="confirmar" id="confirmar" class="btn btn-block ingresar">
                     </div>
                     <div class="form-group text-center">
-                        <span class=""><a href="?c=user&a=Ingresar" class="olvide1">Regresar</a></span>
+                        <span class=""><a href="?c=user&a=Activar" class="olvide1">Regresar</a></span>
                     </div>
                 </form>
             </div>
