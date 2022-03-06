@@ -36,8 +36,12 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `Correo` varchar(255) NOT NULL,
   `Clave` varchar(255) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
+  `Activo` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`DUI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `cliente` (`DUI`, `Nombre`, `Apellido`, `Telefono`, `Correo`, `Clave`, `Direccion`, `Activo`) VALUES
+('12345678-0', 'Juan', 'Perez', '7051-2132', 'jony50morales@gmail.com', '$2y$10$0RSA00AQs8wR4zDhpc5eFOhO1yBQ7Fn9ETMgxxlpdADKBSdGJmUkq', 'Apopa, San Salvador', 1),
+('12345678-9', 'Javier', 'Maldonado', '7005-9988', 'akapella477@gmail.com', '$2y$10$8yC28Jx/tOTDhNqiP7hd2u6DYY3AYPBPEJ4flqjn.5BHNFie0K2ZS', 'Carreteral Troncal', 0);
 
 -- --------------------------------------------------------
 
@@ -130,6 +134,10 @@ CREATE TABLE IF NOT EXISTS `sucursal` (
   PRIMARY KEY (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `sucursal` (`ID_Sucursal`, `Nombre_Sucursal`) VALUES
+('ID202201', 'Sucursal Alemania'),
+('ID202202', 'Sucursal Opico');
+
 -- --------------------------------------------------------
 
 --
@@ -165,6 +173,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`ID_Usuario`),
   KEY `ID_Sucursal` (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Activo`, `Acceso`, `ID_Sucursal`) VALUES
+('HM202202', 'Henry Edenilson', 'Morales López', 'akapella476@gmail.com', '$2y$10$uagHgwjsBP4s49X/VLeFAuAB.yE93PzGbPUpMIMNdeWgtdd1yEsQS', 0, 0, 'ID202201'),
+('JM202201', 'Jony Edenilson', 'Morales López', 'jony25lopezml@gmail.com', '$2y$10$ZrPwajFoLSFZoEbjnuLIae.BQOARl..gNznS44XU1tslqDiqfdIOa', 1, 1, 'ID202201'),
+('PD202203', 'Pedri', 'Gonzalez', 'pedri16gonzalez@gmail.com', '$2y$10$zKnex8Bhe2zrO1hg52lJF.sgmBEG/MKgmj5cm/nmlmVlNgOn2Esl.', 1, 0, 'ID202201'),
+('PT202204', 'Pablo', 'Gavi', 'pablo30gavi@gmail.com', '$2y$10$04luQtGs8/SnR8N9izor7uiicz9gZyCJ1kAUHRmrgSBEybNB8y03i', 0, 1, 'ID202201');
 
 --
 -- Restricciones para tablas volcadas

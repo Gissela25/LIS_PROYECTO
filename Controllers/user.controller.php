@@ -1,11 +1,12 @@
 <?php
 
-require "Models/log.php";
+require_once "Models/user.php";
 
     class UserController{
+        private $modelo;
         public function __construct()
         {
-          
+          $this->modelo= new User;
         }
 
         public function Ingresar()
