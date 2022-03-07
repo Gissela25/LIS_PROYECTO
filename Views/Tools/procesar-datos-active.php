@@ -1,5 +1,5 @@
 <?php
-    require_once 'validaciones.php';
+    include_once 'validaciones.php';
     $errores_rec=array();
     if(isset($_POST['confirmar']))
     {
@@ -10,7 +10,9 @@
         }
         if(isMail($correo))
         {
-            
+            $modelo = new User();
+            $modelo->setEmail($correo);
+            $modelo->activarCuenta();
         }
       
     }

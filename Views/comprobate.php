@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Recuperar Cuenta</title>
-    <link rel="stylesheet" href="Assets/css/active.css">
+    <link rel="stylesheet" href="Assets/css/comprobate.css">
 </head>
 
 <body>
@@ -17,29 +17,16 @@
             <div class="col-md-5 formulario">
                 <form action="?c=user&a=Activar" method="POST" role="form"> 
                     <div class="form-group text-center">
-                        <h1 class="text-light">Activar Cuenta</h1>
-                    </div>        
-                    <?php require 'Tools/procesar-datos-active.php'?>
-                    <?php
-                    if(count($errores_rec)>0&&isset($_POST['confirmar']))
-                    {
-                        echo "<ul>";
-                        foreach($errores_rec as $error)
-                        {
-                          echo "<li>$error</li>";
-                        }
-                        echo "</ul>";
-
-                    }
-                    ?>
-                    <div class="form-group mx-sm-4 pb-3">
-                        <input type="text" class="form-control"  placeholder="Ingrese su Email" name="correo" id="correo">
+                        <?php require_once 'Tools/procesar-datos-comprobate.php'; 
+                        ?>
                     </div>
+                    <br>        
                     <div class="form-group mx-sm-4 pb-2">
-                        <input type="submit" value="Confirmar" name="confirmar" id="confirmar" class="btn btn-block ingresar">
+                        <a  value="Iniciar Sesión" name="iniciar" id="iniciar" href="http://localhost/LIS_PROYECTO/?c=user&a=Ingresar" class="btn btn-block ingresar"> Iniciar Sesión </a>
                     </div>
+
                     <div class="form-group text-center">
-                        <span class=""><a href="?c=user&a=Ingresar" class="olvide1">Regresar</a></span>
+                        <span class=""><a href="http://localhost/LIS_PROYECTO/" class="olvide1">Regresar</a></span>
                     </div>
                 </form>
             </div>
