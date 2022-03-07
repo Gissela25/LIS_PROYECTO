@@ -12,3 +12,7 @@
     {
         return preg_match('/^[a-zA-Z0-9()._,*%&#@=?¿$;ª!|]{8,20}$/',$variable);
     }
+    function isEntero($variable)
+    {
+        return preg_match('/^[0-9]{6}$/',$variable);
+    }

@@ -23,4 +23,9 @@ require_once "Models/user.php";
         {
             require_once "Views/active.php";
         }
+
+        public function Comprobar()
+        {
+            require_once "Views/comprobate.php";
+        }
     }
