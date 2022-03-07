@@ -46,7 +46,8 @@
                     </div>
                     <div class="form-group mx-sm-4 text-right olv">
                         <span class=""><a href="?c=user&a=Recover" class="olvide">Olvide mi
-                                contraseña?</a></span>
+                                contraseña?</a></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class=""><a href="?c=user&a=Activar" class="olvide">Activar Cuenta</a></span>
                     </div>
                     <div class="form-group text-center">
                         <span class=""><a href=""
