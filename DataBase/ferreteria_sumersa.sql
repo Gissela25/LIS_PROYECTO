@@ -36,13 +36,8 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `Correo` varchar(255) NOT NULL,
   `Clave` varchar(255) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
-  `Activo` int(1) NOT NULL DEFAULT '0',
-  `Hash_Active` varchar(32) NOT NULL,
   PRIMARY KEY (`DUI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT INTO `cliente` (`DUI`, `Nombre`, `Apellido`, `Telefono`, `Correo`, `Clave`, `Direccion`, `Activo`, `Hash_Active`) VALUES
-('12345678-0', 'Juan', 'Perez', '7051-2132', 'jony50morales@gmail.com', '$2y$10$mCbjO665PPkPeNLiIIsQb.hncwjbt4XdVVUF5KxmLv2h0UKQCjYgq', 'Apopa, San Salvador', 1, 'b28d7c6b6aec04f5525b453411ff4336'),
-('12345678-9', 'Javier', 'Maldonado', '7005-9988', 'akapella477@gmail.com', '$2y$10$8yC28Jx/tOTDhNqiP7hd2u6DYY3AYPBPEJ4flqjn.5BHNFie0K2ZS', 'Carreteral Troncal', 0, '47d1e990583c9c67424d369f3414728e');
 
 -- --------------------------------------------------------
 
@@ -135,10 +130,6 @@ CREATE TABLE IF NOT EXISTS `sucursal` (
   PRIMARY KEY (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `sucursal` (`ID_Sucursal`, `Nombre_Sucursal`) VALUES
-('ID202201', 'Sucursal Alemania'),
-('ID202202', 'Sucursal Opico');
-
 -- --------------------------------------------------------
 
 --
@@ -171,16 +162,10 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Activo` int(1) NOT NULL DEFAULT '0',
   `Acceso` int(1) NOT NULL DEFAULT '0',
   `ID_Sucursal` varchar(8) NOT NULL,
-  `Hash_Active` varchar(32) NOT NULL,
   PRIMARY KEY (`ID_Usuario`),
   KEY `ID_Sucursal` (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Activo`, `Acceso`, `ID_Sucursal`, `Hash_Active`) VALUES
-('HM202202', 'Henry Edenilson', 'Morales López', 'akapella476@gmail.com', '$2y$10$uagHgwjsBP4s49X/VLeFAuAB.yE93PzGbPUpMIMNdeWgtdd1yEsQS', 0, 0, 'ID202201', '335d3d1cd7ef05ec77714a215134914c'),
-('JM202201', 'Jony Edenilson', 'Morales López', 'jony25lopezml@gmail.com', '$2y$10$ZrPwajFoLSFZoEbjnuLIae.BQOARl..gNznS44XU1tslqDiqfdIOa', 1, 1, 'ID202201', '7a70c831f7cd407750d00c839b23a496'),
-('PD202203', 'Pedri', 'Gonzalez', 'pedri16gonzalez@gmail.com', '$2y$10$zKnex8Bhe2zrO1hg52lJF.sgmBEG/MKgmj5cm/nmlmVlNgOn2Esl.', 1, 0, 'ID202201', '86a08a8cd53357d3fb437a6810af55cc'),
-('PT202204', 'Pablo', 'Gavi', 'pablo30gavi@gmail.com', '$2y$10$04luQtGs8/SnR8N9izor7uiicz9gZyCJ1kAUHRmrgSBEybNB8y03i', 0, 1, 'ID202201', '5314b9674c86e3f9d1ba25ef9bb32895');
 --
 -- Restricciones para tablas volcadas
 --

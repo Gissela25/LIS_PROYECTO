@@ -8,33 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Login</title>
-    <link rel="stylesheet" href="Assets/css/Login.css">
+    <link rel="stylesheet" href="../Assets/css/Login.css">
 </head>
 
 <body>
     <div class="container">
         <div class="row justify-content-center pt-5 mt-5 mr-1">
             <div class="col-md-4 formulario">
-                <form action="?c=user&a=Ingresar" method="POST" role="form">
+                <form action="" method="POST" role="form">
                     <div class="form-group text-center">
                         <h1 class="text-light">Iniciar Sesión</h1>
                     </div>
-                    <?php require 'Tools/procesar-datos-log.php';?>
-                    <?php
-                     if(count($errores_log)>0&&isset($_POST['ingresar']))
-                     {
-                         echo "<ul>";
-                         foreach($errores_log as $error)
-                         {
-                           echo "<li>$error</li>";
-                         }
-                         echo "</ul>";
- 
-                     }
-                    ?>
                     <div class="form-group mx-sm-4 pt-3">
-                        <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico" name="i_email"
-                            id="i_email">
+                        <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico" name="i_user"
+                            id="i_user">
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="i_pass"
@@ -45,9 +32,8 @@
                             class="btn btn-block ingresar">
                     </div>
                     <div class="form-group mx-sm-4 text-right olv">
-                        <span class=""><a href="?c=user&a=Recover" class="olvide">Olvide mi
-                                contraseña?</a></span> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <span class=""><a href="?c=user&a=Activar" class="olvide">Activar Cuenta</a></span>
+                        <span class=""><a href="" class="olvide">Olvide mi
+                                contraseña?</a></span>
                     </div>
                     <div class="form-group text-center">
                         <span class=""><a href=""

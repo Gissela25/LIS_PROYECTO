@@ -2,14 +2,15 @@
 
 require_once "Models/branch.php";
 
-class InicioController{
+class branchcontroller{
+
     private $modelo;
 
     public function __CONSTRUCT(){
-       $this->modelo=new branch();
+        $this->modelo=new branch;
     }
+
     public function Inicio(){
-        //$bd = BasedeDatos::Conectar();
-        require_once "Views/index.php";
+        require_once "Views/branch.php";
     }
 }
