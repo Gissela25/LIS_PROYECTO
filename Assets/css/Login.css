@@ -14,7 +14,6 @@ body{
 }
 .ingresar{
     background: #21325E;
-    padding: 10px;
     font-size: 16px;
     font-weight: 700!important;
     color: white;
@@ -34,7 +33,7 @@ body{
     color: white;
 }
 .olvide:hover{
-    color: white;
+    color: aqua;
     text-decoration-style : none ;
     text-decoration-line: none;
     cursor: pointer;
@@ -56,3 +55,17 @@ body{
     text-decoration-line: none;
     cursor: pointer;
 }
+.google{
+    color: white;
+    background: #21325E;
+    font-weight: 700!important;
+  
+}
+.google:hover{
+    color: white;
+}
+.sing-up{
+
+    color:white;
+}
+

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "google/apiclient": "2.0",
+        "hybridauth/hybridauth": "^3.7"
+    }
+}
