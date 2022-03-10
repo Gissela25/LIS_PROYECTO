@@ -1,0 +1,13 @@
+.Te{
+    color: #F7F6F2;
+}
+.edit{
+    color: black;
+}
+.formulario{
+      background:rgba(238, 238, 238, 1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.568);
+    color: white;
+}

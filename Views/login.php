@@ -50,12 +50,13 @@
                         <input type="submit" value="Ingresar" name="ingresar" id="ingresar"
                             class="btn btn-block ingresar">
                     </div>
-                    <h6 class="pb-2 or"><center>OR</center></h6>
-                    <div class="form-group mx-sm-4">
+                    <?php /*<h6 class="pb-2 or"><center>OR</center></h6>
+                   <div class="form-group mx-sm-4">
                         <center><span class=""> <?php require ('authentify.php')?>
         <a href="<?php echo $client->createAuthUrl() ?>" class="btn google btn-block">Ingresar con cuenta Google</a></span></center>
                         
                     </div>
+                   */ ?>
                     <div class="form-group mx-sm-4 text-right olv">
                    
                         <span class=""><a href="?c=user&a=Recover" class="olvide">Olvide mi
