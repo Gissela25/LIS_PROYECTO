@@ -1,0 +1,1 @@
+<?php require_once 'Core/router.core.php';
