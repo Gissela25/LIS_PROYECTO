@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 04-03-2022 a las 02:35:17
+-- Tiempo de generación: 10-03-2022 a las 01:59:57
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `pago` (
 DROP TABLE IF EXISTS `precio_sucursal`;
 CREATE TABLE IF NOT EXISTS `precio_sucursal` (
   `ID_PS` varchar(8) NOT NULL,
-  `ID_Sucursal` varchar(8) NOT NULL,
+  `ID_Sucursal` int(1) NOT NULL,
   `ID_Producto` varchar(8) NOT NULL,
   `Precio` float(10,2) NOT NULL,
   PRIMARY KEY (`ID_PS`),
@@ -125,10 +125,21 @@ CREATE TABLE IF NOT EXISTS `producto` (
 
 DROP TABLE IF EXISTS `sucursal`;
 CREATE TABLE IF NOT EXISTS `sucursal` (
-  `ID_Sucursal` varchar(8) NOT NULL,
+  `ID_Sucursal` int(1) NOT NULL AUTO_INCREMENT,
   `Nombre_Sucursal` varchar(120) NOT NULL,
   PRIMARY KEY (`ID_Sucursal`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `sucursal`
+--
+
+INSERT INTO `sucursal` (`ID_Sucursal`, `Nombre_Sucursal`) VALUES
+(1, 'Santa Tecla'),
+(2, 'San Salvador'),
+(3, 'Lourdes'),
+(4, 'Opico'),
+(5, 'Zaragoza');
 
 -- --------------------------------------------------------
 
@@ -161,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Clave` varchar(255) NOT NULL,
   `Activo` int(1) NOT NULL DEFAULT '0',
   `Acceso` int(1) NOT NULL DEFAULT '0',
-  `ID_Sucursal` varchar(8) NOT NULL,
+  `ID_Sucursal` int(1) NOT NULL,
   PRIMARY KEY (`ID_Usuario`),
   KEY `ID_Sucursal` (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
