@@ -1,8 +1,9 @@
 body{
-    background-image: url(../img/pintura.jpg); 
+    background-image: url(../img/mesa.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    
 
 }
 .formulario{
@@ -14,6 +15,7 @@ body{
 }
 .ingresar{
     background: #21325E;
+    padding: 10px;
     font-size: 16px;
     font-weight: 700!important;
     color: white;
@@ -30,10 +32,9 @@ body{
 .olvide {
     text-decoration-style: none;
     text-decoration-line: none;
-    color: white;
 }
 .olvide:hover{
-    color: aqua;
+    color: white;
     text-decoration-style : none ;
     text-decoration-line: none;
     cursor: pointer;
@@ -55,17 +56,3 @@ body{
     text-decoration-line: none;
     cursor: pointer;
 }
-.google{
-    color: white;
-    background: #21325E;
-    font-weight: 700!important;
-  
-}
-.google:hover{
-    color: white;
-}
-.sing-up{
-
-    color:white;
-}
-

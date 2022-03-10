@@ -10,12 +10,9 @@ class branchcontroller{
         $this->modelo=new branch;
     }
 
-    public function Inicio(){
+    public function branch(){
         require_once "Views/branch.php";
     }
-<<<<<<< Updated upstream
-}
-=======
 
     public function Insert(){
         $titulo = "Ingresar";
@@ -39,4 +36,3 @@ class branchcontroller{
         header("location:?c=branch&a=branch");
     }
 }
->>>>>>> Stashed changes

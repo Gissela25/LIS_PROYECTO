@@ -18,7 +18,7 @@
 <body>
     <div class="d-flex justify-content-center">
         <div class="col-md-4 my-5">
-            <legend style="color:#084594" class="text-center"><?=$titulo?> Sucursal</legend>
+            <legend style="color:#084594" class="text-center"><?=$titulo?>  Sucursal</legend>
             <form class="formulario" method="POST" action="?c=branch&a=Save">
                 <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
                     width="230px">
@@ -31,7 +31,7 @@
                     <label for="exampleInputPassword1" class="form-label">Nombre Sucursal</label>
                     <input type="name" class="form-control" name="Nombre_Sucursal" value="<?=$p->getPro_nom()?>">
                 </div>
-                <button type="submit" class="btn btn-warning">Enviar</button>
+                <button type="submit" class="btn btn-warning">Insertar</button>
             </form>
         </div>
     </div>
