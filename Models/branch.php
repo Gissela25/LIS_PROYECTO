@@ -38,4 +38,16 @@ class branch{
             die($e->getMessage());
         }
     }
+
+    public function Insert(branch $p){
+        try{
+        $consulta = "Insert INTO sucursal(Nombre_Sucursal) values (?);";
+        $this->pdo->prepare($consulta)
+                    ->execute(array(
+                        $p->getPro_nom()
+                    ));
+        }catch(exception $e){
+        die($e->getMessage());
+        }
+    }
 }
