@@ -1,8 +1,9 @@
 body{
-    background-image: url(../img/pintura.jpg); 
+    background-image: url(../img/contruccion.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    
 
 }
 .formulario{
@@ -14,7 +15,7 @@ body{
 }
 .ingresar{
     background: #21325E;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700!important;
     color: white;
     box-shadow: 0 0 30px rgba(0,0,0,0.568);
@@ -30,10 +31,9 @@ body{
 .olvide {
     text-decoration-style: none;
     text-decoration-line: none;
-    color: white;
 }
 .olvide:hover{
-    color: aqua;
+    color: white;
     text-decoration-style : none ;
     text-decoration-line: none;
     cursor: pointer;
@@ -55,17 +55,3 @@ body{
     text-decoration-line: none;
     cursor: pointer;
 }
-.google{
-    color: white;
-    background: #21325E;
-    font-weight: 700!important;
-  
-}
-.google:hover{
-    color: white;
-}
-.sing-up{
-
-    color:white;
-}
-

@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/pintura.jpg); 
+    background-image: url(../img/contruccion.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -13,7 +13,8 @@ body{
     color: white;
 }
 .ingresar{
-    background: #21325E;
+    background: #FFE162;
+    padding: 10px;
     font-size: 16px;
     font-weight: 700!important;
     color: white;
@@ -30,10 +31,10 @@ body{
 .olvide {
     text-decoration-style: none;
     text-decoration-line: none;
-    color: white;
+    color: #FFE162;
 }
 .olvide:hover{
-    color: aqua;
+    color: white;
     text-decoration-style : none ;
     text-decoration-line: none;
     cursor: pointer;
@@ -47,7 +48,7 @@ body{
     /* border: 2px solid white; */
     padding: 10px;
     border-radius: 10px; 
-    background: #21325E;
+    background: #FFE162;
 }
 .olvide1:hover{
     color: white;
@@ -55,17 +56,3 @@ body{
     text-decoration-line: none;
     cursor: pointer;
 }
-.google{
-    color: white;
-    background: #21325E;
-    font-weight: 700!important;
-  
-}
-.google:hover{
-    color: white;
-}
-.sing-up{
-
-    color:white;
-}
-
