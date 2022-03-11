@@ -10,9 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="../Assets/css/worker.css">
+    <link rel="stylesheet" href="Assets/css/branch.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Empleados</title>
+    <title>Sucursales</title>
 </head>
 
 <body>
@@ -51,32 +51,24 @@
                     <table class="table table-bordered">
                         <thead class="Te" style="background-color: #084594">
                             <tr>
-                                
+                                <th>ID</th>
                                 <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Correo</th>
-                                <th>Sucursal</th>
-                                <th>Activo</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php foreach($this->modelo->show() as $r):?>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                
+                                <td><?=$r->ID_Sucursal?></td>
+                                <td><?=$r->Nombre_Sucursal?></td>
                                 <td>
-                                    <a class="edit mx-3" href="?c=branch&a=edit"><i class="bi bi-pencil-square"></i> Editar
+                                    <a class="edit mx-3" href="?c=branch&a=Insert&id=<?=$r->ID_Sucursal?>"><i class="bi bi-pencil-square"></i> Editar
                                         <i class="fa fa-lg fa-refresh"></i></a>
-                                    <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                        <i class="fa fa-lg fa-refresh"></i></a>
+                                    <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
+                                        <i class="fa fa-lg fa-refresh"></i></a> -->
                                 </td>
                             </tr>
-                            
+                            <?php endforeach;?>
                             <tr>
                             </tr>
                         </tbody>

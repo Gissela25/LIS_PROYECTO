@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="../Assets/css/worker.css">
+    <link rel="stylesheet" href="../Assets/css/branch.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Empleados</title>
 </head>
@@ -52,17 +52,23 @@
                         <thead class="Te" style="background-color: #084594">
                             <tr>
                                 
+                                <th>Codigo</th>
                                 <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Correo</th>
-                                <th>Sucursal</th>
-                                <th>Activo</th>
+                                <th>Descripcion</th>
+                                <th>Imagen</th>
+                                <th>Categoria</th>
+                                <th>Precio</th>
+                                <th>Existencias</th>
+                                <th>Operaciones</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             
                             <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
