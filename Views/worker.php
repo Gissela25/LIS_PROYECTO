@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="../Assets/css/worker.css">
+    <link rel="stylesheet" href="../Assets/css/branch.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Empleados</title>
 </head>
@@ -46,42 +46,80 @@
 
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
-            <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
+            <h5 style="text-align:center">Usuarios Activos</h5>
+            <a class="edit" href="?c=worker&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
             <div class="row mt-3">
-                    <table class="table table-bordered">
-                        <thead class="Te" style="background-color: #084594">
-                            <tr>
-                                
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Correo</th>
-                                <th>Sucursal</th>
-                                <th>Activo</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                
-                                <td>
-                                    <a class="edit mx-3" href="?c=branch&a=edit"><i class="bi bi-pencil-square"></i> Editar
-                                        <i class="fa fa-lg fa-refresh"></i></a>
-                                    <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                        <i class="fa fa-lg fa-refresh"></i></a>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-bordered">
+                    <thead class="Te" style="background-color: #084594">
+                        <tr>
+                            <th>ID Usuario</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Sucursal</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($this->modelo->showactive() as $r):?>
+                        <td><?=$r->ID_Usuario?></td>
+                        <td><?=$r->Nombre?></td>
+                        <td><?=$r->Apellido?></td>
+                        <td><?=$r->Correo?></td>
+                        <td><?=$r->Nombre_Sucursal?></td>
+                        <td>
+                            <a class="edit mx-3" href="?c=worker&a=workeredit&idu=<?=$r->ID_Usuario?>"><i class="bi bi-pencil-square"></i> Editar
+                                <i class="fa fa-lg fa-refresh"></i></a>
+                            <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
+                                <i class="fa fa-lg fa-refresh"></i></a> -->
+                        </td>
+                        </tr>
+                        <?php endforeach;?>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-5 mt-5">
+        <div class="col ml-5">
+        <h5 style="text-align:center">Usuarios Desactivos</h5>
+            <!-- <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a> -->
+            <div class="row mt-3">
+                <table class="table table-bordered">
+                    <thead class="Te" style="background-color: #084594">
+                        <tr>
+                            <th>ID Usuario</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Sucursal</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($this->modelo->showdactive() as $r):?>
+                        <td><?=$r->ID_Usuario?></td>
+                        <td><?=$r->Nombre?></td>
+                        <td><?=$r->Apellido?></td>
+                        <td><?=$r->Correo?></td>
+                        <td><?=$r->Nombre_Sucursal?></td>
+                        <td>
+                            <a class="edit mx-3" href="?c=worker&a=workeredit&idu=<?=$r->ID_Usuario?>"><i class="bi bi-pencil-square"></i> Editar
+                                <i class="fa fa-lg fa-refresh"></i></a>
+                            <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
+                                <i class="fa fa-lg fa-refresh"></i></a> -->
+                        </td>
+                        </tr>
+                        <?php endforeach;?>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

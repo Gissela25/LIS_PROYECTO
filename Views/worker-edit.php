@@ -19,7 +19,7 @@
     <div class="d-flex justify-content-center">
         <div class="col-md-4 my-5">
             <legend style="color:#084594" class="text-center">Informacion Empleado</legend>
-            <form class="formulario" method="POST" action="?c=worker&a=Save">
+            <form class="formulario" method="POST" action="?c=worker&a=Saveedit">
                 <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
                     width="230px">
                 <!-- <div class="form-group">
@@ -28,32 +28,48 @@
                     </div>
                 </div> -->
                 <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label" >ID Usuario</label>
-                    <input type="name" class="form-control" name="ID_Usuario" value="<?=$this->modelo->generate_code();?>" readonly>
+                    <label for="exampleInputPassword1" class="form-label" value="">ID Usuario</label>
+                    <input type="name" class="form-control" name="ID_Usuario" value="<?=$p->getPro_idu()?>">
                 </div>
                 <div class="mb-3" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                    <input type="name" class="form-control" name="Nombre">
+                    <input type="name" class="form-control" name="Nombre" value="<?=$p->getPro_nom()?>">
                 </div>
                 <div class="mb-3" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Apellido</label>
-                    <input type="name" class="form-control" name="Apellido">
+                    <input type="name" class="form-control" name="Apellido" value="<?=$p->getPro_ape()?>">
                 </div>
                 <div class="mb-3" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Correo</label>
-                    <input type="name" class="form-control" name="Correo">
+                    <input type="name" class="form-control" name="Correo" value="<?=$p->getPro_correo()?>">
                 </div>
                 <div class="mb-3" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Clave</label>
-                    <input type="password" class="form-control" name="Clave">
+                    <input type="password" class="form-control" name="Clave" value="<?=$p->getPro_Clave()?>">
                 </div>
                 <label for="exampleInputPassword1" class="form-label">Sucursal</label>
                 <div class="form-floating">
                     <select class="form-select" name="ID_Sucursal" id="floatingSelect"
                         aria-label="Floating label select example">
                         <?php foreach($this->modelo->showsucursal() as $r):?>
-                        <option value="<?=$r->ID_Sucursal?>"><?=$r->Nombre_Sucursal?></option>
+                        <option value="<?=$p->getPro_id()?>"><?=$r->Nombre_Sucursal?></option>
                         <?php endforeach;?>
+                    </select>
+                </div>
+                <label for="exampleInputPassword1" class="form-label">Estado</label>
+                <div class="form-floating">
+                    <select class="form-select" name="Activo" id="floatingSelect"
+                        aria-label="Floating label select example" value="<?=$p->getPro_act()?>">
+                        <option value="0">Activo</option>
+                        <option value="1">Desactivo</option>
+                    </select>
+                </div>
+                <label for="exampleInputPassword1" class="form-label">Acceso</label>
+                <div class="form-floating">
+                    <select class="form-select" name="Acceso" id="floatingSelect"
+                        aria-label="Floating label select example" value="<?=$p->getPro_acce()?>">
+                        <option value="0">Empleado</option>
+                        <option value="1">Administrador</option>
                     </select>
                 </div>
                 <div class="d-flex justify-content-center">
