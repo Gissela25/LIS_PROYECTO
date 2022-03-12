@@ -9,11 +9,13 @@ class worker{
     private $Apellido;
     private $Correo;
     private $Clave;
-    private $Activo;
+    private $Verificado;
+    private $Estado;
     private $Acceso;
     private $ID_Sucursal;
     private $p;
     private $rows;
+    private $pwd_encrypt;
 
     public function __CONSTRUCT(){
         $this->pdo = BasedeDatos::Conectar();
@@ -73,13 +75,23 @@ class worker{
         $this->Clave=$clave;
     }
 
-    public function getPro_act(): ?string{
-        return $this->Activo;
+    public function getPro_ver(): ?string{
+        return $this->Verificado;
 
     }
 
-    public function setPro_act(string $act){
-        $this->Activo=$act;
+    public function setPro_ver(string $ver){
+        $this->Verificado=$ver;
+    }
+
+    
+    public function getPro_estado(): ?string{
+        return $this->Estado;
+
+    }
+
+    public function setPro_estado(string $es){
+        $this->Estado=$es;
     }
 
     public function getPro_acce(): ?string{
@@ -94,7 +106,7 @@ class worker{
         try{
             $consulta=$this->pdo->prepare("SELECT usuario.ID_Usuario, usuario.Nombre, usuario.Apellido, usuario.Correo, sucursal.Nombre_Sucursal 
             FROM usuario, sucursal 
-            WHERE usuario.ID_Sucursal = sucursal.ID_Sucursal AND usuario.Activo = 0;");
+            WHERE usuario.ID_Sucursal = sucursal.ID_Sucursal AND usuario.Estado = 1;");
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_OBJ);
         }catch(Exception $e){
@@ -106,7 +118,7 @@ class worker{
         try{
             $consulta=$this->pdo->prepare("SELECT usuario.ID_Usuario, usuario.Nombre, usuario.Apellido, usuario.Correo, sucursal.Nombre_Sucursal 
             FROM usuario, sucursal 
-            WHERE usuario.ID_Sucursal = sucursal.ID_Sucursal AND usuario.Activo = 1;");
+            WHERE usuario.ID_Sucursal = sucursal.ID_Sucursal AND usuario.Estado = 0;");
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_OBJ);
         }catch(Exception $e){
@@ -134,7 +146,7 @@ class worker{
 
     public function Insert(worker $p){
         try{
-        $consulta = "Insert INTO usuario(ID_Usuario,Nombre,Apellido,Correo,Clave,ID_Sucursal) values (?,?,?,?,?,?);";
+        $consulta = "Insert INTO usuario(ID_Usuario,Nombre,Apellido,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal) values (?,?,?,?,?,?,?,?,?);";
         $this->pdo->prepare($consulta)
                     ->execute(array(
                         $p->getPro_idu(),
@@ -142,6 +154,9 @@ class worker{
                         $p->getPro_ape(),
                         $p->getPro_correo(),
                         $p->getPro_Clave(),
+                        $p->getPro_ver(),
+                        $p->getPro_estado(),
+                        $p->getPro_acce(),
                         $p->getPro_id()
                     ));
         }catch(exception $e){
@@ -160,8 +175,10 @@ class worker{
             $p->setPro_ape($r->Apellido);
             $p->setPro_correo($r->Correo);
             $p->setPro_Clave($r->Clave);
-            $p->setPro_act($r->Activo);
+            $p->setPro_ver($r->Verificado);
+            $p->setPro_estado($r->Estado);
             $p->setPro_acce($r->Acceso);
+            $p->setPro_id($r->ID_Sucursal);
 
             return $p;
 
@@ -177,7 +194,8 @@ class worker{
            Apellido=?,
            Correo=?,
            Clave=?,
-           Activo=?,
+           Verificado=?,
+           Estado=?,
            Acceso=?,
            ID_Sucursal=?
            WHERE ID_Usuario=?;
@@ -185,13 +203,15 @@ class worker{
         $this->pdo->prepare($consulta)
                     ->execute(array(
                         $p->getPro_nom(),
-                        $p->getPro_id(),
-                        $p->getPro_idu(),
                         $p->getPro_ape(),
                         $p->getPro_correo(),
                         $p->getPro_Clave(),
+                        $p->getPro_ver(),
+                        $p->getPro_estado(),
                         $p->getPro_acce(),
-                        $p->getPro_act(),
+                        $p->getPro_id(),
+                        $p->getPro_idu()
+                        
                     ));
         }catch(exception $e){
         die($e->getMessage());
@@ -208,5 +228,4 @@ class worker{
         }
     }
  
-
 }

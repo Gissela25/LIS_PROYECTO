@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-03-2022 a las 01:59:57
+-- Tiempo de generación: 12-03-2022 a las 05:15:53
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -66,9 +66,21 @@ CREATE TABLE IF NOT EXISTS `detalle` (
 DROP TABLE IF EXISTS `familia`;
 CREATE TABLE IF NOT EXISTS `familia` (
   `ID_Familia` varchar(8) NOT NULL,
-  `Nombre_Sucursal` varchar(120) NOT NULL,
+  `Nombre` varchar(120) NOT NULL,
   PRIMARY KEY (`ID_Familia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `familia`
+--
+
+INSERT INTO `familia` (`ID_Familia`, `Nombre`) VALUES
+('F010', 'Construcción'),
+('F186', 'Electrico'),
+('F245', 'Pintura'),
+('F287', 'Techo'),
+('F779', 'Ferreteria'),
+('F978', 'Fontaneria');
 
 -- --------------------------------------------------------
 
@@ -128,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `sucursal` (
   `ID_Sucursal` int(1) NOT NULL AUTO_INCREMENT,
   `Nombre_Sucursal` varchar(120) NOT NULL,
   PRIMARY KEY (`ID_Sucursal`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `sucursal`
@@ -139,7 +151,8 @@ INSERT INTO `sucursal` (`ID_Sucursal`, `Nombre_Sucursal`) VALUES
 (2, 'San Salvador'),
 (3, 'Lourdes'),
 (4, 'Opico'),
-(5, 'Zaragoza');
+(5, 'Zaragoza'),
+(6, 'Santa Ana');
 
 -- --------------------------------------------------------
 
@@ -170,12 +183,22 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Apellido` varchar(120) NOT NULL,
   `Correo` varchar(255) NOT NULL,
   `Clave` varchar(255) NOT NULL,
-  `Activo` int(1) NOT NULL DEFAULT '0',
+  `Verificado` int(1) NOT NULL DEFAULT '0',
+  `Estado` int(1) NOT NULL DEFAULT '1',
   `Acceso` int(1) NOT NULL DEFAULT '0',
   `ID_Sucursal` int(1) NOT NULL,
   PRIMARY KEY (`ID_Usuario`),
   KEY `ID_Sucursal` (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`) VALUES
+('E104', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$u0xh7dAaTsJJteAImTxw.ux120MqCwfC/1E2lGG0DAQG2dvX./APS', 0, 1, 0, 3),
+('E847', 'Luis', 'Ulloa', 'luisfer@gmail.com', '$2y$10$g3HocxDhUuKHDZ56QfQYyOXsjNoVQLw4R0CvW7EwtT6kEhpxE0dfC', 0, 0, 0, 4),
+('E953', 'Giss', 'Serr', 'gisselaverenice@gmail', '$2y$10$Wh5KE/VqjiwFtR0J/8Glx.FCEYE2TzRgS/uSeEgZcPBeAEqoms9ti', 0, 1, 0, 1);
 
 --
 -- Restricciones para tablas volcadas
