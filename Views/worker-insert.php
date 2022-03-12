@@ -18,7 +18,7 @@
 <body>
     <div class="d-flex justify-content-center">
         <div class="col-md-4 my-5">
-            <legend style="color:#084594" class="text-center">Informacion Empleado</legend>
+            <legend style="color:#084594" class="text-center"><?=$titulo?> Empleado</legend>
             <form class="formulario" method="POST" action="?c=worker&a=Save">
                 <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
                     width="230px">
@@ -46,6 +46,21 @@
                 <div class="mb-3" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Clave</label>
                     <input type="password" class="form-control" name="Clave">
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Verificado" type="hidden" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Estado" type="hidden" value="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Acceso" type="hidden" value="">
+                    </div>
                 </div>
                 <label for="exampleInputPassword1" class="form-label">Sucursal</label>
                 <div class="form-floating">

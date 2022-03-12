@@ -15,55 +15,62 @@ class workercontroller{
     }
 
     public function Insert(){
-        // $titulo = "Ingresar";
-        // $p=new branch();
-        // if(isset($_GET['id'])){
-        //     $p=$this->modelo->have($_GET['id']);
-        //     $titulo="Actualizar";
-        // }
+        $titulo = "Ingresar";
+        $p=new worker();
+        if(isset($_GET['idu'])){
+        $p=$this->modelo->have($_GET['idu']);
+        $titulo="Actualizar";
+        }
         require_once "Views/worker-insert.php";
     }
 
     public function Save(){
         $p=new worker();
+        $pwd_encrypt=  password_hash($Clave,PASSWORD_DEFAULT, ['cost' => 10]);  
         $p->setPro_idu($_POST['ID_Usuario']);
         $p->setPro_nom($_POST['Nombre']);
         $p->setPro_ape($_POST['Apellido']);
         $p->setPro_correo($_POST['Correo']);
         $p->setPro_Clave($_POST['Clave']);
+        $p->setPro_ver(intval($_POST['Verificado']));
+        $p->setPro_estado(intval($_POST['Estado']));
+        $p->setPro_acce(intval($_POST['Acceso']));
         $p->setPro_id(intval($_POST['ID_Sucursal']));
+        $p->setPro_Clave($pwd_encrypt);
 
-        // $p->getPro_idu() > 0 ?
-        // $this->modelo->Update($p) :
         $this->modelo->Insert($p);
+
 
         header("location:?c=worker&a=worker");
     }
 
     public function workeredit(){
+        $titulo = "Ingresar";
         $p=new worker();
         if(isset($_GET['idu'])){
-             $p=$this->modelo->have($_GET['idu']);
-         }
+        $p=$this->modelo->have($_GET['idu']);
+        $titulo="Actualizar";
+        }
         require_once "Views/worker-edit.php";
     }
 
     
-    public function Saveedit(){
+     public function Saveedit()
+     {
         $p=new worker();
+        $pwd_encrypt=  password_hash($Clave,PASSWORD_DEFAULT, ['cost' => 10]);
         $p->setPro_idu($_POST['ID_Usuario']);
         $p->setPro_nom($_POST['Nombre']);
         $p->setPro_ape($_POST['Apellido']);
         $p->setPro_correo($_POST['Correo']);
         $p->setPro_Clave($_POST['Clave']);
-        $p->setPro_act(intval($_POST['Activo']));
+        $p->setPro_ver(intval($_POST['Verificado']));
+        $p->setPro_estado(intval($_POST['Estado']));
         $p->setPro_acce(intval($_POST['Acceso']));
         $p->setPro_id(intval($_POST['ID_Sucursal']));
-
-    
+        $p->setPro_Clave($pwd_encrypt);
+        
         $this->modelo->Update($p);
-    
-
         header("location:?c=worker&a=worker");
-    }
+ }
 }

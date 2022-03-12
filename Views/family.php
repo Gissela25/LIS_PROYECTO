@@ -49,26 +49,26 @@
 
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
-            <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
+            <a class="edit" href="?c=family&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
             <div class="row mt-3">
                     <table class="table table-bordered">
                         <thead class="Te" style="background-color: #084594">
                             <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
+                                <th>ID Familia</th>
+                                <th>Familia</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($this->modelo->show() as $r):?>
                             <tr>
-                                <td><?=$r->ID_Sucursal?></td>
-                                <td><?=$r->Nombre_Sucursal?></td>
+                                <td><?=$r->ID_Familia?></td>
+                                <td><?=$r->Nombre?></td>
                                 <td>
-                                    <a class="edit mx-3" href="?c=branch&a=Insert&id=<?=$r->ID_Sucursal?>"><i class="bi bi-pencil-square"></i> Editar
+                                    <a class="edit mx-3" href="?c=family&a=edit&id=<?=$r->ID_Familia?>"><i class="bi bi-pencil-square"></i> Editar
                                         <i class="fa fa-lg fa-refresh"></i></a>
-                                    <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                        <i class="fa fa-lg fa-refresh"></i></a> -->
+                                    <a class="edit mx-3" href="?c=family&a=sendelete&id=<?=$r->ID_Familia?>"><i class="bi bi-trash-fill"></i> Eliminar
+                                        <i class="fa fa-lg fa-refresh"></i></a>
                                 </td>
                             </tr>
                             <?php endforeach;?>

@@ -18,36 +18,36 @@
 <body>
     <div class="d-flex justify-content-center">
         <div class="col-md-4 my-5">
-            <legend style="color:#084594" class="text-center">Informacion Empleado</legend>
+            <legend style="color:#084594" class="text-center"><?=$titulo?> Empleado</legend>
             <form class="formulario" method="POST" action="?c=worker&a=Saveedit">
                 <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
                     width="230px">
-                <!-- <div class="form-group">
-                    <div class="col-lg-10">
-                        <input class="form-control" name="ID_Sucursal" type="hidden" value="">
-                    </div>
-                </div> -->
-                <div class="mb-3" style="color:#084594">
+                <div class="" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label" value="">ID Usuario</label>
                     <input type="name" class="form-control" name="ID_Usuario" value="<?=$p->getPro_idu()?>">
                 </div>
-                <div class="mb-3" style="color:#084594">
+                <div class="" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Nombre</label>
                     <input type="name" class="form-control" name="Nombre" value="<?=$p->getPro_nom()?>">
                 </div>
-                <div class="mb-3" style="color:#084594">
+                <div class="" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Apellido</label>
                     <input type="name" class="form-control" name="Apellido" value="<?=$p->getPro_ape()?>">
                 </div>
-                <div class="mb-3" style="color:#084594">
+                <div class="" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Correo</label>
                     <input type="name" class="form-control" name="Correo" value="<?=$p->getPro_correo()?>">
                 </div>
-                <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Clave</label>
-                    <input type="password" class="form-control" name="Clave" value="<?=$p->getPro_Clave()?>">
+                <div class="" style="color:#084594">
+                    <label for="exampleInputPassword1" class="form-label"></label>
+                    <input type="hidden" class="form-control" name="Clave" value="<?=$p->getPro_Clave()?>">
                 </div>
-                <label for="exampleInputPassword1" class="form-label">Sucursal</label>
+                <div class="form-group">
+                    <div class="col-lg-10">
+                        <input class="form-control" name="Verificado" type="hidden" value="">
+                    </div>
+                </div>
+                <label for="exampleInputPassword1" class="form-label" style="color:#084594">Sucursal</label>
                 <div class="form-floating">
                     <select class="form-select" name="ID_Sucursal" id="floatingSelect"
                         aria-label="Floating label select example">
@@ -56,15 +56,22 @@
                         <?php endforeach;?>
                     </select>
                 </div>
-                <label for="exampleInputPassword1" class="form-label">Estado</label>
-                <div class="form-floating">
-                    <select class="form-select" name="Activo" id="floatingSelect"
-                        aria-label="Floating label select example" value="<?=$p->getPro_act()?>">
-                        <option value="0">Activo</option>
-                        <option value="1">Desactivo</option>
-                    </select>
+                <div class="" style="color:#084594">
+                    <label for="exampleInputPassword1" class="form-label" style="color:#084594">Estado</label>
                 </div>
-                <label for="exampleInputPassword1" class="form-label">Acceso</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Estado" id="flexRadioDefault1" value="1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Activo
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Estado" id="flexRadioDefault2" value="0">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Inactivo
+                    </label>
+                </div>
+                <label for="exampleInputPassword1" class="form-label" style="color:#084594">Acceso</label>
                 <div class="form-floating">
                     <select class="form-select" name="Acceso" id="floatingSelect"
                         aria-label="Floating label select example" value="<?=$p->getPro_acce()?>">
@@ -79,6 +86,7 @@
         </div>
     </div>
 
+    </div>
     </div>
 </body>
 

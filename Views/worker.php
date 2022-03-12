@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="../Assets/css/branch.css">
+    <link rel="stylesheet" href="Assets/css/branch.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Empleados</title>
 </head>
@@ -31,10 +31,13 @@
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Sucursales</a>
+                        <a class="nav-link active" aria-current="page" href="?c=branch&a=branch">Sucursales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Empleados</a>
+                        <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="?c=family&a=family">Familia</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Productos</a>
@@ -84,7 +87,7 @@
     </div>
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
-        <h5 style="text-align:center">Usuarios Desactivos</h5>
+        <h5 style="text-align:center">Usuarios Inactivos</h5>
             <!-- <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a> -->
             <div class="row mt-3">
                 <table class="table table-bordered">
