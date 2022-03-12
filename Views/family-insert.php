@@ -18,18 +18,17 @@
 <body>
     <div class="d-flex justify-content-center">
         <div class="col-md-4 my-5">
-            <legend style="color:#084594" class="text-center"><?=$titulo?>  Sucursal</legend>
-            <form class="formulario" method="POST" action="?c=branch&a=Save">
+            <legend style="color:#084594" class="text-center"><?=$titulo?> Familia</legend>
+            <form class="formulario" method="POST" action="?c=family&a=Save">
                 <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
                     width="230px">
-                <div class="form-group">
-                    <div class="col-lg-10">
-                        <input class="form-control" name="ID_Sucursal" type="hidden" value="<?=$p->getPro_id()?>">
-                    </div>
+                <div class="mb-3" style="color:#084594">
+                    <label for="exampleInputPassword1" class="form-label">ID Familia</label>
+                    <input type="name" class="form-control" name="ID_Familia"  value="<?=$this->modelo->generate_code();?>" readonly>
                 </div>
                 <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Nombre Sucursal</label>
-                    <input type="name" class="form-control" name="Nombre_Sucursal" value="<?=$p->getPro_nom()?>">
+                    <label for="exampleInputPassword1" class="form-label">Familia</label>
+                    <input type="name" class="form-control" name="Nombre" value="">
                 </div>
                 <button type="submit" class="btn btn-warning">Insertar</button>
             </form>

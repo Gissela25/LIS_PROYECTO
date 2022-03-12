@@ -15,6 +15,12 @@ class branchcontroller{
     }
 
     public function Insert(){
+        $titulo = "Ingresar";
+        $p=new branch();
+        if(isset($_GET['id'])){
+            $p=$this->modelo->have($_GET['id']);
+            $titulo="Actualizar";
+        }
         require_once "Views/branch-insert.php";
     }
 
@@ -23,6 +29,8 @@ class branchcontroller{
         $p->setPro_id(intval($_POST['ID_Sucursal']));
         $p->setPro_nom($_POST['Nombre_Sucursal']);
 
+        $p->getPro_id() > 0 ?
+        $this->modelo->Update($p) :
         $this->modelo->Insert($p);
 
         header("location:?c=branch&a=branch");

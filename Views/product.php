@@ -10,9 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/branch.css">
+    <link rel="stylesheet" href="../Assets/css/branch.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Sucursales</title>
+    <title>Empleados</title>
 </head>
 
 <body>
@@ -31,13 +31,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=branch&a=branch">Sucursales</a>
+                        <a class="nav-link active" aria-current="page" href="#">Sucursales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=family&a=family">Familia</a>
+                        <a class="nav-link active" aria-current="page" href="#">Empleados</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Productos</a>
@@ -54,24 +51,38 @@
                     <table class="table table-bordered">
                         <thead class="Te" style="background-color: #084594">
                             <tr>
-                                <th>ID</th>
+                                
+                                <th>Codigo</th>
                                 <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Imagen</th>
+                                <th>Categoria</th>
+                                <th>Precio</th>
+                                <th>Existencias</th>
+                                <th>Operaciones</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($this->modelo->show() as $r):?>
+                            
                             <tr>
-                                <td><?=$r->ID_Sucursal?></td>
-                                <td><?=$r->Nombre_Sucursal?></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                
                                 <td>
-                                    <a class="edit mx-3" href="?c=branch&a=Insert&id=<?=$r->ID_Sucursal?>"><i class="bi bi-pencil-square"></i> Editar
+                                    <a class="edit mx-3" href="?c=branch&a=edit"><i class="bi bi-pencil-square"></i> Editar
                                         <i class="fa fa-lg fa-refresh"></i></a>
-                                    <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                        <i class="fa fa-lg fa-refresh"></i></a> -->
+                                    <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
+                                        <i class="fa fa-lg fa-refresh"></i></a>
                                 </td>
                             </tr>
-                            <?php endforeach;?>
+                            
                             <tr>
                             </tr>
                         </tbody>
