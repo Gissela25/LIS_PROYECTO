@@ -4,41 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-   
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <title>Contactanos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Assets/css/mail.css">
 </head>
-<body class="bg-secondary">
-    <section class="d-flex justify-content-center">
-        <div class="card col-sm-6 p-3">
-        <div class="nb-3">
-            <h4>Contacto</h4>
-        </div>
-        <div class="nd-2">
-            <form action="">
-                <div class="nd-2">
-                    <label for="nombre">Nombre</label>
-                    <input type="text"  class="form-control" name="nombre" id="nombre" placeholder="Ingrese su nombre">
-                </div>
-                <div class="nd-2">
-                    <label for="apellido">Apellido</label>
-                    <input type="text"  class="form-control" name="nombre" id="nombre" placeholder="Ingrese su apellido">
-                </div>
-                <div class="nd-2">
-                    <label for="correo">Correo</label>
-                    <input type="text"  class="form-control" name="nombre" id="nombre" placeholder="Ingrese su E-mail">
-                </div>
-                <div class="nd-2">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje" id="mensaje"class="form-control" placeholder="Ej. Hola"></textarea>
-                </div>
-                <div class="nd-2">
-                    <button class="btn btn-primary">Enviar</button>
-                </div>
-            </form>
-        </div>
-        </div>
-    </section>
+<body>
+    <div class="container">
+        <h1>Contactanos</h1>
+        <p>Escribenos en nuestro formulario de contacto sus dudas o preguntas con respecto a nuestros servicios</p>
+        <form action="mail.php" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name">
+            <label for="phone">Telefono:</label>
+            <input type="text" name="phone" id="phone">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <label for="subject">Asunto:</label>
+            <input type="text" name="subject" id="subject">
+            <label for="message">Mensaje</label>
+            <textarea name="message" cols="30" rows="4"></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </body>
 </html>
