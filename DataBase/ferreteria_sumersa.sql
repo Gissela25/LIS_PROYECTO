@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 12-03-2022 a las 05:15:53
+-- Tiempo de generación: 13-03-2022 a las 06:05:01
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ferreteria_sumersa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cantidad_sucursal`
+--
+
+DROP TABLE IF EXISTS `cantidad_sucursal`;
+CREATE TABLE IF NOT EXISTS `cantidad_sucursal` (
+  `ID_Cantidad` varchar(8) NOT NULL,
+  `Cantidad_ST` float(10,2) NOT NULL,
+  `Cantidad_SS` float(10,2) NOT NULL,
+  `Cantidad_LO` float(10,2) NOT NULL,
+  `Cantidad_OP` float(10,2) NOT NULL,
+  `Cantidad_ZA` float(10,2) NOT NULL,
+  `Cantidad_SA` float(10,2) NOT NULL,
+  PRIMARY KEY (`ID_Cantidad`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -49,12 +67,12 @@ DROP TABLE IF EXISTS `detalle`;
 CREATE TABLE IF NOT EXISTS `detalle` (
   `ID_Detalle` varchar(8) NOT NULL,
   `ID_Tiket` varchar(8) NOT NULL,
-  `ID_PS` varchar(8) NOT NULL,
+  `ID_Precio` varchar(8) NOT NULL,
   `Cantidad` int(11) NOT NULL,
   `Total` float(10,2) NOT NULL,
   PRIMARY KEY (`ID_Detalle`),
   KEY `ID_Tiket` (`ID_Tiket`),
-  KEY `ID_PS` (`ID_PS`)
+  KEY `ID_Precio` (`ID_Precio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -69,18 +87,6 @@ CREATE TABLE IF NOT EXISTS `familia` (
   `Nombre` varchar(120) NOT NULL,
   PRIMARY KEY (`ID_Familia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `familia`
---
-
-INSERT INTO `familia` (`ID_Familia`, `Nombre`) VALUES
-('F010', 'Construcción'),
-('F186', 'Electrico'),
-('F245', 'Pintura'),
-('F287', 'Techo'),
-('F779', 'Ferreteria'),
-('F978', 'Fontaneria');
 
 -- --------------------------------------------------------
 
@@ -103,13 +109,14 @@ CREATE TABLE IF NOT EXISTS `pago` (
 
 DROP TABLE IF EXISTS `precio_sucursal`;
 CREATE TABLE IF NOT EXISTS `precio_sucursal` (
-  `ID_PS` varchar(8) NOT NULL,
-  `ID_Sucursal` int(1) NOT NULL,
-  `ID_Producto` varchar(8) NOT NULL,
-  `Precio` float(10,2) NOT NULL,
-  PRIMARY KEY (`ID_PS`),
-  KEY `ID_Sucursal` (`ID_Sucursal`),
-  KEY `ID_Producto` (`ID_Producto`)
+  `ID_Precio` varchar(8) NOT NULL,
+  `Precio_ST` float(10,2) NOT NULL,
+  `Precio_SS` float(10,2) NOT NULL,
+  `Precio_LO` float(10,2) NOT NULL,
+  `Precio_OP` float(10,2) NOT NULL,
+  `Precio_ZA` float(10,2) NOT NULL,
+  `Precio_SA` float(10,2) NOT NULL,
+  PRIMARY KEY (`ID_Precio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -124,9 +131,12 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `Descripcion` varchar(120) NOT NULL,
   `Imagen` longblob NOT NULL,
   `ID_Familia` varchar(8) NOT NULL,
-  `Cantidad` int(11) NOT NULL,
+  `ID_Precio` varchar(8) NOT NULL,
+  `ID_Cantidad` varchar(8) NOT NULL,
   PRIMARY KEY (`ID_Producto`),
-  KEY `ID_Familia` (`ID_Familia`)
+  KEY `ID_Familia` (`ID_Familia`),
+  KEY `ID_Precio` (`ID_Precio`),
+  KEY `ID_Cantidad` (`ID_Cantidad`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -140,19 +150,7 @@ CREATE TABLE IF NOT EXISTS `sucursal` (
   `ID_Sucursal` int(1) NOT NULL AUTO_INCREMENT,
   `Nombre_Sucursal` varchar(120) NOT NULL,
   PRIMARY KEY (`ID_Sucursal`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `sucursal`
---
-
-INSERT INTO `sucursal` (`ID_Sucursal`, `Nombre_Sucursal`) VALUES
-(1, 'Santa Tecla'),
-(2, 'San Salvador'),
-(3, 'Lourdes'),
-(4, 'Opico'),
-(5, 'Zaragoza'),
-(6, 'Santa Ana');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -192,15 +190,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`) VALUES
-('E104', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$u0xh7dAaTsJJteAImTxw.ux120MqCwfC/1E2lGG0DAQG2dvX./APS', 0, 1, 0, 3),
-('E847', 'Luis', 'Ulloa', 'luisfer@gmail.com', '$2y$10$g3HocxDhUuKHDZ56QfQYyOXsjNoVQLw4R0CvW7EwtT6kEhpxE0dfC', 0, 0, 0, 4),
-('E953', 'Giss', 'Serr', 'gisselaverenice@gmail', '$2y$10$Wh5KE/VqjiwFtR0J/8Glx.FCEYE2TzRgS/uSeEgZcPBeAEqoms9ti', 0, 1, 0, 1);
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -209,20 +198,15 @@ INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `V
 --
 ALTER TABLE `detalle`
   ADD CONSTRAINT `detalle_ibfk_1` FOREIGN KEY (`ID_Tiket`) REFERENCES `tiket` (`ID_Tiket`),
-  ADD CONSTRAINT `detalle_ibfk_2` FOREIGN KEY (`ID_PS`) REFERENCES `precio_sucursal` (`ID_PS`);
-
---
--- Filtros para la tabla `precio_sucursal`
---
-ALTER TABLE `precio_sucursal`
-  ADD CONSTRAINT `precio_sucursal_ibfk_1` FOREIGN KEY (`ID_Sucursal`) REFERENCES `sucursal` (`ID_Sucursal`),
-  ADD CONSTRAINT `precio_sucursal_ibfk_2` FOREIGN KEY (`ID_Producto`) REFERENCES `producto` (`ID_Producto`);
+  ADD CONSTRAINT `detalle_ibfk_2` FOREIGN KEY (`ID_Precio`) REFERENCES `precio_sucursal` (`ID_Precio`);
 
 --
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`ID_Familia`) REFERENCES `familia` (`ID_Familia`);
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`ID_Familia`) REFERENCES `familia` (`ID_Familia`),
+  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`ID_Precio`) REFERENCES `precio_sucursal` (`ID_Precio`),
+  ADD CONSTRAINT `producto_ibfk_3` FOREIGN KEY (`ID_Cantidad`) REFERENCES `cantidad_sucursal` (`ID_Cantidad`);
 
 --
 -- Filtros para la tabla `tiket`
