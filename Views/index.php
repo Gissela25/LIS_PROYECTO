@@ -46,7 +46,7 @@
                             <i class="bi bi-geo-alt-fill"></i> Sucursales
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">San Tecla</a></li>
+                            <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
                             <li><a class="dropdown-item" href="#">Alemania</a></li>
                             <li><a class="dropdown-item" href="#">Lourdes</a></li>
                             <li><a class="dropdown-item" href="#">Opico</a></li>
