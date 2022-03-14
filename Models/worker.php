@@ -14,8 +14,8 @@ class worker{
     private $Acceso;
     private $ID_Sucursal;
     private $p;
-    private $rows;
     private $pwd_encrypt;
+    private $rows;
 
     public function __CONSTRUCT(){
         $this->pdo = BasedeDatos::Conectar();
@@ -227,5 +227,18 @@ class worker{
             die($e->getMessage());
         }
     }
+
+    public function show()
+        {
+            try{
+                $consulta = $this->pdo->prepare("SELECT * FROM usuario;");
+                $consulta->execute();           
+                return $consulta->fetchAll(PDO::FETCH_OBJ);
+            }
+            catch(Exception $e)
+            {
+                die($e->getMessage());
+            }
+        }
  
 }

@@ -1,3 +1,6 @@
+<?php
+    $ID_Usuario=$_GET["idu"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +23,11 @@
         <div class="col-md-4 my-5">
             <legend style="color:#084594" class="text-center"><?=$titulo?> Empleado</legend>
             <form class="formulario" method="POST" action="?c=worker&a=Saveedit">
+                <?php foreach($this->modelo->show() as $row)
+            if($row->ID_Usuario==$ID_Usuario)
+            {
+            {
+                ?>
                 <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
                     width="230px">
                 <div class="" style="color:#084594">
@@ -51,9 +59,28 @@
                 <div class="form-floating">
                     <select class="form-select" name="ID_Sucursal" id="floatingSelect"
                         aria-label="Floating label select example">
-                        <?php foreach($this->modelo->showsucursal() as $r):?>
-                        <option value="<?=$p->getPro_id()?>"><?=$r->Nombre_Sucursal?></option>
-                        <?php endforeach;?>
+                        <?php
+							foreach($this->modelo->showsucursal() as $r)
+							{
+							?>
+
+
+                        <?php if($row->ID_Sucursal==$r->ID_Sucursal)
+							{
+								?>
+                        <option selected value="<?=$row->ID_Sucursal?>"><?=$r->Nombre_Sucursal?></option>
+                        <?php
+							} 
+							else
+							{
+								?>
+                        <option value="<?=$r->ID_Sucursal?>"><?=$r->Nombre_Sucursal?></option>
+                        <?php
+							}
+							?>
+                        <?php
+						}
+                        ?>
                     </select>
                 </div>
                 <div class="" style="color:#084594">
@@ -82,6 +109,10 @@
                 <div class="d-flex justify-content-center">
                     <div class="col-md-3 my-4">
                         <button type="submit" class="btn btn-warning">Ingresar</button>
+                        <?php
+            }
+            }
+            ?>
             </form>
         </div>
     </div>
