@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Correo</label>
+                    <label for="exampleInputPassword1" class="form-label">Sucursal</label>
                     <div class="form-floating">
                         <select class="form-select" name="ID_Sucursal" id="floatingSelect"
                             aria-label="Floating label select example">
