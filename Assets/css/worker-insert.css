@@ -1,0 +1,33 @@
+.Te{
+    /* color: #e7c331; */
+}
+.edit{
+    color: black;
+}
+.formulario{
+      background:#ffffff;
+    padding: 20px;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(209, 209, 209, 1);
+    color: white;
+}
+body{
+    
+
+}
+input[type=submit] {
+    background-color: #214673;
+    padding: 5px 50px;
+    color: #F8C045;
+    font-size: 18px;
+    border-bottom: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+input[type=submit]:hover {
+    background: #F8C045;
+    color: black;
+} 
