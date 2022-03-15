@@ -39,8 +39,20 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?c=family&a=family">Familia</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Productos</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-geo-alt-fill"></i> Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Ingresar Productos</a></li>
+                            <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="#">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="#">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="#">Opico</a></li>
+                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="#">Santa Ana</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
