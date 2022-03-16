@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Login</title>
-    <link rel="stylesheet" href="Assets/css/login.css">
+    <link rel="stylesheet" href="Assets/css/loginn.css">
 </head>
 
 <body>
@@ -18,10 +18,11 @@
 
         </div>
         <div class="row justify-content-center pt-5 mt-5 mr-1">
-            <div class="col-md-4 formulario">
-                <form action="?c=user&a=Ingresar" method="POST" role="form">
+            <div class="col-md-4 ">
+            <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px" width="200px">
+                <form class="formulario"action="?c=user&a=Ingresar" method="POST" role="form">
                     <div class="form-group text-center">
-                        <h1 class="text-light">Iniciar Sesión</h1>
+                    <h3 class="text-" style="color:#084594">Iniciar Sesion</h3>
                     </div>
                     <?php require 'Tools/procesar-datos-log.php';?>
                     <?php
@@ -57,14 +58,16 @@
                         
                     </div>
                    */ ?>
-                    <div class="form-group mx-sm-4 text-right olv">
-                   
-                        <span class=""><a href="?c=user&a=Recover" class="olvide">Olvide mi
+                    <div class="form-group mx-sm-4 text-center olv">
+                         <span class=""><a href="?c=user&a=Recover" class="olvide">¿Olvide mi
                                 contraseña?</a></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="form-group mx-sm-4 text-center olv">
                                 <span class=""><a href="?c=user&a=Activar" class="olvide">Activar Cuenta</a></span>
                             </div>
-                    <div class="form-group text-center">
-                        <span>Aún no tienes cuenta? <a href="#" class="olvide sing-up">Registrar</a></span>
+                            <div class="form-group mx-sm-4 text-center olv">
+                            <!-- <div class="form-group text-center"> -->
+                        <span><a href="#" class="olvide sing-up">Registrar</a></span>
+                    </div>
                     </div>
                 </form>
             </div>
