@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
@@ -31,25 +31,27 @@
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Sucursales</a>
+                        <a class="nav-link active" aria-current="page" href="?c=branch&a=branch">Sucursales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Empleados</a>
+                        <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="?c=family&a=family">Familia</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                             Productos
+                            <i class="bi bi-geo-alt-fill"></i> Productos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Ingresar Productos</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=show">Mostrar Productos</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showst">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showss">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showlo">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showop">Opico</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showza">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showsa">Santa Ana</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=show">Inventario General</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="#">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="#">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="#">Opico</a></li>
+                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="#">Santa Ana</a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -59,26 +61,16 @@
 
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
-            <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
+            <a class="edit" href="?c=products&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
             <div class="row mt-3">
                 <table class="table table-bordered">
                     <thead class="Te" style="background-color: #084594">
                         <tr>
+                            <th>Codigo Producto</th>
                             <th>Nombre</th>
+                            <th>Descripcion</th>
                             <th>Imagen</th>
                             <th>Familia</th>
-                            <th>Precio SS</th>
-                            <th>Cantidad SS</th>
-                            <th>Precio ST</th>
-                            <th>Cantidad ST</th>
-                            <th>Precio LO</th>
-                            <th>Cantidad LO</th>
-                            <th>Precio OP</th>
-                            <th>Cantidad OP</th>
-                            <th>Precio ZA</th>
-                            <th>Cantidad ZA</th>
-                            <th>Precio SA</th>
-                            <th>Cantidad SA</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -89,24 +81,14 @@
                    {
                       $path="img/".$r->Imagen;
                       if(file_exists($path))
-                      {
+                      
                    ?>
-                        <tr <tr id="id_<?=$r->ID_Producto?>">
+                        <tr < id="id_<?=$r->ID_Producto?>">
+                            <td><?=$r->ID_Producto?></td>
                             <td><?=$r->Nombrep?></td>
+                            <td><?=$r->Descripcion?></td>
                             <td><?php echo "<img src='img/$r->Imagen' width='200px' height='200px'>"?></td>
                             <td><?=$r->Nombre?></td>
-                            <td><?=$r->Precio_SS?></td>
-                            <td><?=$r->Cantidad_SS?></td>
-                            <td><?=$r->Precio_ST?></td>
-                            <td><?=$r->Cantidad_ST?></td>
-                            <td><?=$r->Precio_LO?></td>
-                            <td><?=$r->Cantidad_LO?></td>
-                            <td><?=$r->Precio_OP?></td>
-                            <td><?=$r->Cantidad_OP?></td>
-                            <td><?=$r->Precio_ZA?></td>
-                            <td><?=$r->Cantidad_ZA?></td>
-                            <td><?=$r->Precio_SA?></td>
-                            <td><?=$r->Cantidad_SA?></td>
                             <td>
                                 <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
                                     <i class="fa fa-lg fa-refresh"></i></a>
@@ -116,12 +98,9 @@
                         </tr>
                         <?php
                         }
-                    }  
-                    
                     ?>
                     </tbody>
                 </table>
             </div>
 </body>
-
 </html>
