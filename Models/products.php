@@ -212,9 +212,9 @@ class products{
         $this->Precio_SA=$presa;
     }
 
-    public function showst(){
+    public function showstall(){
         try{
-            $consulta=$this->pdo->prepare("SELECT producto.ID_Producto,producto.Descripcion,producto.Nombrep,producto.Imagen,precio_cantidad.Precio_ST, precio_cantidad.Cantidad_ST,familia.Nombre FROM producto,precio_cantidad,familia WHERE precio_cantidad.ID_Producto = producto.ID_Producto AND familia.ID_Familia = producto.ID_Familia;");
+            $consulta=$this->pdo->prepare("SELECT producto.ID_Producto,producto.Nombrep,producto.Descripcion,producto.Imagen,familia.Nombre,precio_cantidad.Precio_ST,precio_cantidad.Cantidad_ST FROM producto,familia,precio_cantidad WHERE producto.ID_Producto = precio_cantidad.ID_Producto AND producto.ID_Familia = familia.ID_Familia AND precio_cantidad.Precio_ST IS NOT NULL;");
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_OBJ);
         }catch(Exception $e){
@@ -433,6 +433,16 @@ class products{
             $p->setPro_idpc($r->ID_PC);
             return $p;
 
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function showstw(){
+        try{
+            $consulta=$this->pdo->prepare("SELECT producto.ID_Producto,producto.Nombrep,producto.Descripcion,producto.Imagen,familia.Nombre FROM familia,producto,precio_cantidad WHERE producto.ID_Familia = familia.ID_Familia AND precio_cantidad.Precio_ST IS NULL;");
+            $consulta->execute();
+            return $consulta->fetchAll(PDO::FETCH_OBJ);
         }catch(Exception $e){
             die($e->getMessage());
         }

@@ -62,46 +62,6 @@
                     <label for="exampleInputPassword1" class="form-label">Existencias Santa Tecla</label>
                     <input type="numbers" class="form-control" name="Cantidad_ST">
                 </div>
-                <div class="mb-3" style="color:#084594">
-                    <!-- <label for="exampleInputPassword1" class="form-label">Precio Santa Salvador</label> -->
-                    <input type="hidden" class="form-control" name="Precio_SS">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <!-- <label for="exampleInputPassword1" class="form-label">Existencias Santa Salvador</label> -->
-                    <input type="hidden" class="form-control" name="Cantidad_SS">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <!-- <label for="exampleInputPassword1" class="form-label">Precio Lourdes</label> -->
-                    <input type="hidden" class="form-control" name="Precio_LO">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <!-- <label for="exampleInputPassword1" class="form-label">Existencias Lourdes</label> -->
-                    <input type="hidden" class="form-control" name="Cantidad_LO">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <!-- <label for="exampleInputPassword1" class="form-label">Precio Opico</label> -->
-                    <input type="hidden" class="form-control" name="Precio_OP">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <!-- <label for="exampleInputPassword1" class="form-label">Existencias Opico</label> -->
-                    <input type="hidden" class="form-control" name="Cantidad_OP">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <!-- <label for="exampleInputPassword1" class="form-label">Precio Zaragoza</label> -->
-                    <input type="hidden" class="form-control" name="Precio_ZA">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Existencias Zaragoza</label>
-                    <input type="numbers" class="form-control" name="Cantidad_ZA">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Precio Santa Ana</label>
-                    <input type="numbers" class="form-control" name="Precio_SA">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Existencias Santa Ana</label>
-                    <input type="numbers" class="form-control" name="Cantidad_SA">
-                </div> --> 
                 <div class="d-flex justify-content-center">
                     <div class="my-2">
                         <input type="submit" class="btn "></input>

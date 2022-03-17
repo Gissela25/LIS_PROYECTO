@@ -144,6 +144,11 @@ class productscontroller{
         $this->modelo->Updatest($p);
 
 
-        header("location:?c=products&a=show");
+        header("location:?c=products&a=showstall");
+    }
+
+    public function Showstall()
+    {
+        require_once "views/products-show-st.php";
     }
 }

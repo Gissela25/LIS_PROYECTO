@@ -71,13 +71,15 @@
                             <th>Descripcion</th>
                             <th>Imagen</th>
                             <th>Familia</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                    
-                   foreach ($this->modelo->Showstw() as $r)
+                   foreach ($this->modelo->Showstall() as $r)
                    {
                       $path="img/".$r->Imagen;
                       if(file_exists($path))
@@ -89,13 +91,15 @@
                             <td><?=$r->Descripcion?></td>
                             <td><?php echo "<img src='img/$r->Imagen' width='200px' height='200px'>"?></td>
                             <td><?=$r->Nombre?></td>
+                            <td>$<?=$r->Precio_ST?></td>
+                            <td><?=$r->Cantidad_ST?></td>
                             <td>
-                                <!-- <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
+                                <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
                                     <i class="fa fa-lg fa-refresh"></i></a>
                                 <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                    <i class="fa fa-lg fa-refresh"></i></a> -->
-                                    <a class="edit mx-3" href="?c=products&a=Insertst&id=<?=$r->ID_Producto?>"><i class="bi bi-box2-fill"></i>Agregar Stoke
                                     <i class="fa fa-lg fa-refresh"></i></a>
+                                    <!-- <a class="edit mx-3" href="?c=products&a=Insertst&id=<?=$r->ID_Producto?>"><i class="bi bi-box2-fill"></i>Agregar Stoke
+                                    <i class="fa fa-lg fa-refresh"></i></a> -->
                                     
                             </td>
                         </tr>
