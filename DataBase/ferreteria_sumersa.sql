@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 15-03-2022 a las 06:57:37
+-- Tiempo de generación: 17-03-2022 a las 08:02:00
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -20,33 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ferreteria_sumersa`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cantidad_sucursal`
---
-
-DROP TABLE IF EXISTS `cantidad_sucursal`;
-CREATE TABLE IF NOT EXISTS `cantidad_sucursal` (
-  `ID_Cantidad` varchar(8) NOT NULL,
-  `Cantidad_ST` int(11) NOT NULL,
-  `Cantidad_SS` int(11) NOT NULL,
-  `Cantidad_LO` int(11) NOT NULL,
-  `Cantidad_OP` int(11) NOT NULL,
-  `Cantidad_ZA` int(11) NOT NULL,
-  `Cantidad_SA` int(11) NOT NULL,
-  `ID_Producto` varchar(8) NOT NULL,
-  PRIMARY KEY (`ID_Cantidad`),
-  KEY `ID_Producto` (`ID_Producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `cantidad_sucursal`
---
-
-INSERT INTO `cantidad_sucursal` (`ID_Cantidad`, `Cantidad_ST`, `Cantidad_SS`, `Cantidad_LO`, `Cantidad_OP`, `Cantidad_ZA`, `Cantidad_SA`, `ID_Producto`) VALUES
-('C001', 55, 44, 22, 22, 22, 222, 'P001');
 
 -- --------------------------------------------------------
 
@@ -102,12 +75,12 @@ CREATE TABLE IF NOT EXISTS `familia` (
 --
 
 INSERT INTO `familia` (`ID_Familia`, `Nombre`) VALUES
-('F037', 'Techo'),
-('F115', 'Electrico'),
-('F477', 'Fontaneria'),
-('F707', 'Construccion'),
-('F860', 'Ferreteria'),
-('F916', 'Pintura');
+('F094', 'Ferreteria'),
+('F153', 'Techo'),
+('F251', 'Pintura'),
+('F315', 'Fontaneria'),
+('F856', 'Electrico'),
+('F899', 'Construccion');
 
 -- --------------------------------------------------------
 
@@ -125,29 +98,36 @@ CREATE TABLE IF NOT EXISTS `pago` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `precio_sucursal`
+-- Estructura de tabla para la tabla `precio_cantidad`
 --
 
-DROP TABLE IF EXISTS `precio_sucursal`;
-CREATE TABLE IF NOT EXISTS `precio_sucursal` (
-  `ID_Precio` varchar(8) NOT NULL,
-  `Precio_ST` float(10,2) NOT NULL,
-  `Precio_SS` float(10,2) NOT NULL,
-  `Precio_LO` float(10,2) NOT NULL,
-  `Precio_OP` float(10,2) NOT NULL,
-  `Precio_ZA` float(10,2) NOT NULL,
-  `Precio_SA` float(10,2) NOT NULL,
+DROP TABLE IF EXISTS `precio_cantidad`;
+CREATE TABLE IF NOT EXISTS `precio_cantidad` (
+  `ID_PC` varchar(8) NOT NULL,
+  `Precio_ST` float(10,2) DEFAULT NULL,
+  `Precio_SS` float(10,2) DEFAULT NULL,
+  `Precio_LO` float(10,2) DEFAULT NULL,
+  `Precio_OP` float(10,2) DEFAULT NULL,
+  `Precio_ZA` float(10,2) DEFAULT NULL,
+  `Precio_SA` float(10,2) DEFAULT NULL,
+  `Cantidad_ST` int(11) DEFAULT NULL,
+  `Cantidad_SS` int(11) DEFAULT NULL,
+  `Cantidad_LO` int(11) DEFAULT NULL,
+  `Cantidad_OP` int(11) DEFAULT NULL,
+  `Cantidad_ZA` int(11) DEFAULT NULL,
+  `Cantidad_SA` int(11) DEFAULT NULL,
   `ID_Producto` varchar(8) NOT NULL,
-  PRIMARY KEY (`ID_Precio`),
+  PRIMARY KEY (`ID_PC`),
   KEY `ID_Producto` (`ID_Producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `precio_sucursal`
+-- Volcado de datos para la tabla `precio_cantidad`
 --
 
-INSERT INTO `precio_sucursal` (`ID_Precio`, `Precio_ST`, `Precio_SS`, `Precio_LO`, `Precio_OP`, `Precio_ZA`, `Precio_SA`, `ID_Producto`) VALUES
-('P001', 12.00, 22.00, 3.00, 45.00, 32.00, 54.00, 'P001');
+INSERT INTO `precio_cantidad` (`ID_PC`, `Precio_ST`, `Precio_SS`, `Precio_LO`, `Precio_OP`, `Precio_ZA`, `Precio_SA`, `Cantidad_ST`, `Cantidad_SS`, `Cantidad_LO`, `Cantidad_OP`, `Cantidad_ZA`, `Cantidad_SA`, `ID_Producto`) VALUES
+('PC165', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PROD561'),
+('PC621', 2.56, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, 'PROD297');
 
 -- --------------------------------------------------------
 
@@ -158,7 +138,7 @@ INSERT INTO `precio_sucursal` (`ID_Precio`, `Precio_ST`, `Precio_SS`, `Precio_LO
 DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
   `ID_Producto` varchar(8) NOT NULL,
-  `Descripcion` varchar(600) NOT NULL,
+  `Descripcion` varchar(120) NOT NULL,
   `Nombrep` varchar(120) NOT NULL,
   `Imagen` varchar(15) NOT NULL,
   `ID_Familia` varchar(8) NOT NULL,
@@ -171,7 +151,8 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 INSERT INTO `producto` (`ID_Producto`, `Descripcion`, `Nombrep`, `Imagen`, `ID_Familia`) VALUES
-('P001', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, corporis maiores doloremque obcaecati expedita eius laudantium consequatur qui nihil, asperiores autem distinctio repellendus esse, assumenda amet perferendis animi sunt vitae?', 'lampara', 'PROD00005.webp', 'F037');
+('PROD297', 'STANLEY - CINTA MÉTRICA 50 MTS', 'cinta metrica', 'PROD00009.webp', 'F094'),
+('PROD561', 'PHILIPS - FOCO LED 9W E27 LUZ AMARILLA TIPO GLOBO', 'Lampara', 'PROD00010.webp', 'F856');
 
 -- --------------------------------------------------------
 
@@ -240,32 +221,26 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`) VALUES
-('E210', 'Gissela', 'Serrano', 'gisselaverenice@gmail.com', '$2y$10$n9crKxTCoM9DWAlzgDymmuKErHtT3IV9/ataeteuFeTx2cBPcoNeW', 0, 1, 0, 3),
-('E274', 'Susan', 'Zelaya', 'susan15@gmail.com', '$2y$10$RiRBiUOjezK20.ZGq7h2e..H4aESEpbzaKDaaOvoX5pTcBPsS79/6', 0, 0, 0, 2),
-('E466', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$L0Fkvs/ujxPLG4wiM2MR7emC8.qMBiQXb3L2PKuDSoiG5b0NWePPG', 0, 1, 0, 6);
+('E215', 'Gissela', 'Serrano', 'gisselaverenice@gmail.com', '$2y$10$hUBeQSS93QwHC.4dTvsnLOwGZHyLuE7aKTVaNxjNsmgVOG3yoyVSO', 0, 1, 0, 3),
+('E486', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$gzmxibaaS/Z/FiJWGaGx/OVrghmrogCt864zFfYNkkOhZJTOAm69C', 0, 0, 0, 3),
+('E802', 'Susan', 'Zelaya', 'susan15@gmail.com', '$2y$10$GgqKR6PHTOfTnGC8oHVRr.6asTKBq06HYrnCztaj3eIGjgmaEey4S', 0, 1, 0, 1);
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `cantidad_sucursal`
---
-ALTER TABLE `cantidad_sucursal`
-  ADD CONSTRAINT `cantidad_sucursal_ibfk_1` FOREIGN KEY (`ID_Producto`) REFERENCES `producto` (`ID_Producto`);
-
---
 -- Filtros para la tabla `detalle`
 --
 ALTER TABLE `detalle`
   ADD CONSTRAINT `detalle_ibfk_1` FOREIGN KEY (`ID_Tiket`) REFERENCES `tiket` (`ID_Tiket`),
-  ADD CONSTRAINT `detalle_ibfk_2` FOREIGN KEY (`ID_Precio`) REFERENCES `precio_sucursal` (`ID_Precio`);
+  ADD CONSTRAINT `detalle_ibfk_2` FOREIGN KEY (`ID_Precio`) REFERENCES `precio_cantidad` (`ID_PC`);
 
 --
--- Filtros para la tabla `precio_sucursal`
+-- Filtros para la tabla `precio_cantidad`
 --
-ALTER TABLE `precio_sucursal`
-  ADD CONSTRAINT `precio_sucursal_ibfk_1` FOREIGN KEY (`ID_Producto`) REFERENCES `producto` (`ID_Producto`);
+ALTER TABLE `precio_cantidad`
+  ADD CONSTRAINT `precio_cantidad_ibfk_1` FOREIGN KEY (`ID_Producto`) REFERENCES `producto` (`ID_Producto`);
 
 --
 -- Filtros para la tabla `producto`

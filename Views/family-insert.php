@@ -11,17 +11,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/branch.css">
+    <link rel="stylesheet" href="Assets/css/family-insert.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
     <div class="d-flex justify-content-center">
         <div class="col-md-4 my-5">
-            <legend style="color:#084594" class="text-center"><?=$titulo?> Familia</legend>
-            <form class="formulario" method="POST" action="?c=family&a=Save">
-                <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
-                    width="230px">
+        <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
+                    width="230px">       
+        <form class="formulario" method="POST" action="?c=family&a=Save">
+                    <legend style="color:#084594" class="text-center"><?=$titulo?> Familia</legend>
                 <div class="mb-3" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">ID Familia</label>
                     <input type="name" class="form-control" name="ID_Familia"  value="<?=$this->modelo->generate_code();?>" readonly>
@@ -30,7 +30,11 @@
                     <label for="exampleInputPassword1" class="form-label">Familia</label>
                     <input type="name" class="form-control" name="Nombre" value="">
                 </div>
-                <button type="submit" class="btn btn-warning">Insertar</button>
+                <div class="d-flex justify-content-center">
+                    <div class="my-2">
+                    <input type="submit" class="btn "></input>
+                </div>
+                </div>
             </form>
         </div>
     </div>
