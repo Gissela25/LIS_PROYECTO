@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Recuperar Cuenta</title>
-    <link rel="stylesheet" href="../Assets/css/worker-insert.css">
+    <!-- <link rel="stylesheet" href="../Assets/css/worker-insert.css"> -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
 </head>
@@ -25,13 +25,15 @@
                 <h4>Resgistar</h4>
             </div>
             <div class="nd-2"> -->
-            <form class="formulario" method="POST" action="">
+            <form class="" method="POST" action="">
                 <div class="col-xs-6">
-                <label for="nombre" style="color:#084594">Nombre</label>
+                    <h1 style="color:#084594">Informacion</h1>
+                    <label for="nombre" style="color:#084594">Nombre</label>
                     <input type="text" class="form-control" />
                 </div>
                 <div class="col-xs-6">
-                <label for="nombre" style="color:#084594">Nombre</label>
+                    <h1 style="color:#084594">Informacion</h1>
+                    <label for="nombre" style="color:#084594">Nombre</label>
                     <input type="text" class="form-control" />
                 </div>
                 <!-- <div class="nd-2">
@@ -74,9 +76,7 @@
                         <input type="text" class="form-control" name="nombre" id="nombre"
                             placeholder="verificar contraseña">
                     </div> -->
-                    <div class="my-2">
-                        <button class="btn btn-primary">Registrarme</button>
-                    </div>
+                <button type="button" class="btn btn-outline-primary">Primary</button>
             </form>
         </div>
     </div>
