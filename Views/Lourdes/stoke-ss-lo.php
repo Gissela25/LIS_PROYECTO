@@ -28,80 +28,86 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showlo">Inventario
+                            General</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Sucursales</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showloall">Lourdes</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Empleados</a>
+                        <a class="nav-link active" aria-current="page" href="?c=family&a=family">Familia</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                             Productos
+                            <i class="bi bi-geo-alt-fill"></i> Productos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Ingresar Productos</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showst">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showss">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showlo">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showop">Opico</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showza">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=showsa">Santa Ana</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=show">Inventario General</a></li>
+                            <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="#">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="#">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="#">Opico</a></li>
+                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="#">Santa Ana</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-archive-fill"></i> Stoke
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="?c=products&a=stokestlo">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeoplo">Opico</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokesslo">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokezalo">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokesalo">Santa Ana</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
-            <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
+            <!-- <a class="edit" href="?c=products&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a> -->
             <div class="row mt-3">
                 <table class="table table-bordered">
                     <thead class="Te" style="background-color: #084594">
                         <tr>
-                            <th>ID Producto</th>
+                            <th>Codigo Producto</th>
                             <th>Nombre</th>
                             <th>Descripcion</th>
                             <th>Imagen</th>
                             <th>Familia</th>
                             <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Acciones</th>
+                            <th>Existencias</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                    
-                   foreach ($this->modelo->showlo() as $r)
+                   foreach ($this->modelo->Showssall() as $r)
                    {
                       $path="img/".$r->Imagen;
                       if(file_exists($path))
-                      {
+                      
                    ?>
-                        <tr <tr id="id_<?=$r->ID_Producto?>">
+                        <tr < id="id_<?=$r->ID_Producto?>">
                             <td><?=$r->ID_Producto?></td>
                             <td><?=$r->Nombrep?></td>
                             <td><?=$r->Descripcion?></td>
                             <td><?php echo "<img src='img/$r->Imagen' width='200px' height='200px'>"?></td>
-                            <!-- <td><?=$r->Imagen?></td> -->
                             <td><?=$r->Nombre?></td>
-                            <td><?=$r->Precio_LO?></td>
-                            <td><?=$r->Cantidad_LO?></td>
-                            <td>
-                                <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
-                                    <i class="fa fa-lg fa-refresh"></i></a>
-                                <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                    <i class="fa fa-lg fa-refresh"></i></a>
-                            </td>
+                            <td>$<?=$r->Precio_SS?></td>
+                            <td><?=$r->Cantidad_SS?></td>
                         </tr>
                         <?php
                         }
-                    }  
-                    
                     ?>
                     </tbody>
                 </table>

@@ -26,32 +26,8 @@
                     <input type="name" class="form-control" name="ID_Producto" 
                         value="<?=$p->getPro_id()?>" readonly>
                 </div> 
-               
-                <!-- <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Producto</label>
-                    <input type="name" class="form-control" name="Nombrep">
-                </div>
                 <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Descripcion</label>
-                    <textarea type="name" class="form-control" name="Descripcion"></textarea>
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Imagen</label>
-                    <input type="file" class="form-control" name="Imagen">
-                </div>
-                <div class="mb-3" style="color:#084594">
-                    <label for="exampleInputPassword1" class="form-label">Categoria</label>
-                    <div class="form-floating">
-                        <select class="form-select" name="ID_Familia" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <?php foreach($this->modelo->showfamilia() as $r):?>
-                            <option value="<?=$r->ID_Familia?>"><?=$r->Nombre?></option>
-                            <?php endforeach;?>
-                        </select>
-                    </div>
-                </div> -->
-                <div class="mb-3" style="color:#084594">
-                    <input type="name" class="form-control" name="ID_PC" 
+                    <input type="hidden" class="form-control" name="ID_PC" 
                         value="<?=$p->getPro_idpc()?>" readonly>
                 </div>
                 <div class="mb-3" style="color:#084594">

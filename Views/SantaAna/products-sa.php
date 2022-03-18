@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showst">Inventario General</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showsa">Inventario General</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showstall">Santa Tecla</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showsaall">Santa Ana</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>
@@ -54,6 +54,19 @@
                             <li><a class="dropdown-item" href="#">Santa Ana</a></li>
                         </ul>
                     </li> --> 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-archive-fill"></i> Stoke
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="?c=products&a=stokestsa">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokesssa">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokelosa">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokezasa">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeopsa">Opico</a></li>
+                        </ul>
+                    </li> 
                 </ul>
             </div>
         </div>
@@ -71,15 +84,13 @@
                             <th>Descripcion</th>
                             <th>Imagen</th>
                             <th>Familia</th>
-                            <th>Precio</th>
-                            <th>Existencias</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                    
-                   foreach ($this->modelo->Showstall() as $r)
+                   foreach ($this->modelo->Showsaw() as $r)
                    {
                       $path="img/".$r->Imagen;
                       if(file_exists($path))
@@ -91,15 +102,13 @@
                             <td><?=$r->Descripcion?></td>
                             <td><?php echo "<img src='img/$r->Imagen' width='200px' height='200px'>"?></td>
                             <td><?=$r->Nombre?></td>
-                            <td>$<?=$r->Precio_ST?></td>
-                            <td><?=$r->Cantidad_ST?></td>
                             <td>
-                                <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
+                                <!-- <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
                                     <i class="fa fa-lg fa-refresh"></i></a>
                                 <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                    <i class="fa fa-lg fa-refresh"></i></a>
-                                    <!-- <a class="edit mx-3" href="?c=products&a=Insertst&id=<?=$r->ID_Producto?>"><i class="bi bi-box2-fill"></i>Agregar Stoke
                                     <i class="fa fa-lg fa-refresh"></i></a> -->
+                                    <a class="edit mx-3" href="?c=products&a=Insertsa&id=<?=$r->ID_Producto?>"><i class="bi bi-box2-fill"></i>Agregar Stoke
+                                    <i class="fa fa-lg fa-refresh"></i></a>
                                     
                             </td>
                         </tr>
