@@ -11,7 +11,7 @@ class familycontroller{
     }
 
     public function family(){
-        require_once "Views/family.php";
+        require_once "Views/family/family.php";
     }
 
     public function Insert(){
@@ -21,7 +21,7 @@ class familycontroller{
             $p=$this->modelo->have($_GET['id']);
             $titulo="Actualizar";
         }
-        require_once "Views/family-insert.php";
+        require_once "Views/family/family-insert.php";
     }
 
     public function Save(){
@@ -51,7 +51,7 @@ class familycontroller{
             $p=$this->modelo->have($_GET['id']);
             $titulo="Actualizar";
         }
-        require_once "Views/family-edit.php";
+        require_once "Views/family/family-edit.php";
     }
 
     public function sendelete()
@@ -62,7 +62,7 @@ class familycontroller{
             $p=$this->modelo->have($_GET['id']);
             $titulo="Actualizar";
         }
-        require_once "Views/family-delete.php";
+        require_once "Views/family/family-delete.php";
     }
 
     // public function delete(){
