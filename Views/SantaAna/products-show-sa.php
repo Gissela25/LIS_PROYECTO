@@ -107,7 +107,7 @@
                             <td>$<?=$r->Precio_SA?></td>
                             <td><?=$r->Cantidad_SA?></td>
                             <td>
-                                <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
+                                <a class="edit mx-3" href="?c=products&a=editsa&id=<?=$r->ID_Producto?>"><i class="bi bi-pencil-square"></i> Editar
                                     <i class="fa fa-lg fa-refresh"></i></a>
                                 <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
                                     <i class="fa fa-lg fa-refresh"></i></a> -->

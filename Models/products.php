@@ -795,12 +795,222 @@ class products{
             $p = new products();
             $p->setPro_id($r->ID_Producto);
             $p->setPro_idpc($r->ID_PC);
-            $p->setPro_prelo($r->Precio_OP);
-            $p->setPro_canlo($r->Cantidad_OP);
+            $p->setPro_preop($r->Precio_OP);
+            $p->setPro_canop($r->Cantidad_OP);
             return $p;
 
         }catch(Exception $e){
             die($e->getMessage());
         }
     }
+
+    public function Updatessp(products $p){
+        try{
+        $consulta = "UPDATE precio_cantidad SET 
+           Precio_SS=?,
+           Cantidad_SS=?,
+           ID_Producto=?
+           WHERE ID_PC=?;
+        ";
+        $this->pdo->prepare($consulta)
+                    ->execute(array(
+                        $p->getPro_press(),
+                        $p->getPro_canss(),
+                        $p->getPro_id(),
+                        $p->getPro_idpc()
+                        
+                    ));
+        }catch(exception $e){
+        die($e->getMessage());
+        }
+    }
+
+    public function havessp($id){
+        try{
+            $consulta=$this->pdo->prepare("SELECT * FROM precio_cantidad WHERE ID_Producto=?;");
+            $consulta->execute(array($id));
+            $r=$consulta->fetch(PDO::FETCH_OBJ);
+            $p = new products();
+            $p->setPro_id($r->ID_Producto);
+            $p->setPro_idpc($r->ID_PC);
+            $p->setPro_press($r->Precio_SS);
+            $p->setPro_canss($r->Cantidad_SS);
+            return $p;
+
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function Updatesap(products $p){
+        try{
+        $consulta = "UPDATE precio_cantidad SET 
+           Precio_SA=?,
+           Cantidad_SA=?,
+           ID_Producto=?
+           WHERE ID_PC=?;
+        ";
+        $this->pdo->prepare($consulta)
+                    ->execute(array(
+                        $p->getPro_presa(),
+                        $p->getPro_cansa(),
+                        $p->getPro_id(),
+                        $p->getPro_idpc()
+                        
+                    ));
+        }catch(exception $e){
+        die($e->getMessage());
+        }
+    }
+
+    public function havesap($id){
+        try{
+            $consulta=$this->pdo->prepare("SELECT * FROM precio_cantidad WHERE ID_Producto=?;");
+            $consulta->execute(array($id));
+            $r=$consulta->fetch(PDO::FETCH_OBJ);
+            $p = new products();
+            $p->setPro_id($r->ID_Producto);
+            $p->setPro_idpc($r->ID_PC);
+            $p->setPro_presa($r->Precio_SA);
+            $p->setPro_cansa($r->Cantidad_SA);
+            return $p;
+
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function Updatestp(products $p){
+        try{
+        $consulta = "UPDATE precio_cantidad SET 
+           Precio_ST=?,
+           Cantidad_ST=?,
+           ID_Producto=?
+           WHERE ID_PC=?;
+        ";
+        $this->pdo->prepare($consulta)
+                    ->execute(array(
+                        $p->getPro_prest(),
+                        $p->getPro_canst(),
+                        $p->getPro_id(),
+                        $p->getPro_idpc()
+                        
+                    ));
+        }catch(exception $e){
+        die($e->getMessage());
+        }
+    }
+
+    public function havestp($id){
+        try{
+            $consulta=$this->pdo->prepare("SELECT * FROM precio_cantidad WHERE ID_Producto=?;");
+            $consulta->execute(array($id));
+            $r=$consulta->fetch(PDO::FETCH_OBJ);
+            $p = new products();
+            $p->setPro_id($r->ID_Producto);
+            $p->setPro_idpc($r->ID_PC);
+            $p->setPro_prest($r->Precio_ST);
+            $p->setPro_canst($r->Cantidad_ST);
+            return $p;
+
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function Updatezap(products $p){
+        try{
+        $consulta = "UPDATE precio_cantidad SET 
+           Precio_ZA=?,
+           Cantidad_ZA=?,
+           ID_Producto=?
+           WHERE ID_PC=?;
+        ";
+        $this->pdo->prepare($consulta)
+                    ->execute(array(
+                        $p->getPro_preza(),
+                        $p->getPro_canza(),
+                        $p->getPro_id(),
+                        $p->getPro_idpc()
+                        
+                    ));
+        }catch(exception $e){
+        die($e->getMessage());
+        }
+    }
+
+    public function havezap($id){
+        try{
+            $consulta=$this->pdo->prepare("SELECT * FROM precio_cantidad WHERE ID_Producto=?;");
+            $consulta->execute(array($id));
+            $r=$consulta->fetch(PDO::FETCH_OBJ);
+            $p = new products();
+            $p->setPro_id($r->ID_Producto);
+            $p->setPro_idpc($r->ID_PC);
+            $p->setPro_preza($r->Precio_ZA);
+            $p->setPro_canza($r->Cantidad_ZA);
+            return $p;
+
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function Update_product()
+        {
+            try{
+                if($this->getPro_ima()==""){
+                        if($this->getPro_idf()==""){
+                            $query="UPDATE producto SET nombre ='{$this->getNombre()}',descripcion= '{$this->getDescripcion()}',precio='{$this->getPrecio()}',existencias='{$this->getExistencias()}' WHERE codigo_producto='{$this->getCodigo_P()}';";
+                            $this->pdo->prepare($query)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
+                            $this->getCodigo_f(),$this->getPrecio(),$this->getExistencias()));
+                        }
+                        else{
+                            $query="UPDATE producto SET nombre ='{$this->getNombre()}',descripcion= '{$this->getDescripcion()}',codigo_familia='{$this->getCodigo_f()}',precio='{$this->getPrecio()}',existencias='{$this->getExistencias()}' WHERE codigo_producto='{$this->getCodigo_P()}';";
+                            $this->pdo->prepare($query)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
+                            $this->getCodigo_f(),$this->getPrecio(),$this->getExistencias()));
+                        }
+                }
+                else{
+                    if($this->getCodigo_f()==""){
+
+                        
+                        $query="UPDATE producto SET nombre ='{$this->getNombre()}',descripcion= '{$this->getDescripcion()}',img='{$this->getImg()}',precio='{$this->getPrecio()}',existencias='{$this->getExistencias()}' WHERE codigo_producto='{$this->getCodigo_P()}';";
+                        $this->pdo->prepare($query)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
+                        $this->getCodigo_f(),$this->getPrecio(),$this->getExistencias()));
+                    }
+                    else{
+
+
+                        $query="UPDATE producto SET nombre ='{$this->getNombre()}',descripcion= '{$this->getDescripcion()}',img='{$this->getImg()}',codigo_familia='{$this->getCodigo_f()}',precio='{$this->getPrecio()}',existencias='{$this->getExistencias()}' WHERE codigo_producto='{$this->getCodigo_P()}';";
+                        $this->pdo->prepare($query)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
+                        $this->getCodigo_f(),$this->getPrecio(),$this->getExistencias()));
+                    }
+
+                }
+                   
+            }
+            catch(Exception $e)
+            {
+                die($e->getMessage());
+            }
+        }
+
+        public function havestd($id){
+            try{
+                $consulta=$this->pdo->prepare("SELECT producto.ID_Producto,producto.Imagen,producto.Descripcion, precio_cantidad.Precio_ST,precio_cantidad.Cantidad_ST FROM producto,precio_cantidad WHERE ID_Producto=?;");
+                $consulta->execute(array($id));
+                $r=$consulta->fetch(PDO::FETCH_OBJ);
+                $p = new products();
+                $p->setPro_id($r->ID_Producto);
+                $p->setPro_ima($r->Imagen);
+                $p->setPro_des($r->Descripcion);
+                $p->setPro_prest($r->Precio_ST);
+                $p->setPro_canst($r->Cantidad_ST);
+                return $p;
+    
+            }catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
 }
