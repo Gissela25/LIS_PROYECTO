@@ -88,20 +88,24 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="Estado" id="flexRadioDefault1" value="1" checked>
-                    <label class="form-check-label" style="color:#084594" for="flexRadioDefault1">Activo</label>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Activo
+                    </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="Estado" id="flexRadioDefault2" value="0">
-                    <label class="form-check-label" style="color:#084594" for="flexRadioDefault2">Inactivo</label>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Inactivo
+                    </label>
                 </div>
-                <!-- <label for="exampleInputPassword1" class="form-label" style="color:#084594">Acceso</label>
+                <label for="exampleInputPassword1" class="form-label" style="color:#084594">Acceso</label>
                 <div class="form-floating">
                     <select class="form-select" name="Acceso" id="floatingSelect"
                         aria-label="Floating label select example" value="<?=$p->getPro_acce()?>">
                         <option value="0">Empleado</option>
                         <option value="1">Administrador</option>
                     </select>
-                </div> -->
+                </div>
                 <div class="d-flex justify-content-center">
                     <div class="col-md-3 my-4">
                     <input type="submit" class="btn "></input>
