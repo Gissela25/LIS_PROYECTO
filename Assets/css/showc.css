@@ -1,0 +1,20 @@
+body{
+    background-color: white;
+}
+
+.card{
+    background-color: whitesmoke;
+}
+.card:hover{
+    transform: translate(-10px);
+}
+.boton{
+    background-color: #214673;
+    padding: 5px 80px;
+    color: #F8C045;
+    font-size: 18px;
+    border-bottom: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}

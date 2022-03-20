@@ -996,21 +996,5 @@ class products{
             }
         }
 
-        public function havestd($id){
-            try{
-                $consulta=$this->pdo->prepare("SELECT producto.ID_Producto,producto.Imagen,producto.Descripcion, precio_cantidad.Precio_ST,precio_cantidad.Cantidad_ST FROM producto,precio_cantidad WHERE ID_Producto=?;");
-                $consulta->execute(array($id));
-                $r=$consulta->fetch(PDO::FETCH_OBJ);
-                $p = new products();
-                $p->setPro_id($r->ID_Producto);
-                $p->setPro_ima($r->Imagen);
-                $p->setPro_des($r->Descripcion);
-                $p->setPro_prest($r->Precio_ST);
-                $p->setPro_canst($r->Cantidad_ST);
-                return $p;
-    
-            }catch(Exception $e){
-                die($e->getMessage());
-            }
-        }
+
 }

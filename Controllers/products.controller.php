@@ -734,13 +734,10 @@ class productscontroller{
         header("location:?c=products&a=showzaall");
     }
 
-    public function Detailsst()
+    public function clientsst()
     {
-        // $p=new products();
-        // if(isset($_GET['id'])){
-        //     $p=$this->modelo->havestd($_GET['id']);
-        // }
         require_once "views/products/show-st-c.php";
     }
+
 
 }
