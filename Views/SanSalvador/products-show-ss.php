@@ -31,7 +31,7 @@
                         <a class="nav-link active" aria-current="page" href="?c=products&a=showss">Inventario General</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showssall">Santa Salvador</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showssall">San Salvador</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>
