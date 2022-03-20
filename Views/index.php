@@ -123,7 +123,9 @@
                  <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>San Salvador</b></div>
                  <span style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2286 - 4000</span>
                  <p style= "font-family:Open Sans;font-size:120%;">Email: elmer.calderon@sumersa.com.sv</p>
+                 <a href="https://web.whatsapp.com/send?phone=50370391256&text=" target="_blank">
                  <img src="Assets/img/whatsapp_layout.png">
+                 </a>
             </div>
             <div class="col-md-4">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d777.0474469332613!2d-89.29564760341782!3d13.673871466142495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ccce09c136cd1f9!2sSumersa!5e1!3m2!1ses-419!2ssv!4v1647737564160!5m2!1ses-419!2ssv"
@@ -131,7 +133,9 @@
                  <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>Santa Tecla</b></div>
                  <span style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2250 - 7200</span>
                  <p style= "font-family:Open Sans; font-size:120%;"> PBX: (503) 2250 - 7200 / (503) 2228 - 4444</p>
+                 <a href="https://web.whatsapp.com/send?phone=50370391262&text=" target="_blank">
                  <img src="Assets/img/whatsapp_layout.png">
+                 </a>
              </div>
              <div class="col-md-4">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d457.61147098487874!2d-89.28759146977266!3d13.587609227829821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f632cff74f21bc5%3A0xd0c610f73005c09b!2sFerreter%C3%ADa%20Sumersa!5e1!3m2!1ses-419!2ssv!4v1647737657375!5m2!1ses-419!2ssv"
@@ -139,7 +143,9 @@
                  <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>Zaragoza</b></div>
                  <p style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2314 - 1100</p>
                  <p></p><br>
+                 <a href="https://web.whatsapp.com/send?phone=50370391247&text=" target="_blank">
                  <img src="Assets/img/whatsapp_layout.png">
+                 </a>
              </div>
              <div class="col-md-4">
                  <br>
@@ -148,7 +154,9 @@
                  <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>Lourdes Colón</b></div>
                  <span style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2338 - 4821</span>
                  <p style= "font-family:Open Sans; font-size:120%;"> Fax: (503) 2338 - 6843</p>
+                 <a href="https://web.whatsapp.com/send?phone=50370391253&text=" target="_blank">
                  <img src="Assets/img/whatsapp_layout.png">
+                 </a>
             </div>
             <div class="col-md-4">
                 <br>
@@ -157,7 +165,9 @@
                  <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>Desvío a Opico</b></div>
                  <span style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2319 - 3564</span>
                  <p style= "font-family:Open Sans; font-size:120%;"> Fax: (503) 2319 - 3563</p>
+                 <a href="https://web.whatsapp.com/send?phone=50370391254&text=" target="_blank">
                  <img src="Assets/img/whatsapp_layout.png">
+                 </a>
              </div>
              <div class="col-md-4">
                  <br>
@@ -166,7 +176,9 @@
                 <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>Santa Ana</b></div>
                 <p style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2440 - 5555 /  (503) 2440 - 5048 </p>
                 <p></p><br>
-                <img src="Assets/img/whatsapp_layout.png">
+                <a href="https://web.whatsapp.com/send?phone=50370392286&text=" target="_blank">
+                 <img src="Assets/img/whatsapp_layout.png">
+                 </a>
              </div>
     </div>
     </div>
