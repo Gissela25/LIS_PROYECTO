@@ -11,7 +11,7 @@ class branchcontroller{
     }
 
     public function branch(){
-        require_once "Views/branch.php";
+        require_once "Views/branch/branch.php";
     }
 
     public function Insert(){
@@ -21,7 +21,7 @@ class branchcontroller{
             $p=$this->modelo->have($_GET['id']);
             $titulo="Actualizar";
         }
-        require_once "Views/branch-insert.php";
+        require_once "Views/branch/branch-insert.php";
     }
 
     public function Save(){
