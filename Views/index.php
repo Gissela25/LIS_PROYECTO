@@ -142,7 +142,7 @@
                  width="385" height="235" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                  <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>Zaragoza</b></div>
                  <p style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2314 - 1100</p>
-                 <p></p><br>
+                 <br>
                  <a href="https://web.whatsapp.com/send?phone=50370391247&text=" target="_blank">
                  <img src="Assets/img/whatsapp_layout.png">
                  </a>
@@ -175,7 +175,7 @@
                 width="385" height="235" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 <div style="font-family:Anton; font-size:260%; color: rgb(40, 68, 116);"><b>Santa Ana</b></div>
                 <p style= "font-family:Open Sans; font-size:120%;">Teléfono: (503) 2440 - 5555 /  (503) 2440 - 5048 </p>
-                <p></p><br>
+                <br>
                 <a href="https://web.whatsapp.com/send?phone=50370392286&text=" target="_blank">
                  <img src="Assets/img/whatsapp_layout.png">
                  </a>
