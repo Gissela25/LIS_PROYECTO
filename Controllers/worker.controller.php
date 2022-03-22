@@ -11,7 +11,7 @@ class workercontroller{
     }
 
     public function worker(){
-        require_once "Views/worker.php";
+        require_once "Views/worker/worker.php";
     }
 
     public function Insert(){
@@ -21,7 +21,7 @@ class workercontroller{
         $p=$this->modelo->have($_GET['idu']);
         $titulo="Actualizar";
         }
-        require_once "Views/worker-insert.php";
+        require_once "Views/worker/worker-insert.php";
     }
 
     public function Save(){
@@ -51,7 +51,7 @@ class workercontroller{
         $p=$this->modelo->have($_GET['idu']);
         $titulo="Actualizar";
         }
-        require_once "Views/worker-edit.php";
+        require_once "Views/worker/worker-edit.php";
     }
 
     
