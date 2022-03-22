@@ -20,14 +20,16 @@
     <div class="row mx-5 mt-5 my-4">
         <div class="col ml-5">
             <div class="row mt-3">
+            
 
                 <table class="table table-borderless">
                     <thead>
                         <tr>
+                        
                             <th scope="col"></th>
-                            <th scope="col">Informacion Personal</th>
+                            <th scope="col"style="color:#084594">INFORMACION PERSONAL</th>
                             <th scope="col"></th>
-                            <th scope="col">
+                            <th scope="col"style="color:#084594">
                                 DATOS DE INICIO DE SESIÓN</th>
                         </tr>
                     </thead>
@@ -37,7 +39,7 @@
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">DUI</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
+                                    <input type="text" class="form-control" placeholder="Ingrese su DUI"
                                         name="i_email" id="i_email">
                                 </div>
                             </td>
@@ -55,7 +57,7 @@
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
+                                    <input type="text" class="form-control" placeholder="Ingrese su Nombre"
                                         name="i_email" id="i_email">
                                 </div>
                             </td>
@@ -63,7 +65,7 @@
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Clave</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
+                                    <input type="text" class="form-control" placeholder="Ingrese su Clave"
                                         name="i_email" id="i_email">
                                 </div>
                             </td>
@@ -73,15 +75,15 @@
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
+                                    <input type="text" class="form-control" placeholder="Ingrese Apellido"
                                         name="i_email" id="i_email">
                                 </div>
                             </td>
                             <td></td>
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
-                                    <label for="exampleInputPassword1" class="form-label">Correo</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
+                                    <label for="exampleInputPassword1" class="form-label">Confirmar clave</label>
+                                    <input type="text" class="form-control" placeholder="Confirme su clave"
                                         name="i_email" id="i_email">
                                 </div>
                             </td>
@@ -90,8 +92,8 @@
                             <th scope="row"></th>
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
-                                    <label for="exampleInputPassword1" class="form-label">DUI</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
+                                    <label for="exampleInputPassword1" class="form-label">Numero De Telefono</label>
+                                    <input type="text" class="form-control" placeholder="Ingrese su numero de telefono"
                                         name="i_email" id="i_email">
                                 </div>
                             </td>
@@ -105,8 +107,8 @@
                             <th scope="row"></th>
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
-                                    <label for="exampleInputPassword1" class="form-label">DUI</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
+                                    <label for="exampleInputPassword1" class="form-label">Direccion</label>
+                                    <input type="text" class="form-control" placeholder="Ingrese su direccion"
                                         name="i_email" id="i_email">
                                 </div>
                             </td>
