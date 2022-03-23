@@ -7,7 +7,7 @@
 .formulario{
    background:#ffffff;
    padding: 20px;
-   border-color: black;
+   border-color: gray;
    border-radius: 10px;
    box-shadow: 0 0 5px rgba(209, 209, 209, 1);
    color: black;
@@ -23,7 +23,6 @@ input[type=submit] {
    cursor: pointer;
    transition: all .3s ease;
 }
-
 input[type=submit]:hover {
    background: #F8C045;
    color: black;

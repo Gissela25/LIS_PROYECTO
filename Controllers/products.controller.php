@@ -56,6 +56,10 @@ class productscontroller{
         require_once "views/products/products-insert.php";    
     }
 
+    public function Update()
+    {
+        require_once "views/products/products-update.php";
+    }
     // public function Save(){
     //     $p=new products(); 
     //     $p->setPro_id($_POST['ID_Producto']);
