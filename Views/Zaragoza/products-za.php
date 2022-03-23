@@ -62,7 +62,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=stokestza">Santa Tecla</a></li>
                             <li><a class="dropdown-item" href="?c=products&a=stokessza">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=stokesalo">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokesaza">Lourdes</a></li>
                             <li><a class="dropdown-item" href="?c=products&a=stokesaop">Opico</a></li>
                             <li><a class="dropdown-item" href="?c=products&a=stokesasa">Santa Ana</a></li>
                         </ul>

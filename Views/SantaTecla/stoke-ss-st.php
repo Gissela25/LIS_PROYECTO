@@ -28,11 +28,11 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showsa">Inventario
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showst">Inventario
                             General</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showsaall">Santa Tecla</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showstall">Santa Tecla</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>

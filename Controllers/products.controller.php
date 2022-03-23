@@ -51,19 +51,24 @@ class productscontroller{
         require_once "views/products/products-insert.php";
     }
 
-    public function Save(){
-        $p=new products(); 
-        $p->setPro_id($_POST['ID_Producto']);
-        $p->setPro_des($_POST['Descripcion']);
-        $p->setPro_nom($_POST['Nombrep']);
-        $p->setPro_ima($_POST['Imagen']);
-        $p->setPro_idf($_POST['ID_Familia']);
-        $p->setPro_idpc($_POST['ID_PC']);
-        $this->modelo->Insert($p);
-
-
-        header("location:?c=products&a=show");
+    public function Add()
+    {
+        require_once "views/products/products-insert.php";    
     }
+
+    // public function Save(){
+    //     $p=new products(); 
+    //     $p->setPro_id($_POST['ID_Producto']);
+    //     $p->setPro_des($_POST['Descripcion']);
+    //     $p->setPro_nom($_POST['Nombrep']);
+    //     $p->setPro_ima($_POST['Imagen']);
+    //     $p->setPro_idf($_POST['ID_Familia']);
+    //     $p->setPro_idpc($_POST['ID_PC']);
+    //     $this->modelo->Insert($p);
+
+
+    //     header("location:?c=products&a=show");
+    // }
 
     // public function Save(){
     //     $p=new products(); 
@@ -734,13 +739,10 @@ class productscontroller{
         header("location:?c=products&a=showzaall");
     }
 
-    public function Detailsst()
+    public function clientsst()
     {
-        // $p=new products();
-        // if(isset($_GET['id'])){
-        //     $p=$this->modelo->havestd($_GET['id']);
-        // }
         require_once "views/products/show-st-c.php";
     }
+
 
 }

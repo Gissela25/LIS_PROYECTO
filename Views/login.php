@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Login</title>
@@ -42,12 +43,21 @@
                     <div class="form-group mx-sm-4 pt-3">
                         <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico" name="i_email"
                             id="i_email">
+                    </div>  
+                     <div class="form-group mx-sm-3 text-center olv">
+                            
                     </div>
+                    
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="i_pass"
                             id="i_pass">
+                            <div class="form-group mx-sm-3 text-center olv">
+                            <span class=""><a href="?c=user&a=Recover" class="olvide">¿Olvide mi
+                                contraseña?</a></span>
                     </div>
-                    <div class="form-group mx-sm-4 pb-3">
+                    </div>
+                  
+                    <div class="form-group mx-sm-5 pb-3 ">
                         <input type="submit" value="Ingresar" name="ingresar" id="ingresar"
                             class="btn btn-block ingresar">
                     </div>
@@ -58,15 +68,17 @@
                         
                     </div>
                    */ ?>
-                    <div class="form-group mx-sm-4 text-center olv">
-                         <span class=""><a href="?c=user&a=Recover" class="olvide">¿Olvide mi
-                                contraseña?</a></span> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <div class="form-group mx-sm-4 text-center olv">
-                                <span class=""><a href="?c=user&a=Activar" class="olvide">Activar Cuenta</a></span>
+                    <!-- <div class="form-group mx-sm-4 text-center olv"> -->
+                         <!-- <span class=""><a href="?c=user&a=Recover" class="olvide">¿Olvide mi
+                                contraseña?</a></span> &nbsp;&nbsp;&nbsp;&nbsp; -->
+                               
+
+                                <div class="form-group mx-sm-4 my-1 text-center olv">
+                                <span class=""><a href="?c=user&a=Activar" class="olvide"><i class="bi bi-key-fill"></i>Activar Cuenta</a></span>
                             </div>
                             <div class="form-group mx-sm-4 text-center olv">
-                            <!-- <div class="form-group text-center"> -->
-                        <span><a href="#" class="olvide sing-up">Registrar</a></span>
+                            <div class="form-group text-center">
+                        <span><a href="#" class="olvide sing-up"><i class="bi bi-book-half"></i>Registrar</a></span>
                     </div>
                     </div>
                 </form>
