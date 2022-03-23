@@ -376,31 +376,31 @@ class products{
     //     }
     // }
 
-    public function Insert(products $p){
-        try{
-        $consulta = "Insert INTO producto(ID_Producto,Descripcion,Nombrep,Imagen,ID_Familia) values (?,?,?,?,?);";
-        $ejecutar = $this->pdo->prepare($consulta)
-                    ->execute(array(
-                        $p->getPro_id(),
-                        $p->getPro_des(),
-                        $p->getPro_nom(),
-                        $p->getPro_ima(),
-                        $p->getPro_idf()
-                    ));
-                    if($ejecutar == 1)
-                                    {
-                                    $consulta = "Insert INTO precio_cantidad(ID_PC,ID_Producto) values (?,?);";
-                                    $ejecutar = $this->pdo->prepare($consulta)
-                                                ->execute(array(
-                                                $p->getPro_idpc(),
-                                                $p->getPro_id()
-                                    ));
-                                    }
+    // public function Insert(products $p){
+    //     try{
+    //     $consulta = "Insert INTO producto(ID_Producto,Descripcion,Nombrep,Imagen,ID_Familia) values (?,?,?,?,?);";
+    //     $ejecutar = $this->pdo->prepare($consulta)
+    //                 ->execute(array(
+    //                     $p->getPro_id(),
+    //                     $p->getPro_des(),
+    //                     $p->getPro_nom(),
+    //                     $p->getPro_ima(),
+    //                     $p->getPro_idf()
+    //                 ));
+    //                 if($ejecutar == 1)
+    //                                 {
+    //                                 $consulta = "Insert INTO precio_cantidad(ID_PC,ID_Producto) values (?,?);";
+    //                                 $ejecutar = $this->pdo->prepare($consulta)
+    //                                             ->execute(array(
+    //                                             $p->getPro_idpc(),
+    //                                             $p->getPro_id()
+    //                                 ));
+    //                                 }
         
-        }catch(exception $e){
-        die($e->getMessage());
-        }
-    }
+    //     }catch(exception $e){
+    //     die($e->getMessage());
+    //     }
+    // }
 
     public function Updatest(products $p){
         try{
@@ -956,11 +956,33 @@ class products{
         }
     }
 
-    public function Update_product()
+    public function Input_Product(){
+        try{
+
+            $consulta = "INSERT INTO producto(ID_Producto,Descripcion,Nombrep,Imagen,ID_Familia)".
+            "VALUES ('{$this->getPro_id()}','{$this->getPro_des()}','{$this->getPro_nom()}','{$this->getPro_ima()}','{$this->getPro_idf()}')";
+            $ejecutar = $this->pdo->prepare($consulta)->execute(array($this->getPro_id(),$this->getPro_des(),$this->getPro_nom(),$this->getPro_ima(),
+            $this->getPro_idf()));
+
+            if($ejecutar == 1){
+                $consulta = "INSERT INTO precio_cantidad(ID_PC,ID_Producto)".
+            "VALUES ('{$this->getPro_idpc()}','{$this->getPro_id()}')";
+            $ejecutar = $this->pdo->prepare($consulta)->execute(array($this->getPro_idpc(),$this->getPro_id()));
+
+            }
+
+        }catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+}
+
+
+        public function Update_product()
         {
             try{
-                if($this->getPro_ima()==""){
-                        if($this->getPro_idf()==""){
+                if($this->getImg()==""){
+                        if($this->getCodigo_f()==""){
                             $query="UPDATE producto SET nombre ='{$this->getNombre()}',descripcion= '{$this->getDescripcion()}',precio='{$this->getPrecio()}',existencias='{$this->getExistencias()}' WHERE codigo_producto='{$this->getCodigo_P()}';";
                             $this->pdo->prepare($query)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
                             $this->getCodigo_f(),$this->getPrecio(),$this->getExistencias()));
@@ -985,6 +1007,47 @@ class products{
                         $query="UPDATE producto SET nombre ='{$this->getNombre()}',descripcion= '{$this->getDescripcion()}',img='{$this->getImg()}',codigo_familia='{$this->getCodigo_f()}',precio='{$this->getPrecio()}',existencias='{$this->getExistencias()}' WHERE codigo_producto='{$this->getCodigo_P()}';";
                         $this->pdo->prepare($query)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
                         $this->getCodigo_f(),$this->getPrecio(),$this->getExistencias()));
+                    }
+
+                }
+                   
+            }
+            catch(Exception $e)
+            {
+                die($e->getMessage());
+            }
+        }
+
+        
+        public function Update_product()
+        {
+            try{
+                if($this->getPro_ima()==""){
+                        if($this->getPro_idf()==""){
+                            $consulta="UPDATE producto SET Nombre ='{$this->getPro_nom()}',Descripcion= '{$this->getPro_des()}' WHERE ID_Producto='{$this->getPro_id()}';";
+                            $this->pdo->prepare($consulta)->execute(array($this->getPro_id(),$this->getPro_nom(),$this->getPro_des(),$this->getPro_ima(),
+                            $this->getPro_idf()));
+                        }
+                        else{
+                            $consulta="UPDATE producto SET Nombre ='{$this->getPro_nom()}',Descripcion= '{$this->getPro_des()}',ID_Familia='{$this->getPro_idf()}' WHERE ID_Producto='{$this->getPro_id()}';";
+                            $this->pdo->prepare($consulta)->execute(array($this->getPro_id(),$this->getPro_nom(),$this->getPro_des(),$this->getPro_ima(),
+                            $this->getPro_idf()));
+                        }
+                }
+                else{
+                    if($this->getPro_idf()==""){
+
+                        
+                        $consulta="UPDATE producto SET Nombre ='{$this->getPro_nom()}',Descripcion= '{$this->getPro_des()}',Imagen='{$this->getPro_ima()}' WHERE ID_Producto='{$this->getPro_id()}';";
+                        $this->pdo->prepare($consulta)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
+                        $this->getCodigo_f(),$this->getPro_idf()));
+                    }
+                    else{
+                       
+                        $consulta="UPDATE producto SET Nombre ='{$this->getPro_nom()}',Descripcion= '{$this->getPro_des()}',ID_Familia='{$this->getPro_idf()}',Imagen='{$this->getPro_ima()}' WHERE ID_Producto='{$this->getPro_id()}';";
+                        $this->pdo->prepare($consulta)->execute(array($this->getCodigo_P(),$this->getNombre(),$this->getDescripcion(),$this->getImg(),
+                        $this->getCodigo_f(),$this->getPro_idf()));
+
                     }
 
                 }
