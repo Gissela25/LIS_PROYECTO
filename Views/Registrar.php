@@ -99,8 +99,7 @@
                             </td>
                             <td></td>
                             <td>
-                                <a href="" class="btn btn-primary btn-block boton mx-5">Ver
-                                    más</a>
+                                <a href="" class="btn btn-primary btn-block boton mx-5">Ingresar</a>
                             </td>
                         </tr>
                         <tr>
