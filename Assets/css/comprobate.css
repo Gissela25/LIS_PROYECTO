@@ -6,6 +6,9 @@ body{
     
 
 }
+ul li{
+    color: rgb(131, 42, 42);
+    }
 .formulario{
     background:rgba(0,0,0,.1);
     padding: 20px;

@@ -39,63 +39,107 @@
             $this-> code_v = $cd;
         }
 
+        public function SelectSucursal($i)
+        {
+            switch ($i) {
+                case 1:
+                    header("Location: ?c=products&a=showst");
+                    break;
+                case 2:
+                    header("Location: ?c=products&a=showss");
+                    break;
+                case 3:
+                    header("Location: ?c=products&a=showlo");
+                    break;
+                case 4:
+                    header("Location: ?c=products&a=showop");
+                    break;
+                case 5:
+                    header("Location: ?c=products&a=showza");
+                    break;
+                case 6:
+                    header("Location: ?c=products&a=showsa");
+                    break;
+            }
+        }
         public function Into()
         {
             try{
                 //Usuario -> Empleado
-                $consulta1=$this->pdo->prepare("SELECT COUNT(*) FROM usuario WHERE Correo='{$this->getEmail()}';");
-                $consulta1->execute(array($this->getEmail()));
+                $Correo=$this->getEmail();
+                $consulta1=$this->pdo->prepare($consulta1="SELECT COUNT(*) FROM usuario WHERE Correo=?");
+                $consulta1->bindParam(1,$Correo);
+                $consulta1->execute();
                 $filas1= $consulta1->fetchColumn();
-                $sql1=$this->pdo->prepare("SELECT Correo,Clave,Activo,Acceso FROM usuario WHERE Correo='{$this->getEmail()}';");
-                $sql1->execute(array($this->getEmail()));
+                $sql1=$this->pdo->prepare("SELECT Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
+                $sql1->bindParam(1,$Correo);
+                $sql1->execute();
                 $ru=$sql1->fetch(PDO::FETCH_ASSOC);
                
                 //Usuario -> Cliente
-                $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo='{$this->getEmail()}';");
-                $consulta2->execute(array($this->getEmail()));
+                $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo=?;");
+                $consulta2->bindParam(1,$Correo);
+                $consulta2->execute();
                 $filas2= $consulta2->fetchColumn();
-                $sql2=$this->pdo->prepare("SELECT Correo,Clave,Activo FROM cliente WHERE Correo='{$this->getEmail()}';");
-                $sql2->execute(array($this->getEmail()));
+                $sql2=$this->pdo->prepare("SELECT Correo,Clave,Verificado FROM cliente WHERE Correo=?;");
+                $sql2->bindParam(1,$Correo);
+                $sql2->execute();
                 $rc=$sql2->fetch(PDO::FETCH_ASSOC);
               
 
                 if($filas1>0)
                 {
-                    $estado=$ru['Activo'];               
+                    $estado=$ru['Verificado'];               
                    if($estado==1)
                    {
-                    echo "<ul> <li>Cuenta de usuario activa</li></ul>";
                     $acceso1=$ru['Acceso'];
                     $pwd_user=$ru['Clave'];
+                    $ids=$ru['ID_Sucursal'];
+                    $state=$ru['Estado'];
                     if($acceso1==1){
-                        echo "<ul> <li>Cuenta de usuario admin</li></ul>";
+
                         if(password_verify($this->getPass(),$pwd_user))
                         {
-                            echo "<ul> <li>Entrada válida</li></ul>";
+                            //echo "<ul> <li>Entrada válida</li></ul>";
+                            if($state==1){
+                                session_start();
+                                header("Location: ?c=branch&a=branch");
+                            }
+                            else
+                            {
+                                echo "<ul> <li>Su cuenta de administrador ha sido desactivada</li></ul>";
+                            }
+                          
                         }
                         else{
-                            echo "<ul> <li>Entrada inválida</li></ul>";
+                            echo "<ul> <li>Credenciales inválidas</li></ul>";
                         }
                     }
                     elseif($acceso1==0){
-                        echo "<ul> <li>Cuenta de usuario estándar</li></ul>";
                         if(password_verify($this->getPass(),$pwd_user))
                         {
                             echo "<ul> <li>Entrada válida</li></ul>";
+                            if($state==1)
+                            {
+                                $this->SelectSucursal($ids);
+                            }
+                          else{
+                            echo "<ul> <li>Su cuenta de empleado ha sido desactivada</li></ul>";
+                          }
                         }
                         else{
-                            echo "<ul> <li>Entrada inválida</li></ul>";
+                            echo "<ul> <li>Credenciales inválidas</li></ul>";
                         }
                     }
                    }
                    elseif($estado==0){
-                    echo "<ul> <li>Cuenta de usuario inactiva</li></ul>";
+                    echo "<ul> <li>Cuenta de usuario no existe</li></ul>";
                    }
                 }
                 else{
                     if($filas2>0)
                 {
-                    $estado2=$rc['Activo'];        
+                    $estado2=$rc['Verificado'];        
                    if($estado2==1)
                    {
                     echo "<ul> <li>Cuenta de usuario activa</li></ul>";
@@ -278,18 +322,23 @@
             try{
             
             //Busqueda -> Empleado / Admin
-                $consulta1=$this->pdo->prepare("SELECT COUNT(*) FROM usuario WHERE Correo='{$this->getEmail()}';");
-                $consulta1->execute(array($this->getEmail()));
+                $Correo=$this->getEmail();
+                $consulta1=$this->pdo->prepare("SELECT COUNT(*) FROM usuario WHERE Correo=?;");
+                $consulta1->bindParam(1,$Correo);
+                $consulta1->execute();
                 $filas1= $consulta1->fetchColumn();
-                $sql1=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Activo,Acceso FROM usuario WHERE Correo='{$this->getEmail()}';");
-                $sql1->execute(array($this->getEmail()));
+                $sql1=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Verificado FROM usuario WHERE Correo=?;");
+                $sql1->bindParam(1,$Correo);
+                $sql1->execute();
                 $ru=$sql1->fetch(PDO::FETCH_ASSOC);
                 //Busqueda -> Cliente
-                $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo='{$this->getEmail()}';");
-                $consulta2->execute(array($this->getEmail()));
+                $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo=?;");
+                $consulta2->bindParam(1,$Correo);
+                $consulta2->execute();
                 $filas2= $consulta2->fetchColumn();
-                $sql2=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Activo FROM cliente WHERE Correo='{$this->getEmail()}';");
-                $sql2->execute(array($this->getEmail()));
+                $sql2=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Verificado FROM cliente WHERE Correo=?;");
+                $sql2->bindParam(1,$Correo);
+                $sql2->execute();
                 $rc=$sql2->fetch(PDO::FETCH_ASSOC);
 
                 //Fecha y hora de la zona
@@ -322,6 +371,8 @@
                 die($e->getMessage());
             }
         }
+
+//      Aquí inicia el proceso de activacion de cuentas
 
         public function generarCorreoActivacion($i_nombre,$i_apellido,$i_correo,$i_table,$hash_active)
         {
@@ -432,7 +483,7 @@
                     "</div>".
                     "<p class='text-dis'>Para poder activar tu cuenta debes cliquear  el botón activar</p>".
                     "<p>&nbsp;</p>".
-                    "<a href='https://www.sumersa.com.sv/?user=$emailCliente&hash=$hash_active' target='_blank' class='btn-activate btn btn-primary btn-block'>Activar</a>".
+                    "<a href='https://www.sumersa.com.sv/?c=user&a=Comprobar&user=$emailCliente&hash=$hash_active' target='_blank' class='btn-activate btn btn-primary btn-block'>Activar</a>".
                     "</div>".   
                     "<div class='seccion3'>".
                     "<p>&nbsp;</p>".
@@ -464,76 +515,115 @@
             }
 
         }
-
+//A partir de acá se comprueba
         public function comprobarActivacion($email,$hash)
         {
-            $consulta1=$this->pdo->prepare("SELECT COUNT(*) FROM usuario WHERE Correo='$email';");
-            $consulta1->execute(array($email));
+            /*    $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo=?;");
+                $consulta2->bindParam(1,$Correo);
+                $consulta2->execute();
+                $filas2= $consulta2->fetchColumn();
+                $sql2=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Verificado FROM cliente WHERE Correo=?;");
+                $sql2->bindParam(1,$Correo);
+                $sql2->execute();
+                $rc=$sql2->fetch(PDO::FETCH_ASSOC); */
+            $consulta1=$this->pdo->prepare("SELECT COUNT(*) FROM usuario WHERE Correo=? AND Hash_Active=?;");
+            $consulta1->bindParam(1,$email);
+            $consulta1->bindParam(2,$hash);
+            $consulta1->execute();
             $filas1= $consulta1->fetchColumn();
-            $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo='$email';");
-            $consulta2->execute(array($email));
+            $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo=? AND Hash_Active=?;");
+            $consulta2->bindParam(1,$email);
+            $consulta2->bindParam(2,$hash);
+            $consulta2->execute();
             $filas2= $consulta2->fetchColumn();
             if($filas1>0)
             {
             $i_table = "usuario";
-            $query=$this->pdo->prepare("UPDATE $i_table SET Activo='1' WHERE Correo = '$email' ");
-            $query->execute(array($email));
+            $query=$this->pdo->prepare("UPDATE $i_table SET Verificado='1' WHERE Correo = ? ");
+            $query->bindParam(1,$email);
+            $query->execute();
 
-            $consulta3=$this->pdo->prepare("SELECT COUNT(*) FROM $i_table WHERE Correo='$email' AND Activo='1';");
-            $consulta3->execute(array($email));
+            $consulta3=$this->pdo->prepare("SELECT COUNT(*) FROM $i_table WHERE Correo=? AND Verificado='1';");
+            $consulta3->bindParam(1,$email);
+            $consulta3->execute();
             $filas3= $consulta3->fetchColumn();
-            if($filas3)
+            if($filas3>0)
             {
-                $sql1=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Activo,Acceso,Hash_Active FROM usuario WHERE Correo='$email';");
-                $sql1->execute(array($email));
+                $sql1=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Verificado,Acceso,Hash_Active FROM usuario WHERE Correo=?;");
+                $sql1->bindParam(1,$email);
+                $sql1->execute();
                 $ru=$sql1->fetch(PDO::FETCH_ASSOC);
-                echo "<div class=''> <h1>Hola, ".$ru['Nombre']."</h1> </div>
-                <h1>Ya eres uno de nosotros</h1>";
+                echo "<div class='contenedor'><div class='display-1'> <h1>Bienvenido ".$ru['Nombre']." ".$ru['Apellido']."</h1> </div>
+                <h1>Ya eres parte del grupo SUMERSA</h1></div>";
             }
             }
             elseif($filas2>0)
            {
                 $i_table = "cliente";
-                $query=$this->pdo->prepare("UPDATE $i_table SET Activo='1' WHERE Correo = '$email' ");
-                $query->execute(array($email));
-                $consulta3=$this->pdo->prepare("SELECT COUNT(*) FROM $i_table WHERE Correo='$email' AND Activo='1';");
-                $consulta3->execute(array($email));
+                $query=$this->pdo->prepare("UPDATE $i_table SET Verificado='1' WHERE Correo = ? ");
+                $query->bindParam(1,$email);
+                $query->execute();
+                $consulta3=$this->pdo->prepare("SELECT COUNT(*) FROM $i_table WHERE Correo=? AND Verificado='1';");
+                $consulta3->bindParam(1,$email);
+                $consulta3->execute();
                 $filas3= $consulta3->fetchColumn();
-                if($filas3)
+                if($filas3>0)
                 {
-                    echo "Activada";
+                $sql1=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave FROM cliente WHERE Correo=?;");
+                $sql1->bindParam(1,$email);
+                $sql1->execute();
+                $ru=$sql1->fetch(PDO::FETCH_ASSOC);
+                echo "<div class='contenedor'><div class='display-1'> <h1>Bienvenido ".$ru['Nombre']." ".$ru['Apellido']."</h1> </div>
+                <h1>Ya eres parte del grupo SUMERSA</h1></div>";
                 }
            }
 
         }
-
+        public function GenerarHash()
+        {
+            $hash = md5(rand(1,100000));
+            return $hash;
+        }
 
         public function activarCuenta()
         {
             try{
                 // Búsqueda -> usuario
-                $consulta1=$this->pdo->prepare("SELECT COUNT(*) FROM usuario WHERE Correo='{$this->getEmail()}';");
-                $consulta1->execute(array($this->getEmail()));
+                /*     $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo=?;");
+                $consulta2->bindParam(1,$Correo);
+                $consulta2->execute();
+                $filas2= $consulta2->fetchColumn();
+                $sql2=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Verificado FROM cliente WHERE Correo=?;");
+                $sql2->bindParam(1,$Correo);
+                $sql2->execute();
+                $rc=$sql2->fetch(PDO::FETCH_ASSOC);*/
+                $Correo=$this->getEmail();
+                $consulta1=$this->pdo->prepare("SELECT COUNT(*) FROM usuario WHERE Correo=?;");
+                $consulta1->bindParam(1,$Correo);
+                $consulta1->execute();
                 $filas1= $consulta1->fetchColumn();
-                $sql1=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Activo,Acceso,Hash_Active FROM usuario WHERE Correo='{$this->getEmail()}';");
-                $sql1->execute(array($this->getEmail()));
+                $sql1=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Verificado,Acceso,Hash_Active FROM usuario WHERE Correo=?;");
+                $sql1->bindParam(1,$Correo);
+                $sql1->execute();
                 $ru=$sql1->fetch(PDO::FETCH_ASSOC);
                 // Búsqueda -> cliente
-                $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo='{$this->getEmail()}';");
-                $consulta2->execute(array($this->getEmail()));
+                $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo=?;");
+                $consulta2->bindParam(1,$Correo);
+                $consulta2->execute();
                 $filas2= $consulta2->fetchColumn();
-                $sql2=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Activo,Hash_Active FROM cliente WHERE Correo='{$this->getEmail()}';");
-                $sql2->execute(array($this->getEmail()));
+                $sql2=$this->pdo->prepare("SELECT Nombre,Apellido,Correo,Clave,Verificado,Hash_Active FROM cliente WHERE Correo=?;");
+                $sql2->bindParam(1,$Correo);
+                $sql2->execute();
                 $rc=$sql2->fetch(PDO::FETCH_ASSOC);
 
                 //Fecha y hora de la zona
                 date_default_timezone_set("America/El_Salvador");
                 if($filas1>0)
                 {
-                $estado=$ru['Activo']; 
+                $estado=$ru['Verificado']; 
                 if($estado==1)
                 {
-                    echo "<ul> <li>La cuenta se encuentra activa: Regrese </li></ul>";
+                    echo "<ul> <li>La cuenta ya ha sido activada </li></ul>";
                 }
                 elseif($estado==0){
 
@@ -550,9 +640,9 @@
                 else{
                     if($filas2>0)
                     {
-                        $estado=$rc['Activo'];
+                        $estado=$rc['Verificado'];
                         if($estado==1){
-                            echo "<ul> <li>La cuenta se encuentra activa: Regrese </li></ul>";
+                            echo "<ul> <li>La cuenta  ya ha sido activada </li></ul>";
                         }
                         else{
                             $i_nombre = $rc['Nombre'];
