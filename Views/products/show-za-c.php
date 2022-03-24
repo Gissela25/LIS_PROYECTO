@@ -54,6 +54,9 @@
                             <li><a class="dropdown-item" href="?c=products&a=clientssa">Santa Ana</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Views/Contacts.php">Contactanos</a> 
+                    </li>
                 </ul>
             </div>
         </div>
