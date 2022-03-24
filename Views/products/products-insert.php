@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="mb-3" style="color:#084594">
-                    <input type="text" class="form-control" value="<?=$this->modelo->generate_codep();?>" readonly
+                    <input type="hidden" class="form-control" value="<?=$this->modelo->generate_codep();?>" readonly
                         name="ID_PC" id="ID_PC" required>
                 </div>
                 <div class="d-flex justify-content-center">

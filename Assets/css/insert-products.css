@@ -23,6 +23,7 @@ input[type=submit] {
    cursor: pointer;
    transition: all .3s ease;
 }
+
 input[type=submit]:hover {
    background: #F8C045;
    color: black;

@@ -80,21 +80,21 @@
                             <div class="col-sm-9">
                                 <select name="ID_Familia" id="ID_Familia" class="form-control">
                                     <?php
-							foreach($this->modelo->showfamilia() as $r)
+							foreach($this->modelo->showfamilia() as $row)
 							{
 							?>
 
 
-                                    <?php if($r->ID_Cantidad==$r->ID_Familia)
+                                    <?php if($r->ID_Cantidad==$row->ID_Familia)
 							{
 								?>
-                                    <option selected value="<?=$r->ID_Familia?>"><?=$r->Nombre?></option>
+                                    <option selected value="<?=$r->ID_Familia?>"><?=$row->Nombre?></option>
                                     <?php
 							} 
 							else
 							{
 								?>
-                                    <option value="<?=$r->ID_Familia?>"><?=$r->Nombre?></option>
+                                    <option value="<?=$row->ID_Familia?>"><?=$row->Nombre?></option>
                                     <?php
 							}
 							?>
