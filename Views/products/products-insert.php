@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/worker-insert.css">
+    <link rel="stylesheet" href="Assets/css/insert-products.css">
 </head>
 
 <body>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="mb-3" style="color:#084594">
-                    <input type="text" class="form-control" value="<?=$this->modelo->generate_codep();?>" readonly
+                    <input type="hidden" class="form-control" value="<?=$this->modelo->generate_codep();?>" readonly
                         name="ID_PC" id="ID_PC" required>
                 </div>
                 <div class="d-flex justify-content-center">

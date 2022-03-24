@@ -62,7 +62,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-3">
             <?php
                    
-                    foreach ($this->modelo->showstall() as $r)
+                    foreach ($this->modelo->showsaall() as $r)
                      {
                         $path="img/".$r->Imagen;
                         if(file_exists($path))
@@ -75,9 +75,9 @@
                         <h5 class="card-title">
                             <?=$r->Nombrep?>
                         </h5>
-                        <p class="card-text">Precio <?=$r->Precio_ST?> $</p>
+                        <p class="card-text">Precio <?=$r->Precio_SA?> $</p>
                         <?php
-                                    if(($r->Cantidad_ST)>0)
+                                    if(($r->Cantidad_SA)>0)
                                     {
                                         ?>
                         <p class="card-text ">Disponibilidad: <span style="color: green;"> en existencia</span></p>

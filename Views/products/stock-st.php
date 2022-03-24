@@ -12,11 +12,11 @@
     </script>
     <link rel="stylesheet" href="Assets/css/branch.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Sucursales</title>
+    <title>Empleados</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
@@ -61,36 +61,43 @@
 
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
-            <a class="edit" href="?c=family&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
+            <!-- <a class="edit" href="?c=products&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a> -->
             <div class="row mt-3">
                 <table class="table table-bordered">
                     <thead class="Te" style="background-color: #084594">
                         <tr>
-                            <th>ID Familia</th>
+                            <th>Codigo Producto</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Imagen</th>
                             <th>Familia</th>
-                            <th>Acciones</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($this->modelo->show() as $r):?>
-                        <tr>
-                            <td><?=$r->ID_Familia?></td>
+                        <?php
+                   
+                   foreach ($this->modelo->Showstall() as $r)
+                   {
+                      $path="img/".$r->Imagen;
+                      if(file_exists($path))
+                      
+                   ?>
+                        <tr < id="id_<?=$r->ID_Producto?>">
+                            <td><?=$r->ID_Producto?></td>
+                            <td><?=$r->Nombrep?></td>
+                            <td><?=$r->Descripcion?></td>
+                            <td><?php echo "<img src='img/$r->Imagen' width='200px' height='200px'>"?></td>
                             <td><?=$r->Nombre?></td>
-                            <td>
-                                <a class="edit mx-3" href="?c=family&a=edit&id=<?=$r->ID_Familia?>"><i
-                                        class="bi bi-pencil-square"></i> Editar
-                                    <i class="fa fa-lg fa-refresh"></i></a>
-                                <a class="edit mx-3" href="?c=family&a=sendelete&id=<?=$r->ID_Familia?>"><i
-                                        class="bi bi-trash-fill"></i> Eliminar
-                                    <i class="fa fa-lg fa-refresh"></i></a>
-                            </td>
+                            <td>$<?=$r->Precio_ST?></td>
+                            <td><?=$r->Cantidad_ST?></td>
                         </tr>
-                        <?php endforeach;?>
-                        <tr>
-                        </tr>
+                        <?php
+                        }
+                    ?>
                     </tbody>
                 </table>
             </div>
 </body>
-
 </html>

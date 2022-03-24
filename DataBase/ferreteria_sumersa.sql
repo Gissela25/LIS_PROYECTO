@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 18-03-2022 a las 08:04:15
+-- Tiempo de generación: 24-03-2022 a las 02:23:51
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `Correo` varchar(255) NOT NULL,
   `Clave` varchar(255) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
+  `Verificado` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`DUI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -75,12 +76,11 @@ CREATE TABLE IF NOT EXISTS `familia` (
 --
 
 INSERT INTO `familia` (`ID_Familia`, `Nombre`) VALUES
-('F094', 'Ferreteria'),
-('F153', 'Techo'),
-('F251', 'Pintura'),
-('F315', 'Fontaneria'),
-('F856', 'Electrico'),
-('F899', 'Construccion');
+('F049', 'Techo'),
+('F164', 'Pintura'),
+('F184', 'Fontaneria'),
+('F304', 'Ferreteria'),
+('F368', 'Construccion');
 
 -- --------------------------------------------------------
 
@@ -126,12 +126,7 @@ CREATE TABLE IF NOT EXISTS `precio_cantidad` (
 --
 
 INSERT INTO `precio_cantidad` (`ID_PC`, `Precio_ST`, `Precio_SS`, `Precio_LO`, `Precio_OP`, `Precio_ZA`, `Precio_SA`, `Cantidad_ST`, `Cantidad_SS`, `Cantidad_LO`, `Cantidad_OP`, `Cantidad_ZA`, `Cantidad_SA`, `ID_Producto`) VALUES
-('PC111', NULL, 6.76, NULL, 2.70, NULL, NULL, NULL, 33, NULL, 2, NULL, NULL, 'PROD847'),
-('PC165', 2.56, NULL, NULL, 2.70, NULL, NULL, 45, NULL, NULL, 2, NULL, NULL, 'PROD561'),
-('PC289', 2.56, NULL, NULL, NULL, 2.80, NULL, 45, NULL, NULL, NULL, 24, NULL, 'PROD798'),
-('PC524', 33.66, NULL, 33.45, NULL, NULL, NULL, 5, NULL, 60, NULL, NULL, NULL, 'PROD607'),
-('PC621', 2.56, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, 'PROD297'),
-('PC889', 7.87, NULL, NULL, NULL, NULL, 7.56, 45, NULL, NULL, NULL, NULL, 23, 'PROD541');
+('PC698', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PROD883');
 
 -- --------------------------------------------------------
 
@@ -142,9 +137,9 @@ INSERT INTO `precio_cantidad` (`ID_PC`, `Precio_ST`, `Precio_SS`, `Precio_LO`, `
 DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
   `ID_Producto` varchar(8) NOT NULL,
-  `Descripcion` varchar(120) NOT NULL,
-  `Nombrep` varchar(1000) NOT NULL,
-  `Imagen` varchar(15) NOT NULL,
+  `Descripcion` varchar(300) NOT NULL,
+  `Nombrep` varchar(120) NOT NULL,
+  `Imagen` varchar(20) NOT NULL,
   `ID_Familia` varchar(8) NOT NULL,
   PRIMARY KEY (`ID_Producto`),
   KEY `ID_Familia` (`ID_Familia`)
@@ -155,12 +150,7 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 INSERT INTO `producto` (`ID_Producto`, `Descripcion`, `Nombrep`, `Imagen`, `ID_Familia`) VALUES
-('PROD297', 'STANLEY - CINTA MÉTRICA 50 MTS', 'cinta metrica', 'PROD00009.webp', 'F094'),
-('PROD541', 'PALA PUNTA REDONDA ACERO 47 PULGADAS 1.2METROS FIBRA DE VIDRIO', 'pala', 'PROD00004.webp', 'F899'),
-('PROD561', 'PHILIPS - FOCO LED 9W E27 LUZ AMARILLA TIPO GLOBO', 'Lampara', 'PROD00010.webp', 'F856'),
-('PROD607', 'CLASICA - PINTURA CLASICA LATEX NARANJA CUB 10022-0015-05', 'Pintura', 'PROD00005.webp', 'F251'),
-('PROD798', 'HIERRO REDONDO CORRUGADO 1 PULG X 6 METROS GRADO 40', 'Hierro', 'PROD00002.webp', 'F899'),
-('PROD847', 'MEZCLA MORTERO LISTO PARA UTILIZAR,', 'Cemento', 'PROD00003.webp', 'F899');
+('PROD883', 'Bolsa', 'Cemento', 'PROD883.webp', 'F368');
 
 -- --------------------------------------------------------
 
@@ -173,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `sucursal` (
   `ID_Sucursal` int(1) NOT NULL AUTO_INCREMENT,
   `Nombre_Sucursal` varchar(120) NOT NULL,
   PRIMARY KEY (`ID_Sucursal`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `sucursal`
@@ -229,9 +219,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`) VALUES
-('E215', 'Gissela', 'Serrano', 'gisselaverenice@gmail.com', '$2y$10$LcxLIDlndQTRBNlYeWaXkususjYIcajW5SS6uw6nyeIDA702EHHeW', 0, 0, 0, 3),
-('E486', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$gzmxibaaS/Z/FiJWGaGx/OVrghmrogCt864zFfYNkkOhZJTOAm69C', 0, 0, 0, 3),
-('E802', 'Susan', 'Zelaya', 'susan15@gmail.com', '$2y$10$GgqKR6PHTOfTnGC8oHVRr.6asTKBq06HYrnCztaj3eIGjgmaEey4S', 0, 1, 0, 1);
+('E779', 'William', 'Portan', 'williamportan@gmail.com', '$2y$10$EnVUYXYlwnSJcmSFB07AHeE4AVmqU1TsshqkftYcPnTD5MSZQhHia', 0, 0, 0, 1);
 
 --
 -- Restricciones para tablas volcadas

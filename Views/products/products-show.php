@@ -46,12 +46,12 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=show">Inventario General</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="#">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="#">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="#">Opico</a></li>
-                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="#">Santa Ana</a></li> -->
+                            <li><a class="dropdown-item" href="?c=products&a=stokestad">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokessad">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeload">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeopad">Opico</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokezaad">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokesaad">Santa Ana</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -90,10 +90,10 @@
                             <td><?php echo "<img src='img/$r->Imagen' width='200px' height='200px'>"?></td>
                             <td><?=$r->Nombre?></td>
                             <td>
-                                <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
+                                <a class="edit mx-3" href="?c=products&a=Update&id=<?=$r->ID_Producto?>"><i class="bi bi-pencil-square"></i> Editar
                                     <i class="fa fa-lg fa-refresh"></i></a>
-                                <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                    <i class="fa fa-lg fa-refresh"></i></a>
+                                <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
+                                    <i class="fa fa-lg fa-refresh"></i></a> -->
                             </td>
                         </tr>
                         <?php
