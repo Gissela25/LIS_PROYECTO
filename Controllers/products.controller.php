@@ -569,6 +569,36 @@ class productscontroller{
         require_once "views/Zaragoza/stoke-lo-za.php";
     }
 
+    public function stokestad()
+    {
+        require_once "views/products/stock-st.php";
+    }
+
+    public function stokessad()
+    {
+        require_once "views/products/stock-ss.php";
+    }
+
+    public function stokesaad()
+    {
+        require_once "views/products/stock-sa.php";
+    }
+
+    public function stokezaad()
+    {
+        require_once "views/products/stock-za.php";
+    }
+
+    public function stokeload()
+    {
+        require_once "views/products/stock-lo.php";
+    }
+
+    public function stokeopad()
+    {
+        require_once "views/products/stock-op.php";
+    }
+
     public function Savelop(){
         $p=new products(); 
         $p->setPro_id($_POST['ID_Producto']);
@@ -746,6 +776,36 @@ class productscontroller{
     public function clientsst()
     {
         require_once "views/products/show-st-c.php";
+    }
+
+    public function clientsss()
+    {
+        require_once "views/products/show-ss-c.php";
+    }
+
+    public function clientssa()
+    {
+        require_once "views/products/show-sa-c.php";
+    }
+
+    public function clientsza()
+    {
+        require_once "views/products/show-za-c.php";
+    }
+
+    public function clientslo()
+    {
+        require_once "views/products/show-lo-c.php";
+    }
+
+    public function clientsop()
+    {
+        require_once "views/products/show-op-c.php";
+    }
+
+    public function Detailsst()
+    {
+        require_once "views/products/details-st.php";
     }
 
 

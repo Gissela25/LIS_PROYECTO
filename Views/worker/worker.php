@@ -46,12 +46,12 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=show">Inventario General</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="#">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="#">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="#">Opico</a></li>
-                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="#">Santa Ana</a></li> -->
+                            <li><a class="dropdown-item" href="?c=products&a=stokestad">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokessad">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeload">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeopad">Opico</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokezaad">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokesaad">Santa Ana</a></li>
                         </ul>
                     </li>
                 </ul>

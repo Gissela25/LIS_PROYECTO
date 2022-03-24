@@ -136,7 +136,7 @@ if(isset($_POST['update']))
     if(isText(isset($Nombrep))&&isText($Descripcion)&&isProduct($ID_Producto))
     {
        $filename=$_FILES['nimg_p']['name'];
-       if(isset($filename))
+       if(!isset($filename))
        {
                    //Obtenemos algunos datos necesarios sobre el archivo
                    $size = $_FILES['nimg_p']['size'];

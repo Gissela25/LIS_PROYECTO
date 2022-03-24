@@ -9,8 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="Assets/css/update-products.css">
 </head>
 
@@ -63,48 +68,42 @@
                             <input type="text" class="form-control" name="Descripcion" id="Descripcion"
                                 value="<?=$r->Descripcion?>">
                         </div>
-
-                        <div class="row form-group">
-                            <div class="col-sm-3">
-                                <label class="control-label" for="nimg_p">Nueva Img(opcional):</label>
-                            </div>
-                            <div class="col-sm-9">
-                                <input type="file" class="form-control" name="nimg_p" id="nimg_p">
-                            </div>
+                        <div class="mb-3" style="color:#084594">
+                            <label class="control-label" for="nimg_p">Nueva Img(opcional):</label>
+                            <input type="file" class="form-control" name="nimg_p" id="nimg_p">
                         </div>
-                        <div class="row form-group">
-                            <div class="col-sm-3">
-                                <label class="control-label" for="ID_Familia">Nueva Categoria (Opcional):</label>
-                            </div>
-
-                            <div class="col-sm-9">
-                                <select name="ID_Familia" id="ID_Familia" class="form-control">
-                                    <?php
+                        <label for="exampleInputPassword1" class="form-label" style="color:#084594">Sucursal</label>
+                        <div class="form-floating">
+                            <select class="form-select" name="ID_Familia" id="ID_Familia"
+                                aria-label="Floating label select example">
+                                <?php
 							foreach($this->modelo->showfamilia() as $row)
 							{
 							?>
 
 
-                                    <?php if($r->ID_Cantidad==$row->ID_Familia)
+                                <?php if($row->Nombre==$r->Nombre)
 							{
 								?>
-                                    <option selected value="<?=$r->ID_Familia?>"><?=$row->Nombre?></option>
-                                    <?php
+                                <option selected value="<?=$row->ID_Familia?>"><?=$row->Nombre?></option>
+                                <?php
 							} 
 							else
 							{
 								?>
-                                    <option value="<?=$row->ID_Familia?>"><?=$row->Nombre?></option>
-                                    <?php
+                                <option value="<?=$row->ID_Familia?>"><?=$row->Nombre?></option>
+                                <?php
 							}
 							?>
-                                    <?php
-						}?>
-                                </select>
-
-                            </div>
+                                <?php
+						}
+                        ?>
+                            </select>
                         </div>
-                        <!-- <div class="form-group mx-sm-4  ">
+
+                    </div>
+                </div>
+                <!-- <div class="form-group mx-sm-4  ">
                             <center>
                                 <a href="?c=productos&a=show" class="btn btn-danger">Cancelar</a>
                                 <button type="submit" name="update" id="update" class="btn btn-success"><span
@@ -113,22 +112,22 @@
 
 
                         </div> -->
-                        <div class="d-flex justify-content-center">
-                            <div class="my-2">
-                                <input type="submit" name="update" id="update" class="btn "></input>
-                            </div>
-                        </div>
-
+                <div class="d-flex justify-content-center">
+                    <div class="my-2">
+                        <input type="submit" name="update" id="update" class="btn "></input>
                     </div>
+                </div>
+
+        </div>
 
 
-                    <?php
+        <?php
                         }
                 }
             ?>
 
-            </form>
-        </div>
+        </form>
+    </div>
 
 
     </div>

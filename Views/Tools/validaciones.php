@@ -23,7 +23,7 @@
     }
     function isText($variable)
     {
-        return preg_match('/^(([a-zA-Záéíóúñ0-9_.\-\,()?]+)[ ]?([a-zA-Záéíóúñ0-9_.\-\,()?]+)?)+$/',$variable);
+        return preg_match('/^(([a-zA-ZÁÉÍÓÚáéíóúñ0-9_.\-\,()?]+)[ ]?([a-zA-ZÁÉÍÓÚáéíóúñ0-9_.\-\,()?]+)?)+$/',$variable);
     }
     function isInteger($variable)
     {
