@@ -8,28 +8,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Recuperar Cuenta</title>
-    <link rel="stylesheet" href="Assets/css/comprobate.css">
+    <link rel="stylesheet" href="Assets/css/comprobantee.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="row justify-content-center pt-5 mt-5 mr-1">
-            <div class="col-md-5 formulario">
-                <form action="?c=user&a=Activar" method="POST" role="form"> 
+<div class="d-flex justify-content-center">
+        <div class="col-md-4 my-5">
+        <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
+                    width="230px">   
+        <!-- <div class="col-md-5 formulario"> -->
+                <form action="?c=user&a=Activar" class="formulario" method="POST" role="form"> 
                     <div class="form-group text-center">
                         <?php require_once 'Tools/procesar-datos-comprobate.php'; 
                         ?>
                     </div>
                     <br>        
-                    <div class="form-group mx-sm-4 pb-2">
-                        <a  value="Iniciar Sesión" name="iniciar" id="iniciar" href="http://localhost/LIS_PROYECTO/?c=user&a=Ingresar" class="btn btn-block ingresar"> Iniciar Sesión </a>
+                    <div class="form-group text-center" >
+                        <a  value="Iniciar Sesión" name="iniciar" id="iniciar" href="http://localhost/LIS_PROYECTO/?c=user&a=Ingresar" class="boton"> Iniciar Sesión </a>
                     </div>
 
-                    <div class="form-group text-center">
-                        <span class=""><a href="http://localhost/LIS_PROYECTO/" class="olvide1">Regresar</a></span>
+                    <div class="form-group text-center" >
+                        <span type="submit" ><a href="http://localhost/LIS_PROYECTO/" class="boton">Regresar</a></span>
                     </div>
                 </form>
-            </div>
+            </div> 
         </div>
 
     </div>
