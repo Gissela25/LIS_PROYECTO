@@ -12,6 +12,12 @@ Creación de una tienda en línea para la empresa ferretería Sumersa con el obj
 
 >Phpmyadmin
 
+>Git
+
+>Google Cloud Plataform
+
+>000Webhost
+
 # Licencia
 Este proyecto utiliza la licencia Reconocimiento-No Comercial-Sin Derivados 2.5(CC BY-NC-ND 2.5) que indica:
 
