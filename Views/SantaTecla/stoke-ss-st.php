@@ -28,11 +28,11 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showsa">Inventario
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showst">Inventario
                             General</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showsaall">Santa Tecla</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showstall">Santa Tecla</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?c=worker&a=worker">Empleados</a>
@@ -58,7 +58,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-archive-fill"></i> Stoke
+                            <i class="bi bi-archive-fill"></i> Stock
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=stokessst">San Salvador</a></li>
@@ -69,6 +69,9 @@
                         </ul>
                     </li>
                 </ul>
+                <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/"><i class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
+                    </li>
             </div>
         </div>
     </nav>

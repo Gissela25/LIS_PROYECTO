@@ -1,0 +1,30 @@
+.boton{
+    background-color: #214673;
+    padding: 5px 80px;
+    color: #F8C045;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+    width:80px;
+    height:40px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+.boton:hover{
+    background: #F8C045;
+    color: black;
+    border-color: #F8C045;
+}
+
+.number{
+    width:60px;
+    height:35px;
+}
+
+.barra:hover{
+    background-color: #214673;
+    color: #F8C045;
+}

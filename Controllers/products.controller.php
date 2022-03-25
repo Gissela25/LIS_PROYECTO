@@ -51,19 +51,28 @@ class productscontroller{
         require_once "views/products/products-insert.php";
     }
 
-    public function Save(){
-        $p=new products(); 
-        $p->setPro_id($_POST['ID_Producto']);
-        $p->setPro_des($_POST['Descripcion']);
-        $p->setPro_nom($_POST['Nombrep']);
-        $p->setPro_ima($_POST['Imagen']);
-        $p->setPro_idf($_POST['ID_Familia']);
-        $p->setPro_idpc($_POST['ID_PC']);
-        $this->modelo->Insert($p);
-
-
-        header("location:?c=products&a=show");
+    public function Add()
+    {
+        require_once "views/products/products-insert.php";    
     }
+
+    public function Update()
+    {
+        require_once "views/products/products-update.php";
+    }
+    // public function Save(){
+    //     $p=new products(); 
+    //     $p->setPro_id($_POST['ID_Producto']);
+    //     $p->setPro_des($_POST['Descripcion']);
+    //     $p->setPro_nom($_POST['Nombrep']);
+    //     $p->setPro_ima($_POST['Imagen']);
+    //     $p->setPro_idf($_POST['ID_Familia']);
+    //     $p->setPro_idpc($_POST['ID_PC']);
+    //     $this->modelo->Insert($p);
+
+
+    //     header("location:?c=products&a=show");
+    // }
 
     // public function Save(){
     //     $p=new products(); 
@@ -146,6 +155,42 @@ class productscontroller{
             $p=$this->modelo->haveopp($_GET['id']);
         }
         require_once "views/Opico/products-edit-op.php";
+    }
+
+    public function editss()
+    {
+        $p=new products();
+        if(isset($_GET['id'])){
+            $p=$this->modelo->havessp($_GET['id']);
+        }
+        require_once "views/SanSalvador/products-edit-ss.php";
+    }
+
+    public function editsa()
+    {
+        $p=new products();
+        if(isset($_GET['id'])){
+            $p=$this->modelo->havesap($_GET['id']);
+        }
+        require_once "views/SantaAna/products-edit-sa.php";
+    }
+
+    public function editst()
+    {
+        $p=new products();
+        if(isset($_GET['id'])){
+            $p=$this->modelo->havestp($_GET['id']);
+        }
+        require_once "views/SantaTecla/products-edit-st.php";
+    }
+
+    public function editza()
+    {
+        $p=new products();
+        if(isset($_GET['id'])){
+            $p=$this->modelo->havezap($_GET['id']);
+        }
+        require_once "views/Zaragoza/products-edit-za.php";
     }
 
     public function Insertsa()
@@ -524,6 +569,36 @@ class productscontroller{
         require_once "views/Zaragoza/stoke-lo-za.php";
     }
 
+    public function stokestad()
+    {
+        require_once "views/products/stock-st.php";
+    }
+
+    public function stokessad()
+    {
+        require_once "views/products/stock-ss.php";
+    }
+
+    public function stokesaad()
+    {
+        require_once "views/products/stock-sa.php";
+    }
+
+    public function stokezaad()
+    {
+        require_once "views/products/stock-za.php";
+    }
+
+    public function stokeload()
+    {
+        require_once "views/products/stock-lo.php";
+    }
+
+    public function stokeopad()
+    {
+        require_once "views/products/stock-op.php";
+    }
+
     public function Savelop(){
         $p=new products(); 
         $p->setPro_id($_POST['ID_Producto']);
@@ -581,5 +656,182 @@ class productscontroller{
 
         header("location:?c=products&a=showopall");
     }
+
+    public function Savessp(){
+        $p=new products(); 
+        $p->setPro_id($_POST['ID_Producto']);
+        // $p->setPro_des($_POST['Descripcion']);
+        // $p->setPro_nom($_POST['Nombrep']);
+        // $p->setPro_ima($_POST['Imagen']);
+        // $p->setPro_idf($_POST['ID_Familia']);
+        $p->setPro_idpc($_POST['ID_PC']);
+        // $p->setPro_idc($_POST['ID_Cantidad']);
+        //$p->setPro_prest($_POST['Precio_ST']);
+        $p->setPro_press($_POST['Precio_SS']);
+        //$p->setPro_prelo($_POST['Precio_LO']);
+        //$p->setPro_preop($_POST['Precio_OP']);
+        //$p->setPro_preza($_POST['Precio_ZA']);
+        //$p->setPro_presa($_POST['Precio_SA']);
+        //$p->setPro_canst($_POST['Cantidad_ST']);
+        $p->setPro_canss($_POST['Cantidad_SS']);
+        //$p->setPro_canlo($_POST['Cantidad_LO']);
+        //$p->setPro_canop($_POST['Cantidad_OP']);
+        //$p->setPro_canza($_POST['Cantidad_ZA']);
+        //$p->setPro_cansa($_POST['Cantidad_SA']);
+        //$p->setPro_id($_POST['ID_Producto']);
+
+        $this->modelo->Updatessp($p);
+
+
+        header("location:?c=products&a=showssall");
+    }
+
+    public function Savesap(){
+        $p=new products(); 
+        $p->setPro_id($_POST['ID_Producto']);
+        // $p->setPro_des($_POST['Descripcion']);
+        // $p->setPro_nom($_POST['Nombrep']);
+        // $p->setPro_ima($_POST['Imagen']);
+        // $p->setPro_idf($_POST['ID_Familia']);
+        $p->setPro_idpc($_POST['ID_PC']);
+        // $p->setPro_idc($_POST['ID_Cantidad']);
+        //$p->setPro_prest($_POST['Precio_ST']);
+        //$p->setPro_press($_POST['Precio_SS']);
+        //$p->setPro_prelo($_POST['Precio_LO']);
+        //$p->setPro_preop($_POST['Precio_OP']);
+        //$p->setPro_preza($_POST['Precio_ZA']);
+        $p->setPro_presa($_POST['Precio_SA']);
+        //$p->setPro_canst($_POST['Cantidad_ST']);
+        //$p->setPro_canss($_POST['Cantidad_SS']);
+        //$p->setPro_canlo($_POST['Cantidad_LO']);
+        //$p->setPro_canop($_POST['Cantidad_OP']);
+        //$p->setPro_canza($_POST['Cantidad_ZA']);
+        $p->setPro_cansa($_POST['Cantidad_SA']);
+        //$p->setPro_id($_POST['ID_Producto']);
+
+        $this->modelo->Updatesap($p);
+
+
+        header("location:?c=products&a=showsaall");
+    }
+
+    public function Savestp(){
+        $p=new products(); 
+        $p->setPro_id($_POST['ID_Producto']);
+        // $p->setPro_des($_POST['Descripcion']);
+        // $p->setPro_nom($_POST['Nombrep']);
+        // $p->setPro_ima($_POST['Imagen']);
+        // $p->setPro_idf($_POST['ID_Familia']);
+        $p->setPro_idpc($_POST['ID_PC']);
+        // $p->setPro_idc($_POST['ID_Cantidad']);
+        $p->setPro_prest($_POST['Precio_ST']);
+        //$p->setPro_press($_POST['Precio_SS']);
+        //$p->setPro_prelo($_POST['Precio_LO']);
+        //$p->setPro_preop($_POST['Precio_OP']);
+        //$p->setPro_preza($_POST['Precio_ZA']);
+        //$p->setPro_presa($_POST['Precio_SA']);
+        $p->setPro_canst($_POST['Cantidad_ST']);
+        //$p->setPro_canss($_POST['Cantidad_SS']);
+        //$p->setPro_canlo($_POST['Cantidad_LO']);
+        //$p->setPro_canop($_POST['Cantidad_OP']);
+        //$p->setPro_canza($_POST['Cantidad_ZA']);
+        //$p->setPro_cansa($_POST['Cantidad_SA']);
+        //$p->setPro_id($_POST['ID_Producto']);
+
+        $this->modelo->Updatestp($p);
+
+
+        header("location:?c=products&a=showstall");
+    }
+
+    public function Savezap(){
+        $p=new products(); 
+        $p->setPro_id($_POST['ID_Producto']);
+        // $p->setPro_des($_POST['Descripcion']);
+        // $p->setPro_nom($_POST['Nombrep']);
+        // $p->setPro_ima($_POST['Imagen']);
+        // $p->setPro_idf($_POST['ID_Familia']);
+        $p->setPro_idpc($_POST['ID_PC']);
+        // $p->setPro_idc($_POST['ID_Cantidad']);
+        //$p->setPro_prest($_POST['Precio_ST']);
+        //$p->setPro_press($_POST['Precio_SS']);
+        //$p->setPro_prelo($_POST['Precio_LO']);
+        //$p->setPro_preop($_POST['Precio_OP']);
+        $p->setPro_preza($_POST['Precio_ZA']);
+        //$p->setPro_presa($_POST['Precio_SA']);
+        //$p->setPro_canst($_POST['Cantidad_ST']);
+        //$p->setPro_canss($_POST['Cantidad_SS']);
+        //$p->setPro_canlo($_POST['Cantidad_LO']);
+        //$p->setPro_canop($_POST['Cantidad_OP']);
+        $p->setPro_canza($_POST['Cantidad_ZA']);
+        //$p->setPro_cansa($_POST['Cantidad_SA']);
+        //$p->setPro_id($_POST['ID_Producto']);
+
+        $this->modelo->Updatezap($p);
+
+
+        header("location:?c=products&a=showzaall");
+    }
+
+    public function clientsst()
+    {
+        require_once "views/products/show-st-c.php";
+    }
+
+    public function clientsss()
+    {
+        require_once "views/products/show-ss-c.php";
+    }
+
+    public function clientssa()
+    {
+        require_once "views/products/show-sa-c.php";
+    }
+
+    public function clientsza()
+    {
+        require_once "views/products/show-za-c.php";
+    }
+
+    public function clientslo()
+    {
+        require_once "views/products/show-lo-c.php";
+    }
+
+    public function clientsop()
+    {
+        require_once "views/products/show-op-c.php";
+    }
+
+    public function Detailsst()
+    {
+        require_once "views/products/details-st.php";
+    }
+
+    public function Detailssa()
+    {
+        require_once "views/products/details-sa.php";
+    }
+
+    public function Detailsss()
+    {
+        require_once "views/products/details-ss.php";
+    }
+
+    public function Detailslo()
+    {
+        require_once "views/products/details-lo.php";
+    }
+
+    public function Detailsza()
+    {
+        require_once "views/products/details-za.php";
+    }
+
+    public function Detailsop()
+    {
+        require_once "views/products/details-op.php";
+    }
+
 
 }

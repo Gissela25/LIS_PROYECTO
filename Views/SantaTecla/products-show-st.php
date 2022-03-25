@@ -36,7 +36,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-archive-fill"></i> Stoke
+                            <i class="bi bi-archive-fill"></i> Stock
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=stokessst">San Salvador</a></li>
@@ -68,6 +68,9 @@
                         </ul>
                     </li> --> 
                 </ul>
+                <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/"><i class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
+                    </li>
             </div>
         </div>
     </nav>
@@ -107,7 +110,7 @@
                             <td>$<?=$r->Precio_ST?></td>
                             <td><?=$r->Cantidad_ST?></td>
                             <td>
-                                <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
+                                <a class="edit mx-3" href="?c=products&a=editst&id=<?=$r->ID_Producto?>"><i class="bi bi-pencil-square"></i> Editar
                                     <i class="fa fa-lg fa-refresh"></i></a>
                                 <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
                                     <i class="fa fa-lg fa-refresh"></i></a> -->
