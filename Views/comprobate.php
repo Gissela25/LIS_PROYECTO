@@ -8,6 +8,15 @@ if(!isset($hash))
 {
     $hash="c21f969b5f03d33d43e04f8f136e7682";
 }
+if(isset($_POST['iniciar']))
+{
+    if(isset($email)&&isset($hash))
+    {
+        $modelo=new User();
+        $modelo->InstantSession($email,$hash);
+    }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

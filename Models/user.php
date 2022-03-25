@@ -553,7 +553,7 @@
                 $sql1->bindParam(1,$email);
                 $sql1->execute();
                 $ru=$sql1->fetch(PDO::FETCH_ASSOC);
-                echo "<div class='contenedor'><div class='display-1'> <h1>Bienvenido ".$ru['Nombre']." ".$ru['Apellido']."</h1> </div>
+                echo "<div class='contenedor'><div class='display-1'> <h1>Hola ".$ru['Nombre']." ".$ru['Apellido']."</h1> </div>
                 <h1>Ya eres parte del grupo SUMERSA</h1></div>";
             }
             }
@@ -573,11 +573,70 @@
                 $sql1->bindParam(1,$email);
                 $sql1->execute();
                 $ru=$sql1->fetch(PDO::FETCH_ASSOC);
-                echo "<div class='contenedor'><div class='display-1'> <h1>Bienvenido ".$ru['Nombre']." ".$ru['Apellido']."</h1> </div>
+                echo "<div class='contenedor'><div class='display-1'> <h1>Hola ".$ru['Nombre']." ".$ru['Apellido']."</h1> </div>
                 <h1>Ya eres parte del grupo SUMERSA</h1></div>";
                 }
            }
 
+        }
+        public function InstantSession($Correo,$hash)
+        {
+
+            $consulta1=$this->pdo->prepare($consulta1="SELECT COUNT(*) FROM usuario WHERE Correo=? ;");
+            $consulta1->bindParam(1,$Correo);
+
+            $consulta1->execute();
+            $filas1=$consulta1->fetchColumn();
+            $sql1=$this->pdo->prepare("SELECT Nombre,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
+            $sql1->bindParam(1,$Correo);
+
+            $sql1->execute();
+            $ru=$sql1->fetch(PDO::FETCH_ASSOC);
+
+            //Usuario -> Cliente
+            $consulta2=$this->pdo->prepare("SELECT COUNT(*) FROM cliente WHERE Correo=? ");
+            $consulta2->bindParam(1,$Correo);
+
+            $consulta2->execute();
+            $filas2= $consulta2->fetchColumn();
+            $sql2=$this->pdo->prepare("SELECT Nombre,Correo,Clave,Verificado FROM cliente WHERE Correo=? ");
+            $sql2->bindParam(1,$Correo);
+
+            $sql2->execute();
+            $rc=$sql2->fetch(PDO::FETCH_ASSOC);
+            $filas1;
+            if($filas1>0)
+            {
+
+                $acceso1=$ru['Acceso'];
+                $ids=$ru['ID_Sucursal'];
+                $state=$ru['Estado'];
+                if($acceso1==1)
+                {
+                    if($state==1)
+                    {
+                        header("Location: ?c=branch&a=branch");
+                    }
+                    else
+                    {
+                        header("Location: ?c=inicio");
+                    }
+                    
+                }elseif($acceso1==0)
+                {
+                    if($state==1)
+                    {
+                    $this->SelectSucursal($ids);
+                    }
+                    else
+                    {
+                        header("Location: ?c=inicio");
+                    }
+                }
+            }elseif($filas2>0)
+            {
+                
+            }
         }
         public function GenerarHash()
         {
