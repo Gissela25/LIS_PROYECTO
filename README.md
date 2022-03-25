@@ -26,7 +26,7 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 # Autores
 >Aguillón Amaya, Byron Enrique -Diseño y Manuales 02T
 
->Morales López, Jony Edenilson -Diseñp,Programación y Lógica 02T
+>Morales López, Jony Edenilson -Diseño,Programación y Lógica 02T
 
 >Portán Pineda, William Fernando -Diseño y Manuales 02T
 
