@@ -128,7 +128,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2286 - 4000</span>
                     <p style="font-family:Open Sans;font-size:120%;">Email: elmer.calderon@sumersa.com.sv</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391256&text=" target="_blank">
-                        <img src="Assets/img/whatsapp_layout.png">
+                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -139,7 +139,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2250 - 7200</span>
                     <p style="font-family:Open Sans; font-size:120%;"> PBX: (503) 2250 - 7200 / (503) 2228 - 4444</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391262&text=" target="_blank">
-                        <img src="Assets/img/whatsapp_layout.png">
+                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -150,7 +150,7 @@
                     <p style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2314 - 1100</p>
                     <br>
                     <a href="https://web.whatsapp.com/send?phone=50370391247&text=" target="_blank">
-                        <img src="Assets/img/whatsapp_layout.png">
+                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -162,7 +162,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2338 - 4821</span>
                     <p style="font-family:Open Sans; font-size:120%;"> Fax: (503) 2338 - 6843</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391253&text=" target="_blank">
-                        <img src="Assets/img/whatsapp_layout.png">
+                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -174,7 +174,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2319 - 3564</span>
                     <p style="font-family:Open Sans; font-size:120%;"> Fax: (503) 2319 - 3563</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391254&text=" target="_blank">
-                        <img src="Assets/img/whatsapp_layout.png">
+                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -187,7 +187,7 @@
                     </p>
                     <br>
                     <a href="https://web.whatsapp.com/send?phone=50370392286&text=" target="_blank">
-                        <img src="Assets/img/whatsapp_layout.png">
+                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
             </div>

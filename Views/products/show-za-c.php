@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -55,7 +55,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Views/Contacts.php">Contactanos</a> 
+                        <a class="nav-link active" aria-current="page" href="Views/Contacts.php">Contactanos</a>
                     </li>
                 </ul>
             </div>

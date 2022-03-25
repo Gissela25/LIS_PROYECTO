@@ -133,7 +133,7 @@
                     }
                    }
                    elseif($estado==0){
-                    echo "<ul> <li>Cuenta de usuario no existe</li></ul>";
+                    echo "<ul> <li>Cuenta no activada</li></ul>";
                    }
                 }
                 else{
@@ -724,7 +724,15 @@
             }
         }
 
-        
+        public function show(){
+            try{
+                $consulta=$this->pdo->prepare("SELECT * FROM Usuario;");
+                $consulta->execute();
+                return $consulta->fetchAll(PDO::FETCH_OBJ);
+            }catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
 
     }
     ?>

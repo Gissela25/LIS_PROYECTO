@@ -146,7 +146,8 @@ class worker{
 
     public function Insert(worker $p){
         try{
-        $consulta = "Insert INTO usuario(ID_Usuario,Nombre,Apellido,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal) values (?,?,?,?,?,?,?,?,?);";
+        $hash=$this->GenerarHash();
+        $consulta = "Insert INTO usuario(ID_Usuario,Nombre,Apellido,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal,Hash_Active) values (?,?,?,?,?,?,?,?,?,?);";
         $this->pdo->prepare($consulta)
                     ->execute(array(
                         $p->getPro_idu(),
@@ -157,11 +158,18 @@ class worker{
                         $p->getPro_ver(),
                         $p->getPro_estado(),
                         $p->getPro_acce(),
-                        $p->getPro_id()
+                        $p->getPro_id(),
+                        $hash
                     ));
         }catch(exception $e){
         die($e->getMessage());
         }
+    }
+
+    public function GenerarHash()
+    {
+        $hash = md5(rand(1,100000));
+        return $hash;
     }
 
     public function have($idu){
