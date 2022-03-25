@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 24-03-2022 a las 02:23:51
+-- Tiempo de generación: 25-03-2022 a las 07:39:51
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -37,8 +37,17 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `Clave` varchar(255) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
   `Verificado` int(1) NOT NULL DEFAULT '0',
+  `Hash_Active` varchar(100) NOT NULL,
   PRIMARY KEY (`DUI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`DUI`, `Nombre`, `Apellido`, `Telefono`, `Correo`, `Clave`, `Direccion`, `Verificado`, `Hash_Active`) VALUES
+('12345678-9', 'Jony', 'Lopez', '7005-9988', 'jj@gmail.com', '$2y$10$.pmNtBClNzlICB3h31VlD.FayXlYiyO4jrj9J.eSbsrjVb26/Pqm.', 'Ciudad Delgado, San Salvador', 1, '95bf5763251f491480a0c1e5b76a16d8'),
+('9-87654321', 'Justo', 'Lopez', '7755-4433', 'jl@gmail.com', '$2y$10$.pmNtBClNzlICB3h31VlD.FayXlYiyO4jrj9J.eSbsrjVb26/Pqm.', 'Ciudad Delgado, SS', 1, '95bf5763251f491480a0c1e5b76a16d8');
 
 -- --------------------------------------------------------
 
@@ -76,11 +85,12 @@ CREATE TABLE IF NOT EXISTS `familia` (
 --
 
 INSERT INTO `familia` (`ID_Familia`, `Nombre`) VALUES
-('F049', 'Techo'),
-('F164', 'Pintura'),
-('F184', 'Fontaneria'),
-('F304', 'Ferreteria'),
-('F368', 'Construccion');
+('F094', 'Ferreteria'),
+('F153', 'Techo'),
+('F251', 'Pintura'),
+('F315', 'Fontaneria'),
+('F856', 'Electrico'),
+('F899', 'Construccion');
 
 -- --------------------------------------------------------
 
@@ -126,7 +136,12 @@ CREATE TABLE IF NOT EXISTS `precio_cantidad` (
 --
 
 INSERT INTO `precio_cantidad` (`ID_PC`, `Precio_ST`, `Precio_SS`, `Precio_LO`, `Precio_OP`, `Precio_ZA`, `Precio_SA`, `Cantidad_ST`, `Cantidad_SS`, `Cantidad_LO`, `Cantidad_OP`, `Cantidad_ZA`, `Cantidad_SA`, `ID_Producto`) VALUES
-('PC698', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'PROD883');
+('PC111', NULL, 6.76, NULL, 2.70, NULL, NULL, NULL, 33, NULL, 2, NULL, NULL, 'PROD847'),
+('PC165', 2.56, NULL, NULL, 2.70, NULL, NULL, 45, NULL, NULL, 2, NULL, NULL, 'PROD561'),
+('PC289', 2.56, NULL, NULL, NULL, 2.80, NULL, 45, NULL, NULL, NULL, 24, NULL, 'PROD798'),
+('PC524', 33.66, NULL, 33.45, NULL, NULL, NULL, 5, NULL, 60, NULL, NULL, NULL, 'PROD607'),
+('PC621', 2.56, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, 'PROD297'),
+('PC889', 7.87, NULL, NULL, NULL, NULL, 7.56, 45, NULL, NULL, NULL, NULL, 23, 'PROD541');
 
 -- --------------------------------------------------------
 
@@ -137,9 +152,9 @@ INSERT INTO `precio_cantidad` (`ID_PC`, `Precio_ST`, `Precio_SS`, `Precio_LO`, `
 DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
   `ID_Producto` varchar(8) NOT NULL,
-  `Descripcion` varchar(300) NOT NULL,
-  `Nombrep` varchar(120) NOT NULL,
-  `Imagen` varchar(20) NOT NULL,
+  `Descripcion` varchar(120) NOT NULL,
+  `Nombrep` varchar(1000) NOT NULL,
+  `Imagen` varchar(15) NOT NULL,
   `ID_Familia` varchar(8) NOT NULL,
   PRIMARY KEY (`ID_Producto`),
   KEY `ID_Familia` (`ID_Familia`)
@@ -150,7 +165,12 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 INSERT INTO `producto` (`ID_Producto`, `Descripcion`, `Nombrep`, `Imagen`, `ID_Familia`) VALUES
-('PROD883', 'Bolsa', 'Cemento', 'PROD883.webp', 'F368');
+('PROD297', 'STANLEY - CINTA MÉTRICA 50 MTS', 'cinta metrica', 'PROD00009.webp', 'F094'),
+('PROD541', 'PALA PUNTA REDONDA ACERO 47 PULGADAS 1.2METROS FIBRA DE VIDRIO', 'pala', 'PROD00004.webp', 'F899'),
+('PROD561', 'PHILIPS - FOCO LED 9W E27 LUZ AMARILLA TIPO GLOBO', 'Lampara', 'PROD00010.webp', 'F856'),
+('PROD607', 'CLASICA - PINTURA CLASICA LATEX NARANJA CUB 10022-0015-05', 'Pintura', 'PROD00005.webp', 'F251'),
+('PROD798', 'HIERRO REDONDO CORRUGADO 1 PULG X 6 METROS GRADO 40', 'Hierro', 'PROD00002.webp', 'F899'),
+('PROD847', 'MEZCLA MORTERO LISTO PARA UTILIZAR,', 'Cemento', 'PROD00003.webp', 'F899');
 
 -- --------------------------------------------------------
 
@@ -163,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `sucursal` (
   `ID_Sucursal` int(1) NOT NULL AUTO_INCREMENT,
   `Nombre_Sucursal` varchar(120) NOT NULL,
   PRIMARY KEY (`ID_Sucursal`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `sucursal`
@@ -210,6 +230,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Estado` int(1) NOT NULL DEFAULT '1',
   `Acceso` int(1) NOT NULL DEFAULT '0',
   `ID_Sucursal` int(1) NOT NULL,
+  `Hash_Active` varchar(100) NOT NULL,
   PRIMARY KEY (`ID_Usuario`),
   KEY `ID_Sucursal` (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -218,8 +239,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`) VALUES
-('E779', 'William', 'Portan', 'williamportan@gmail.com', '$2y$10$EnVUYXYlwnSJcmSFB07AHeE4AVmqU1TsshqkftYcPnTD5MSZQhHia', 0, 0, 0, 1);
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`, `Hash_Active`) VALUES
+('E182', 'Pedro', 'Castillo', 'pedro@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 0, 5, '4bf2c2304abdd62f7d39a314d478439c'),
+('E318', 'Luis', 'Ulloa', 'serranogissela0@gmail.com', '$2y$10$sfRVYdMS0awPFKwzahdczOLusv5ZmCLoRPjNWksRrhlC1EEaBsV1C', 1, 1, 0, 2, '54ba05ed452c29d13ed7d2a752e2c32f'),
+('E390', 'Santiago', 'Melendez', 'santiago@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 1, 6, '085a2f56bfb27cb2e44ef3c457591b96'),
+('E486', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 0, 3, '95bf5763251f491480a0c1e5b76a16d8'),
+('E494', 'Juan', 'Lopez', 'juan@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 0, 2, '95bf5763251f491480a0c1e5b76a16d8'),
+('E579', 'Gissela', 'Serrano', 'gisselaverenice@gmail.com', '$2y$10$F4.M6xINdXeqrULvzsWc4eXzPIys4U2ktSa607KIriDHgfctuCF/u', 1, 1, 0, 4, '3cfbdf468f0a03187f6cee51a25e5e9a'),
+('E912', 'Pablo', 'gonzalez', 'pablo@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 0, 0, 4, '95bf5763251f491480a0c1e5b76a16d8');
 
 --
 -- Restricciones para tablas volcadas

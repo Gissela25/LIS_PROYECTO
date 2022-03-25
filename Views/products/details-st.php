@@ -11,11 +11,15 @@
     <title>Registro</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="Assets/css/details-st.css">
+    <link rel="stylesheet" href="Assets/css/detail-st.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
@@ -46,11 +50,11 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=clientsst">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="#">Alemania</a></li>
-                            <li><a class="dropdown-item" href="#">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="#">Opico</a></li>
-                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="#">Aldea</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=clientsss">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=clientslo">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=clientsop">Opico</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=clientsza">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=clientssa">Santa Ana</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -59,6 +63,7 @@
                 </ul>
             </div>
         </div>
+    </nav>
     </nav>
     <div class="container">
         <?php foreach($this->modelo->showstall() as $row)

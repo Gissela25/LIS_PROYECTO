@@ -808,5 +808,30 @@ class productscontroller{
         require_once "views/products/details-st.php";
     }
 
+    public function Detailssa()
+    {
+        require_once "views/products/details-sa.php";
+    }
+
+    public function Detailsss()
+    {
+        require_once "views/products/details-ss.php";
+    }
+
+    public function Detailslo()
+    {
+        require_once "views/products/details-lo.php";
+    }
+
+    public function Detailsza()
+    {
+        require_once "views/products/details-za.php";
+    }
+
+    public function Detailsop()
+    {
+        require_once "views/products/details-op.php";
+    }
+
 
 }

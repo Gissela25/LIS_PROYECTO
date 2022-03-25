@@ -26,6 +26,7 @@ class workercontroller{
 
     public function Save(){
         $p=new worker();
+        $Clave=$_POST['Clave'];
         $pwd_encrypt=  password_hash($Clave,PASSWORD_DEFAULT, ['cost' => 10]);  
         $p->setPro_idu($_POST['ID_Usuario']);
         $p->setPro_nom($_POST['Nombre']);

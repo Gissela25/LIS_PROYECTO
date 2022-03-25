@@ -54,6 +54,10 @@
                             <li><a class="dropdown-item" href="?c=products&a=stokesaad">Santa Ana</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/"><i
+                                class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -61,34 +65,35 @@
 
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
-            <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a>
+            <!-- <a class="edit" href="?c=branch&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a> -->
             <div class="row mt-3">
-                    <table class="table table-bordered">
-                        <thead class="Te" style="background-color: #084594">
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($this->modelo->show() as $r):?>
-                            <tr>
-                                <td><?=$r->ID_Sucursal?></td>
-                                <td><?=$r->Nombre_Sucursal?></td>
-                                <td>
-                                    <a class="edit mx-3" href="?c=branch&a=Insert&id=<?=$r->ID_Sucursal?>"><i class="bi bi-pencil-square"></i> Editar
-                                        <i class="fa fa-lg fa-refresh"></i></a>
-                                    <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
+                <table class="table table-bordered">
+                    <thead class="Te" style="background-color: #084594">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($this->modelo->show() as $r):?>
+                        <tr>
+                            <td><?=$r->ID_Sucursal?></td>
+                            <td><?=$r->Nombre_Sucursal?></td>
+                            <td>
+                                <a class="edit mx-3" href="?c=branch&a=Insert&id=<?=$r->ID_Sucursal?>"><i
+                                        class="bi bi-pencil-square"></i> Editar
+                                    <i class="fa fa-lg fa-refresh"></i></a>
+                                <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
                                         <i class="fa fa-lg fa-refresh"></i></a> -->
-                                </td>
-                            </tr>
-                            <?php endforeach;?>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                            </td>
+                        </tr>
+                        <?php endforeach;?>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 </body>
 
 </html>
