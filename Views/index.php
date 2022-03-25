@@ -1,3 +1,5 @@
+<?php 
+require_once('Core/config.php');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/index.css">
+    <link rel="stylesheet" href="<?=PATH?>Assets/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
@@ -19,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
-            <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
+            <img src="<?=PATH?>Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +38,7 @@
                             <i class="bi bi-person-fill"></i> Mi Cuenta
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="?c=user&a=Ingresar">Iniciar Sesion</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=Ingresar">Iniciar Sesion</a></li>
                             <li><a class="dropdown-item" href="#">Registrarse</a></li>
                         </ul>
                     </li>
@@ -46,16 +48,16 @@
                             <i class="bi bi-geo-alt-fill"></i> Sucursales
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="?c=products&a=clientsst">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientsss">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientslo">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientsop">Opico</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientsza">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientssa">Santa Ana</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=clientsst">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=clientsss">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=clientslo">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=clientsop">Opico</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=clientsza">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=clientssa">Santa Ana</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Views/Contacts.php">Contactanos</a>
+                        <a class="nav-link active" aria-current="page" href="<?=PATH?>Views/Contacts.php">Contactanos</a>
                     </li>
                 </ul>
             </div>
@@ -78,28 +80,28 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="Assets/img/fontaneria.jpg" class="d-block w-100" alt="...">
+                            <img src="<?=PATH?>Assets/img/fontaneria.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>First slide label</h5>
                                 <p>Some representative placeholder content for the first slide.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="Assets/img/electrico.png" class="d-block w-100" alt="...">
+                            <img src="<?=PATH?>Assets/img/electrico.png" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Second slide label</h5>
                                 <p>Some representative placeholder content for the second slide.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="Assets/img/contruccion.jpg" class="d-block w-100" alt="...">
+                            <img src="<?=PATH?>Assets/img/contruccion.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="Assets/img/pintura.jpg" class="d-block w-100" alt="...">
+                            <img src="<?=PATH?>Assets/img/pintura.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
@@ -128,7 +130,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2286 - 4000</span>
                     <p style="font-family:Open Sans;font-size:120%;">Email: elmer.calderon@sumersa.com.sv</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391256&text=" target="_blank">
-                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
+                        <img src="<?=PATH?>Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -139,7 +141,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2250 - 7200</span>
                     <p style="font-family:Open Sans; font-size:120%;"> PBX: (503) 2250 - 7200 / (503) 2228 - 4444</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391262&text=" target="_blank">
-                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
+                        <img src="<?=PATH?>Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -150,7 +152,7 @@
                     <p style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2314 - 1100</p>
                     <br>
                     <a href="https://web.whatsapp.com/send?phone=50370391247&text=" target="_blank">
-                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
+                        <img src="<?=PATH?>Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -162,7 +164,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2338 - 4821</span>
                     <p style="font-family:Open Sans; font-size:120%;"> Fax: (503) 2338 - 6843</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391253&text=" target="_blank">
-                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
+                        <img src="<?=PATH?>Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -174,7 +176,7 @@
                     <span style="font-family:Open Sans; font-size:120%;">Teléfono: (503) 2319 - 3564</span>
                     <p style="font-family:Open Sans; font-size:120%;"> Fax: (503) 2319 - 3563</p>
                     <a href="https://web.whatsapp.com/send?phone=50370391254&text=" target="_blank">
-                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
+                        <img src="<?=PATH?>Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -187,7 +189,7 @@
                     </p>
                     <br>
                     <a href="https://web.whatsapp.com/send?phone=50370392286&text=" target="_blank">
-                        <img src="Assets/img/whatsapp.svg" height="50px" width="50px">
+                        <img src="<?=PATH?>Assets/img/whatsapp.svg" height="50px" width="50px">
                     </a>
                 </div>
             </div>

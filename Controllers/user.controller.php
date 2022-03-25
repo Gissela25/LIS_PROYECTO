@@ -28,4 +28,13 @@ require_once "Models/user.php";
         {
             require_once "Views/comprobate.php";
         }
+        public function Close()
+        {
+            session_start();
+            
+            if(session_destroy())
+            {
+             echo "<script>location.href='?c=inicio'</script>";
+            }
+        }
     }

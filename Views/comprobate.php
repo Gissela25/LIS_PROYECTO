@@ -1,4 +1,5 @@
 <?php
+require_once('Core/config.php');
 extract($_GET);
 if(!isset($email))
 {
@@ -29,16 +30,16 @@ if(isset($_POST['iniciar']))
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Recuperar Cuenta</title>
-    <link rel="stylesheet" href="Assets/css/comprobante.css">
+    <link rel="stylesheet" href="<?=PATH?>Assets/css/comprobante.css">
 </head>
 
 <body>
 <div class="d-flex justify-content-center">
         <div class="col-md-6 my-5">
-        <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
+        <img src="<?=PATH?>Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="85px"
                     width="230px">   
         <!-- <div class="col-md-5 formulario"> -->
-                <form action="?c=user&a=Comprobar&email=<?=$email?>&hash=<?=$hash?>" class="formulario" method="POST" role="form"> 
+                <form action="<?=PATH?>?c=user&a=Comprobar&email=<?=$email?>&hash=<?=$hash?>" class="formulario" method="POST" role="form"> 
                     <div class="form-group text-center">
                         <?php require_once 'Tools/procesar-datos-comprobate.php'; 
                         ?>

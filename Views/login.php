@@ -1,3 +1,5 @@
+<?php 
+require_once('Core/config.php');?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Login</title>
-    <link rel="stylesheet" href="Assets/css/loginn.css">
+    <link rel="stylesheet" href="<?=PATH?>Assets/css/loginn.css">
 </head>
 
 <body>
@@ -20,9 +22,9 @@
         </div>
         <div class="row justify-content-center pt-5 mt-5 mr-1">
             <div class="col-md-4 ">
-                <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px"
+                <img src="<?=PATH?>Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px"
                     width="200px">
-                <form class="formulario" action="?c=user&a=Ingresar" method="POST" role="form">
+                <form class="formulario" action="<?=PATH?>?c=user&a=Ingresar" method="POST" role="form">
                     <div class="form-group text-center">
                         <h3 class="text-" style="color:#084594">Iniciar Sesion</h3>
                     </div>
@@ -53,7 +55,7 @@
                         <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="i_pass"
                             id="i_pass">
                         <div class="form-group mx-sm-3 text-center olv">
-                            <span class=""><a href="?c=user&a=Recover" class="olvide">¿Olvide mi
+                            <span class=""><a href="<?=PATH?>?c=user&a=Recover" class="olvide">¿Olvide mi
                                     contraseña?</a></span>
                         </div>
                     </div>
@@ -76,7 +78,7 @@
 
 
             <div class="form-group mx-sm-4 my-1 text-center olv">
-                <span class=""><a href="?c=user&a=Activar" class="olvide"><i class="bi bi-key-fill"></i>Activar
+                <span class=""><a href="<?=PATH?>?c=user&a=Activar" class="olvide"><i class="bi bi-key-fill"></i>Activar
                         Cuenta</a></span>
             </div>
             <div class="form-group mx-sm-4 text-center olv">

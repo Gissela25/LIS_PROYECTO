@@ -1,5 +1,6 @@
 <?php
-    $codigo_prod=$_GET["id"];
+require_once('Core/config.php'); 
+ require_once "Views/Constant/admin/const.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,13 +17,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/update-products.css">
+    <link rel="stylesheet" href="<?=PATH?>Assets/css/update-products.css">
 </head>
 
 <body>
     <div class="d-flex justify-content-center">
         <div class="col-md-4 my-5">
-            <form method="POST" action="?c=products&a=update&id=<?=$codigo_prod?>" enctype="multipart/form-data"
+            <form method="POST" action="<?=PATH?>?c=products&a=update&id=<?=$codigo_prod?>" enctype="multipart/form-data"
                 class="formulario">
                 <div class="card-body">
                     <?php require 'Views/Tools/procesar-datos-products.php'?>
