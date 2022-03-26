@@ -38,10 +38,7 @@ require_once "Models/user.php";
             }
         }
 
-        public function registrar()
-        {
-            require_once "Views/Registrar.php";
-        }
+        
 
         public function Main()
         {

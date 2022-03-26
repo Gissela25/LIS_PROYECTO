@@ -22,7 +22,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=Ingresar">Iniciar Sesion</a></li>
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=registrar">Registrarse</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=client&a=registrar">Registrarse</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

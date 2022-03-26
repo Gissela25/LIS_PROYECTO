@@ -43,3 +43,11 @@
             return false;
         }
     }
+    function isdui($variable)
+    {
+        return preg_match('/^\d{8}[-]\d{1}$/',$variable);
+    }
+    function istel($variable)
+    {
+        return preg_match('/^\d{4}[-]\d{4}$/',$variable);
+    }

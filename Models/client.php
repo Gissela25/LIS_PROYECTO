@@ -4,10 +4,10 @@ class client{
 
     private $pdo;
     private $r;
-    private $dui;
+    private $DUI
     private $Nombre;
     private $Apellido;
-    private $phone;
+    private $Telefono;
     private $Correo;
     private $Clave;
     private $Direccion;
@@ -24,13 +24,22 @@ class client{
     }
 
     public function getPro_idc(): ?string{
-        return $this->dui;
+        return $this->DUI;
 
     }
 
     public function setPro_idc(string $idc){
-        $this->dui=$idc;
+        $this->DUI=$idc;
     }
+
+    public function getPro_tel(): ?string{
+        return $this->Telefono;
+
+    }
+    public function setPro_tel(string $tel){
+        $this->Telefono=$tel;
+    }
+   
 
     //public function getPro_id(): ?int{
         //return $this->ID_Sucursal;
@@ -93,13 +102,14 @@ class client{
     public function setPro_address(string $clave){
         $this->Clave=$clave;
     }
-    //public function getPro_ver(): ?string{
-        //return $this->Verificado;
-    //}
+    
+    public function getPro_ver(): ?string{
+        return $this->Verificado;
+    }
 
-    //public function setPro_ver(string $ver){
-        //$this->Verificado=$ver;
-    //}
+    public function setPro_ver(string $ver){
+        $this->Verificado=$ver;
+    }
 
     
     //public function getPro_estado(): ?string{
@@ -120,29 +130,29 @@ class client{
         //$this->Acceso=$acce;
     //}
 
-    public function Insert(client $p){
-        try{
-        $hash=$this->GenerarHash();
-        $consulta = "Insert INTO cliente(dui,Nombre,Apellido,Telefono,Correo,Clave,Direccion,Verificado,Hash_Active) values (?,?,?,?,?,?,?,?,?);";
-        $this->pdo->prepare($consulta)
-                    ->execute(array(
-                        $p->getPro_idc(),
-                        $p->getPro_nom(),
-                        $p->getPro_ape(),
-                        $p->getPro_phone(),
-                        $p->getPro_correo(),
-                        $p->getPro_Clave()
-                        $p->getPro_address(),,
-                        $p->getPro_ver(),
-                        //$p->getPro_estado(),
-                        //$p->getPro_acce(),
-                        //$p->getPro_id(),
-                        $hash
-                    ));
-        }catch(exception $e){
-        die($e->getMessage());
-        }
-    }
+    // public function Insert(client $p){
+    //     try{
+    //     $hash=$this->GenerarHash();
+    //     $consulta = "Insert INTO cliente(dui,Nombre,Apellido,Telefono,Correo,Clave,Direccion,Verificado,Hash_Active) values (?,?,?,?,?,?,?,?,?);";
+    //     $this->pdo->prepare($consulta)
+    //                 ->execute(array(
+    //                     $p->getPro_idc(),
+    //                     $p->getPro_nom(),
+    //                     $p->getPro_ape(),
+    //                     $p->getPro_phone(),
+    //                     $p->getPro_correo(),
+    //                     $p->getPro_Clave()
+    //                     $p->getPro_address(),,
+    //                     $p->getPro_ver(),
+    //                     //$p->getPro_estado(),
+    //                     //$p->getPro_acce(),
+    //                     //$p->getPro_id(),
+    //                     $hash
+    //                 ));
+    //     }catch(exception $e){
+    //     die($e->getMessage());
+    //     }
+    // }
 
     public function have($idc){
         try{
@@ -223,6 +233,34 @@ class client{
             }
             catch(Exception $e)
             {
+                die($e->getMessage());
+            }
+        }
+
+        public function GenerarHash()
+        {
+            $hash = md5(rand(1,100000));
+            return $hash;
+        }
+
+        public function Save(){
+            try{
+                $hash=$this->GenerarHash();
+                $consulta=$this->pdo->prepare("SELECT COUNT(*) from cliente WHERE DUI='{$this->getPro_idc()}' OR Correo='{$this->getPro_correo()}';");
+                $consulta->execute(array($this->getPro_idc(),$this->getPro_correo()));
+                $filas= $consulta ->fetchColumn();
+                
+                if($filas==0)
+                {
+                    $consulta=$this->pdo->prepare("INSERT INTO cliente VALUES('{$this->getPro_idc()}', '{$this->getPro_nom()}','{$this->getPro_ape()}','{$this->getPro_tel()}','{$this->getPro_correo()}','{$this->getPro_Clave()}','{$this->getPro_address()}','{$this->getPro_ver()}','$hash');");
+                    $consulta->execute(array($this->getPro_idc(), $this->getPro_nom(), $this->getPro_ape(),$this->getPro_tel(),$this->getPro_correo(),$this->getPro_Clave(),$this->getPro_address(),$this->getPro_correo(),$this->getPro_ver(),$hash));
+                    echo "<div class='alert alert-success'>Usuario ingresado con exito</div>";
+                }
+                else{
+                    echo "<div class='alert alert-danger'><ul> <li>Credenciales en uso</li><li>Las credenciales coinciden con un usuario en existencia.</li></ul></div>";
+                }
+
+            }catch(Exception $e){
                 die($e->getMessage());
             }
         }
