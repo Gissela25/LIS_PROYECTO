@@ -1,65 +1,68 @@
 <?php
 
-require_once "Models/worker.php";
+require_once "Models/client.php";
 
-class workercontroller{
+class clientcontroller{
 
     private $modelo;
 
     public function __CONSTRUCT(){
-        $this->modelo=new worker;
+        $this->modelo=new client;
     }
 
-    public function worker(){
-        require_once "Views/worker.php";
+    public function client(){
+        require_once "Views/client/Registrar.php";
     }
 
     public function Insert(){
         $titulo = "Ingresar";
-        $p=new worker();
-        if(isset($_GET['idu'])){
-        $p=$this->modelo->have($_GET['idu']);
+        $p=new client();
+        if(isset($_GET['idc'])){
+        $p=$this->modelo->have($_GET['idc']);
         $titulo="Actualizar";
         }
-        require_once "Views/worker-insert.php";
+        require_once "Views/client/Registrar.php";
     }
 
     public function Save(){
-        $p=new worker();
+        $p=new client();
+        $Clave=$_POST['Clave'];
         $pwd_encrypt=  password_hash($Clave,PASSWORD_DEFAULT, ['cost' => 10]);  
-        $p->setPro_idu($_POST['ID_Usuario']);
+        $p->setPro_idc($_POST['dui']);
         $p->setPro_nom($_POST['Nombre']);
         $p->setPro_ape($_POST['Apellido']);
+        $p->setPro_phone($_POST['Telefono']);
         $p->setPro_correo($_POST['Correo']);
         $p->setPro_Clave($_POST['Clave']);
+        $p->setPro_address($_POST['Direccion']);
         $p->setPro_ver(intval($_POST['Verificado']));
-        $p->setPro_estado(intval($_POST['Estado']));
-        $p->setPro_acce(intval($_POST['Acceso']));
-        $p->setPro_id(intval($_POST['ID_Sucursal']));
+        //$p->setPro_estado(intval($_POST['Estado']));
+        //$p->setPro_acce(intval($_POST['Acceso']));
+        //$p->setPro_id(intval($_POST['ID_Sucursal']));
         $p->setPro_Clave($pwd_encrypt);
 
         $this->modelo->Insert($p);
 
 
-        header("location:?c=worker&a=worker");
+        header("location:?c=client&a=client");
     }
 
-    public function workeredit(){
+    public function clientedit(){
         $titulo = "Ingresar";
-        $p=new worker();
-        if(isset($_GET['idu'])){
-        $p=$this->modelo->have($_GET['idu']);
+        $p=new client();
+        if(isset($_GET['idc'])){
+        $p=$this->modelo->have($_GET['idc']);
         $titulo="Actualizar";
         }
-        require_once "Views/worker-edit.php";
+        require_once "Views/client/client-edit.php";
     }
 
     
      public function Saveedit()
      {
-        $p=new worker();
+        $p=new client();
         $pwd_encrypt=  password_hash($Clave,PASSWORD_DEFAULT, ['cost' => 10]);
-        $p->setPro_idu($_POST['ID_Usuario']);
+        $p->setPro_idc($_POST['dui']);
         $p->setPro_nom($_POST['Nombre']);
         $p->setPro_ape($_POST['Apellido']);
         $p->setPro_correo($_POST['Correo']);
@@ -71,6 +74,6 @@ class workercontroller{
         $p->setPro_Clave($pwd_encrypt);
         
         $this->modelo->Update($p);
-        header("location:?c=worker&a=worker");
-    }
+        header("location:?c=client&a=client");
+ }
 }
