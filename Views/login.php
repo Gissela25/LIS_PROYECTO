@@ -90,7 +90,7 @@
             </div>
             <div class="form-group text-center">
                         <a href="?c=inicio" class="edit"><i class="bi bi-reply-fill"></i>Regresar</a>
-        </div>
+            </div>
             </form>
         </div>
     </div>
