@@ -14,7 +14,7 @@ require_once('Core/config.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/index.css">
+    <link rel="stylesheet" href="Assets/css/empresa.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
@@ -22,11 +22,13 @@ require_once('Core/config.php');
 <?php 
  require_once "Views/Constant/clientesw/nav.php";
 ?>
-    <div>
-        <img src="Assets/img/contruccion.jpg" width= "100%" height="400px" alt="...">
+    <div class="fondo">
     </div>
-    <div>
-        <h1>QUIENES SOMOS</h1>
+    <div class="row" style="text-align:center">
+                <div class="col-md-1">                    
+                </div>
+                <div class="col-md-4">
+                <h1>QUIENES SOMOS</h1>
         <p>Sumersa es una empresa importadora y comercializadora de materiales para la construcción,
             destacándose en la distribución de productos de hierro tales como láminas, ángulos, polines, vigas y canales entre otros.</p>
 
@@ -35,6 +37,15 @@ require_once('Core/config.php');
 
         <p>Nuestra empresa cuenta con más de 30 años de experiencia durante los cuales hemos mantenido como política de servicio
              el valorar a nuestros clientes a partir de un servicio eficaz y personalizado con productos de alta calidad y economía</p>
+                    
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5">
+                <img src="Assets/img/empresa.png" width = "300px" height = "400px">
+                </div>
+                <div class="col-md-1">
+                </div>
     </div> 
 </body>
 

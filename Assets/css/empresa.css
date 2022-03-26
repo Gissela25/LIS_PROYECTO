@@ -1,0 +1,16 @@
+.fondo{
+    background-image: url(../img/contruccion.jpg) ;
+    background-size: cover;
+    height: 300px;
+    background-color:;
+}
+h1{
+    color: rgb(40, 68, 116);
+    font-size: 50px;
+    font-weight: 800;
+}
+p{
+    text-align: justify;
+    color: rgb(0, 77, 175);
+
+}
