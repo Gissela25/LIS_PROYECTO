@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="<?=PATH?>?c=products&a=inicioc">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -28,12 +28,12 @@
                             <i class="bi bi-geo-alt-fill"></i> Sucursales
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showust">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showuss">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showulo">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showuop">Opico</a></li>
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showuza">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showusa">Santa Ana</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showstu">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showssu">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showlou">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showopu">Opico</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showzau">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=showsau">Santa Ana</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
