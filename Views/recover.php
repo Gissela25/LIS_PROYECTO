@@ -1,3 +1,5 @@
+<?php 
+require_once('Core/config.php');?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,15 +11,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Recuperar Cuenta</title>
-    <link rel="stylesheet" href="Assets/css/recoverr.css">
+    <link rel="stylesheet" href="<?=PATH?>Assets/css/recoverr.css">
 </head>
 
 <body>
     <div class="container">
         <div class="row justify-content-center pt-5 mt-5 mr-1">
             <div class="col-md-5 ">
-            <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px" width="200px">
-                <form class="formulario" action="?c=user&a=Recover" method="POST" role="form"> 
+            <img src="<?=PATH?>Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px" width="200px">
+                <form class="formulario" action="<?=PATH?>?c=user&a=Recover" method="POST" role="form"> 
                     <div class="form-group text-center">
                     <h3 class="text-" style="color:#084594">Recuperar Contraseña</h3>
                     </div>        

@@ -1,7 +1,7 @@
 <?php
 
 require_once "Models/DataBase.php";
-
+require_once "config.php";
 if(!isset($_GET['c'])){
     require_once "Controllers/inicio.controller.php";
     $controlador = new InicioController();

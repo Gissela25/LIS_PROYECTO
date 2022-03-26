@@ -292,7 +292,7 @@ class products{
         }
     }
 
-    public function generate_code($lenght=3)
+    public function generate_code($lenght=5)
     {
         $key = "";
         $pattern = "1234567890";
