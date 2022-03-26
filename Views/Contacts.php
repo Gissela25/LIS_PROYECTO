@@ -29,6 +29,10 @@ require_once('Core/config.php');
             <textarea name="message" cols="30" rows="4"></textarea>
             <input type="submit" value="Enviar">
         </form>
+        <div class="form-group text-center">
+                        <a href="?c=inicio" class="edit"><i class="bi bi-reply-fill"></i>Regresar</a>
+        </div>
     </div>
+    
 </body>
 </html>
