@@ -35,4 +35,9 @@ class branchcontroller{
 
         header("location:?c=branch&a=branch");
     }
+
+    public function inicio(){
+
+        require_once "Views/branch/index.php";
+    }
 }

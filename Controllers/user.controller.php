@@ -37,4 +37,9 @@ require_once "Models/user.php";
              echo "<script>location.href='?c=inicio'</script>";
             }
         }
+
+        public function registrar()
+        {
+            require_once "Views/Registrar.php";
+        }
     }

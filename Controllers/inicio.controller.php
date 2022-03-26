@@ -4,7 +4,7 @@ require_once "Models/branch.php";
 require_once "Models/worker.php";
 require_once "Models/family.php";
 require_once "Models/products.php";
-require_once "Core/config.php";
+
 class InicioController{
     private $modelo;
 

@@ -1,5 +1,3 @@
-<?php 
-require_once('Core/config.php');?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +10,7 @@ require_once('Core/config.php');?>
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Login</title>
     <link rel="stylesheet" href="<?=PATH?>Assets/css/loginn.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -22,9 +21,9 @@ require_once('Core/config.php');?>
         </div>
         <div class="row justify-content-center pt-5 mt-5 mr-1">
             <div class="col-md-4 ">
-                <img src="<?=PATH?>Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px"
+                <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px"
                     width="200px">
-                <form class="formulario" action="<?=PATH?>?c=user&a=Ingresar" method="POST" role="form">
+                <form class="formulario" action="?c=user&a=Ingresar" method="POST" role="form">
                     <div class="form-group text-center">
                         <h3 class="text-" style="color:#084594">Iniciar Sesion</h3>
                     </div>
@@ -55,15 +54,18 @@ require_once('Core/config.php');?>
                         <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="i_pass"
                             id="i_pass">
                         <div class="form-group mx-sm-3 text-center olv">
-                            <span class=""><a href="<?=PATH?>?c=user&a=Recover" class="olvide">¿Olvide mi
+                            <span class=""><a href="?c=user&a=Recover" class="olvide">¿Olvide mi
                                     contraseña?</a></span>
                         </div>
                     </div>
 
-                    <div class="form-group mx-sm-5 pb-3 ">
+                    <div class="form-group mx-sm-5 pb-3">
                         <input type="submit" value="Ingresar" name="ingresar" id="ingresar"
                             class="btn btn-block ingresar">
+                        <button class="google my-2"><i class="bi bi-google"> </i>Log in with Google </button>
                     </div>
+
+
                     <?php /*<h6 class="pb-2 or"><center>OR</center></h6>
                    <div class="form-group mx-sm-4">
                         <center><span class=""> <?php require ('authentify.php')?>
@@ -78,15 +80,12 @@ require_once('Core/config.php');?>
 
 
             <div class="form-group mx-sm-4 my-1 text-center olv">
-                <span class=""><a href="<?=PATH?>?c=user&a=Activar" class="olvide"><i class="bi bi-key-fill"></i>Activar
+                <span class=""><a href="?c=user&a=Activar" class="olvide"><i class="bi bi-key-fill"></i>Activar
                         Cuenta</a></span>
             </div>
             <div class="form-group mx-sm-4 text-center olv">
                 <div class="form-group text-center">
                     <span><a href="#" class="olvide sing-up"><i class="bi bi-book-half"></i>Registrar</a></span>
-                    <div class="right-box">
-                    <i class="bi bi-google"></i><button class="social google">Log in with Google +</button>
-</div>
                 </div>
             </div>
             </form>
@@ -94,11 +93,11 @@ require_once('Core/config.php');?>
     </div>
 
 
-   
-<!-- <span class="right-title">Sign up with <br>Social Network</span> -->
-<!-- <i class="bi bi-facebook"></i><button class="social facebook">Log in with Facebook</button> -->
 
-    
+    <!-- <span class="right-title">Sign up with <br>Social Network</span> -->
+    <!-- <i class="bi bi-facebook"></i><button class="social facebook">Log in with Facebook</button> -->
+
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

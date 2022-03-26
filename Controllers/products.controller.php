@@ -833,5 +833,45 @@ class productscontroller{
         require_once "views/products/details-op.php";
     }
 
+    public function showstu()
+    {
+        require_once "views/clients/show-st.php";
+    }
+    public function showsau()
+    {
+        require_once "views/clients/show-sa.php";
+    }
+
+    public function showssu()
+    {
+        require_once "views/clients/show-ss.php";
+    }
+
+    public function showzau()
+    {
+        require_once "views/clients/show-za.php";
+    }
+
+    public function showlou()
+    {
+        require_once "views/clients/show-lo.php";
+    }
+
+    public function showopu()
+    {
+        require_once "views/clients/show-op.php";
+    }
+
+    public function empresa()
+    {
+        require_once "views/empresa.php";
+    }
+
+    public function inicioc()
+    {
+        require_once "views/clients/index.php";
+    }
+    
+
 
 }

@@ -1,5 +1,6 @@
 <?php
 require_once('Core/config.php'); 
+ require_once "Views/Constant/clientes/const.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@ require_once('Core/config.php');
 
 <body>
 <?php 
- require_once "Views/Constant/clientesw/nav.php";
+ require_once "Views/Constant/clientes/nav.php";
 ?>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-3">
@@ -53,8 +54,7 @@ require_once('Core/config.php');
                         <?php
                                     }
                                     ?>
-                        <a href="?c=products&a=Detailslo&id=<?=$r->ID_Producto?>"
-                            class="btn btn-primary btn-block boton">Ver
+                        <a href="?c=products&a=Detailsst&id=<?=$r->ID_Producto?>" class="btn btn-primary btn-block boton">Ver
                             más</a>
                     </div>
                 </div>

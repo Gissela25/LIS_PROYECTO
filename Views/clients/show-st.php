@@ -1,5 +1,6 @@
 <?php
 require_once('Core/config.php'); 
+ require_once "Views/Constant/clientes/const.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +21,13 @@ require_once('Core/config.php');
 
 <body>
 <?php 
- require_once "Views/Constant/clientesw/nav.php";
+ require_once "Views/Constant/clientes/nav.php";
 ?>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-3">
             <?php
                    
-                    foreach ($this->modelo->showloall() as $r)
+                    foreach ($this->modelo->showstall() as $r)
                      {
                         $path="img/".$r->Imagen;
                         if(file_exists($path))
@@ -39,9 +40,9 @@ require_once('Core/config.php');
                         <h5 class="card-title">
                             <?=$r->Nombrep?>
                         </h5>
-                        <p class="card-text">Precio <?=$r->Precio_LO?> $</p>
+                        <p class="card-text">Precio <?=$r->Precio_ST?> $</p>
                         <?php
-                                    if(($r->Cantidad_LO)>0)
+                                    if(($r->Cantidad_ST)>0)
                                     {
                                         ?>
                         <p class="card-text ">Disponibilidad: <span style="color: green;"> en existencia</span></p>
@@ -53,8 +54,7 @@ require_once('Core/config.php');
                         <?php
                                     }
                                     ?>
-                        <a href="?c=products&a=Detailslo&id=<?=$r->ID_Producto?>"
-                            class="btn btn-primary btn-block boton">Ver
+                        <a href="?c=products&a=Detailsst&id=<?=$r->ID_Producto?>" class="btn btn-primary btn-block boton">Ver
                             más</a>
                     </div>
                 </div>

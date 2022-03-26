@@ -140,7 +140,7 @@
                                 $_SESSION['nombre']=$name;
                                 $_SESSION['apellido']=$apellido;
                                 $_SESSION['correo']=$Correo;
-                                echo "<script>location.href='?c=branch&a=branch'</script>";
+                                echo "<script>location.href='?c=branch&a=inicio'</script>";
                             }
                             else
                             {

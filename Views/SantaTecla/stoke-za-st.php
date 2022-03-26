@@ -19,7 +19,7 @@ require_once "Views/Constant/empleados/ST/const.php"?>
 </head>
 
 <body>
-<?php require_once "Views/Constant/empleados/ST/const.php"?>
+<?php require_once "Views/Constant/empleados/ST/nav.php"?>
     <div class="row mx-5 mt-5">
         <div class="col ml-5">
             <!-- <a class="edit" href="?c=products&a=Insert"><i class="bi bi-plus-square-fill"></i> Insertar</a> -->
