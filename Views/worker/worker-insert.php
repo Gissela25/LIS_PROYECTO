@@ -1,3 +1,7 @@
+<?php
+require_once('Core/config.php');
+ require_once "Views/Constant/admin/const.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 

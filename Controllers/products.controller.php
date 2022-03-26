@@ -837,6 +837,30 @@ class productscontroller{
     {
         require_once "views/clients/show-st.php";
     }
+    public function showsau()
+    {
+        require_once "views/clients/show-sa.php";
+    }
+
+    public function showssu()
+    {
+        require_once "views/clients/show-ss.php";
+    }
+
+    public function showzau()
+    {
+        require_once "views/clients/show-za.php";
+    }
+
+    public function showlou()
+    {
+        require_once "views/clients/show-lo.php";
+    }
+
+    public function showopu()
+    {
+        require_once "views/clients/show-op.php";
+    }
 
     public function empresa()
     {
@@ -846,6 +870,36 @@ class productscontroller{
     public function inicioc()
     {
         require_once "views/clients/index.php";
+    }
+    
+    public function Detailsstc()
+    {
+        require_once "views/clients/details-st.php";
+    }
+
+    public function Detailssac()
+    {
+        require_once "views/clients/details-sa.php";
+    }
+
+    public function Detailsssc()
+    {
+        require_once "views/clients/details-ss.php";
+    }
+
+    public function Detailsloc()
+    {
+        require_once "views/clients/details-lo.php";
+    }
+
+    public function Detailszac()
+    {
+        require_once "views/clients/details-za.php";
+    }
+
+    public function Detailsopc()
+    {
+        require_once "views/clients/details-op.php";
     }
     
 

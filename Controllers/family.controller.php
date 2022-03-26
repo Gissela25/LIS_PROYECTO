@@ -75,9 +75,6 @@ class familycontroller{
         header("location:?c=family&a=family");
     }
 
-    public function inicio(){
-
-        require_once "Views/family/index.php";
-    }
+  
 
 }

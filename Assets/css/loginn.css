@@ -29,9 +29,6 @@ input[type=submit] {
 input[type=submit]:hover {
     background: #F8C045;
     color: black;
-<<<<<<< Updated upstream
-} 
-=======
 } 
 
 .social
@@ -80,4 +77,3 @@ input[type=submit]:hover {
   color: #fff;
   background: #332FD0;
 }
->>>>>>> Stashed changes

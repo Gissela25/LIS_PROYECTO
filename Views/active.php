@@ -1,3 +1,5 @@
+<?php 
+require_once('Core/config.php');?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,7 +12,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
         <title>Recuperar Cuenta</title>
     <!-- <link rel="stylesheet" href="Assets/css/active.css"> -->
-    <link rel="stylesheet" href="Assets/css/activeee.css">
+    <link rel="stylesheet" href="<?=PATH?>Assets/css/activeee.css">
 </head>
 
 <body>
@@ -18,7 +20,7 @@
         <div class="row justify-content-center pt-5 mt-5 mr-1">
           
         <div class="col-md-5 ">
-        <img src="Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px" width="200px">
+        <img src="<?=PATH?>Assets/img/logo.PNG" class="rounded mx-auto d-block mb-3" alt="..." height="65px" width="200px">
            <form class="formulario" action="?c=user&a=Activar" method="POST" role="form"> 
                     <div class="form-group text-center">
                         <h3 class="text-" style="color:#084594">Verificar Cuenta</h3>

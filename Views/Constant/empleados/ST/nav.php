@@ -41,13 +41,15 @@
                         <i class="bi bi-person-fill"></i>Hola, <?php echo $nombre." ".$apellido;?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="<?=PATH?>">Editar Cuenta</a></li>
+                        <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=show">Editar Cuenta</a></li>
                         <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=close">Cerrar Sesion</a></li>
                     </ul>
                 </li>
             </ul>
 
-            </ul>
+            <span class="navbar-text">
+        <?php echo $nombre." ".$apellido;?>
+      </span>
 
         </div>
     </div>
