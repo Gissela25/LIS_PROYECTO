@@ -50,14 +50,16 @@
                             <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=stokeopsa">Opico</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page" href="<?=PATH?>?c=user&a=close"><i
-                                class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-        <?php echo $nombre." ".$apellido;?>
-      </span>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-fill"></i>Hola, <?php echo $nombre." ".$apellido;?>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="<?=PATH?>?c=products&a=show">Editar Cuenta</a></li>
+                        <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=close">Cerrar Sesion</a></li>
+                    </ul>
+                </li>
             </div>
         </div>
     </nav>

@@ -46,11 +46,6 @@
                     </ul>
                 </li>
             </ul>
-
-            <span class="navbar-text">
-        <?php echo $nombre." ".$apellido;?>
-      </span>
-
         </div>
     </div>
 </nav>
