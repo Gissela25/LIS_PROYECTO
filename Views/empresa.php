@@ -24,10 +24,8 @@ require_once('Core/config.php');
 ?>
     <div class="fondo">
     </div>
-    <div class="row" style="text-align:center">
-                <div class="col-md-1">                    
-                </div>
-                <div class="col-md-4">
+    <div style="text-align:center">
+                <div id="columna1">
                 <h1>QUIENES SOMOS</h1>
         <p>Sumersa es una empresa importadora y comercializadora de materiales para la construcción,
             destacándose en la distribución de productos de hierro tales como láminas, ángulos, polines, vigas y canales entre otros.</p>
@@ -39,14 +37,9 @@ require_once('Core/config.php');
              el valorar a nuestros clientes a partir de un servicio eficaz y personalizado con productos de alta calidad y economía</p>
                     
                 </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-5">
+                <div id="columna2">
                 <img src="Assets/img/empresa.png" width = "300px" height = "400px">
-                </div>
-                <div class="col-md-1">
                 </div>
     </div> 
 </body>
-
 </html>
