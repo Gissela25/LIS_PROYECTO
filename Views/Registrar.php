@@ -81,12 +81,12 @@
                                     <div class="form-group mx-sm-4 pt-3">                            
                                         <label for="exampleInputPassword1" class="form-label">Clave</label>
                                         <div class="input-group">
-                                        <input type="password" class="form-control" placeholder="Ingrese su Clave"
-                                            name="Clave" id="Clave">
-                                            <div class="input-group-append">
-                    <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
-                    </div>
-                    </div>
+                                            <input type="password" class="form-control" placeholder="Ingrese su Clave" name="Clave" id="Clave">
+                                        <div class="input-group-append">
+                                        <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()">
+                                         <span class="fa fa-eye-slash icon"></span> </button>
+                                        </div>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
