@@ -1,3 +1,6 @@
+<?php
+require_once('Core/config.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +19,7 @@
 </head>
 
 <body>
+<<<<<<< Updated upstream
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
@@ -64,6 +68,11 @@
             </div>
         </div>
     </nav>
+=======
+<?php 
+ require_once "Views/Constant/clientesw/nav.php";
+?>
+>>>>>>> Stashed changes
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-3">
             <?php

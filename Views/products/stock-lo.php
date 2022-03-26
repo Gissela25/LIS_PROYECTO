@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
+=======
+<?php
+// require_once('Core/config.php'); 
+ require_once "Views/Constant/admin/const.php";
+?>
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 

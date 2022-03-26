@@ -833,5 +833,21 @@ class productscontroller{
         require_once "views/products/details-op.php";
     }
 
+    public function showstu()
+    {
+        require_once "views/clients/show-st.php";
+    }
+
+    public function empresa()
+    {
+        require_once "views/empresa.php";
+    }
+
+    public function inicioc()
+    {
+        require_once "views/clients/index.php";
+    }
+    
+
 
 }
