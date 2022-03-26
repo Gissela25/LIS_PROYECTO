@@ -17,6 +17,8 @@ require_once('Core/config.php');
     </script>
     <link rel="stylesheet" href="Assets/css/worker-insert.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +51,13 @@ require_once('Core/config.php');
                 </div>
                 <div class="mb-3" style="color:#084594">
                     <label for="exampleInputPassword1" class="form-label">Clave</label>
-                    <input type="password" class="form-control" name="Clave">
+                    <div class="input-group">
+                        <input type="password" class="form-control" name="Clave" id="Clave">
+                            <div class="input-group-append">
+                            <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()">
+                             <span class="fa fa-eye-slash icon"></span> </button>
+                            </div>
+                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-10">
@@ -84,8 +92,19 @@ require_once('Core/config.php');
             </form>
         </div>
     </div>
-
     </div>
 </body>
+<script type="text/javascript">
+            function mostrarPassword(){
+		    var cambio = document.getElementById("Clave");
+		    if(cambio.type == "password"){
+			cambio.type = "text";
+			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+		    }else{
+			cambio.type = "password";
+			$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+		    }
+	        } 
+</script>
 
 </html>
