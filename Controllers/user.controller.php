@@ -49,26 +49,26 @@ require_once "Models/user.php";
         }
         public function Mainss()
         {
-            require_once "Views/Constant/empleados/index.php";
+            require_once "Views/Constant/empleados/SS/index.php";
         }
         public function Mainst()
         {
-            require_once "Views/Constant/empleados/index.php";
+            require_once "Views/Constant/empleados/ST/index.php";
         }
         public function Mainsa()
         {
-            require_once "Views/Constant/empleados/index.php";
+            require_once "Views/Constant/empleados/SA/index.php";
         }
         public function Mainop()
         {
-            require_once "Views/Constant/empleados/index.php";
+            require_once "Views/Constant/empleados/OP/index.php";
         }
         public function Mainlo()
         {
-            require_once "Views/Constant/empleados/index.php";
+            require_once "Views/Constant/empleados/LO/index.php";
         }
         public function Mainza()
         {
-            require_once "Views/Constant/empleados/index.php";
+            require_once "Views/Constant/empleados/ZA/index.php";
         }
     }
