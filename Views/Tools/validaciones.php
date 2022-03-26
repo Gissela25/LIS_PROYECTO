@@ -19,7 +19,7 @@
 
     function isProduct($variable)
     {
-        return preg_match('/^PROD[0-9]{3}$/',$variable);
+        return preg_match('/^PROD[0-9]{5}$/',$variable);
     }
     function isText($variable)
     {

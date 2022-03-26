@@ -92,7 +92,7 @@
                         <?php
                                     }
                                     ?>
-                        <a href="?c=products&a=Detailsst&id=<?=$r->ID_Producto?>" class="btn btn-primary btn-block boton">Ver
+                        <a href="?c=products&a=Detailsop&id=<?=$r->ID_Producto?>" class="btn btn-primary btn-block boton">Ver
                             más</a>
                     </div>
                 </div>
