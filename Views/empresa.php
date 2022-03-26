@@ -65,21 +65,8 @@
         </div>
     </nav>
     <div>
-        <div class="d-grid gap-3 mt-3 mx-5">
-
-            <div class="col-xs-6 col-xs-offset-3 tamano">
-                    </div>
-                        <div>
-                            <img src="../Assets/img/contruccion.jpg" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                </div>
-            </div>
-
-            </div>
-        </div>
+        <img src="../Assets/img/contruccion.jpg" class="d-block w-100" alt="...">
+    </div>
 </body>
 
 </html>
