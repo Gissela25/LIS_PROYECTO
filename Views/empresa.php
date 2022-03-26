@@ -23,6 +23,9 @@ require_once('Core/config.php');
  require_once "Views/Constant/clientesw/nav.php";
 ?>
     <div class="fondo">
+        <div class="logo">
+        <img src="Assets/img/logosumersa.png" height="160px" width="580px">
+        </div> 
     </div>
     <div style="text-align:center">
                 <div id="columna1">

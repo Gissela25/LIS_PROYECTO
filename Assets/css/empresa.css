@@ -1,5 +1,5 @@
 .fondo{
-    background-image: url(../img/contruccion.jpg) ;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3),rgba(245, 245, 245, 0.98)), url(../img/contruccion.jpg) ;
     background-size: cover;
     height: 300px;
 }
@@ -28,4 +28,9 @@ p{
 *{
     margin: 0;
     padding: 0;
+}
+.logo{
+    position: relative;
+    top: 25%;
+    left: 28%;
 }
