@@ -88,6 +88,9 @@
                     <span><a href="#" class="olvide sing-up"><i class="bi bi-book-half"></i>Registrar</a></span>
                 </div>
             </div>
+            <div class="form-group text-center">
+                        <a href="?c=inicio" class="edit"><i class="bi bi-reply-fill"></i>Regresar</a>
+        </div>
             </form>
         </div>
     </div>
