@@ -114,7 +114,7 @@
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <div class="my-2">
-                                            <input type="submit" name="add" id="add" class="btn "></input>
+                                            <input type="submit" name="add" id="add" class="btn boton "></input>
                                         </div>
                                     </div>
                                 </td>

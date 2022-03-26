@@ -60,11 +60,11 @@
         {
             array_push($errores,"Debes ingresar una contraseña válida");
         }
-        if(isMail($correo)&&isPass($Clave)&&isdui($dui)&&istel($Telefono)&&isText($Nombre)&&isText($Apellido)&&isText($Direccion))
+        if(isMail($correo)&&isPass($Clave)&&isdui($DUI)&&istel($Telefono)&&isText($Nombre)&&isText($Apellido)&&isText($Direccion))
         {          
-            //$pwd_encrypt=  password_hash($i_email,PASSWORD_DEFAULT, ['cost' => 10]);    
+            $pwd_encrypt=  password_hash($Clave,PASSWORD_DEFAULT, ['cost' => 10]);    
             $modelo = new client();
-            $modelo->setPro_idc($dui);
+            $modelo->setPro_idc($DUI);
             $modelo->setPro_nom($Nombre);
             $modelo->setPro_ape($Apellido);
             $modelo->setPro_tel($Telefono);
@@ -72,6 +72,7 @@
             $modelo->setPro_Clave($Clave);
             $modelo->setPro_address($Direccion);
             $modelo->setPro_ver($Verificar);
+            $modelo->setPro_Clave($pwd_encrypt);
             $modelo->Save();
             header("location:?c=inicio");
         }

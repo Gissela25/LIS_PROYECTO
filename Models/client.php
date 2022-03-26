@@ -4,7 +4,7 @@ class client{
 
     private $pdo;
     private $r;
-    private $DUI
+    private $DUI;
     private $Nombre;
     private $Apellido;
     private $Telefono;
@@ -86,21 +86,13 @@ class client{
         $this->Clave=$clave;
     }
 
-    public function getPro_phone(): ?string{
-        return $this->Clave;
+   public function getPro_address(): ?string{
+        return $this->Direccion;
 
     }
 
-    public function setPro_phone(string $clave){
-        $this->Clave=$clave;
-
-    }    public function getPro_address(): ?string{
-        return $this->Clave;
-
-    }
-
-    public function setPro_address(string $clave){
-        $this->Clave=$clave;
+    public function setPro_address(string $Direccion){
+        $this->Direccion=$Direccion;
     }
     
     public function getPro_ver(): ?string{
