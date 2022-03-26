@@ -32,6 +32,9 @@ require_once('Core/config.php');?>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Views/empresa.php">Quienes Somos</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
