@@ -16,12 +16,12 @@ p{
 #columna1 {
     position:absolute;
     top:450px;
-    left:200px;
+    left:150px;
     width:500px;
     margin-top:10px;
 }
 #columna2 {
-    margin-left:720px;
+    margin-left:640px;
     margin-right:20px;
     margin-top:80px;
 }
