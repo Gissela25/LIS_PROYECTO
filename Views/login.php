@@ -84,13 +84,21 @@ require_once('Core/config.php');?>
             <div class="form-group mx-sm-4 text-center olv">
                 <div class="form-group text-center">
                     <span><a href="#" class="olvide sing-up"><i class="bi bi-book-half"></i>Registrar</a></span>
+                    <div class="right-box">
+                    <i class="bi bi-google"></i><button class="social google">Log in with Google +</button>
+</div>
                 </div>
             </div>
             </form>
         </div>
     </div>
 
-    </div>
+
+   
+<!-- <span class="right-title">Sign up with <br>Social Network</span> -->
+<!-- <i class="bi bi-facebook"></i><button class="social facebook">Log in with Facebook</button> -->
+
+    
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
