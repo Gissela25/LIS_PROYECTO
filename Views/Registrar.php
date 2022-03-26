@@ -12,6 +12,8 @@
     </script>
     <link rel="stylesheet" href="Assets/css/registrar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Cliente</title>
 </head>
 
@@ -76,10 +78,15 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    <div class="form-group mx-sm-4 pt-3">
+                                    <div class="form-group mx-sm-4 pt-3">                            
                                         <label for="exampleInputPassword1" class="form-label">Clave</label>
+                                        <div class="input-group">
                                         <input type="password" class="form-control" placeholder="Ingrese su Clave"
                                             name="Clave" id="Clave">
+                                            <div class="input-group-append">
+                    <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+                    </div>
+                    </div>
                                     </div>
                                 </td>
                             </tr>
@@ -139,5 +146,16 @@
                     </table>
             </div>
             </form>
-
+            <script type="text/javascript">
+            function mostrarPassword(){
+		    var cambio = document.getElementById("Clave");
+		    if(cambio.type == "password"){
+			cambio.type = "text";
+			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+		    }else{
+			cambio.type = "password";
+			$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+		    }
+	        } 
+            </script>
 </html>
