@@ -11,6 +11,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="<?=PATH?>Assets/css/loginn.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -46,17 +49,20 @@
                         <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico"
                             name="i_email" id="i_email">
                     </div>
-                    <div class="form-group mx-sm-3 text-center olv">
 
-                    </div>
-
-                    <div class="form-group mx-sm-4 pb-3">
+                    <div class="form-group mx-sm-4 pb-6">
+                    <div class="input-group">
                         <input type="password" class="form-control" placeholder="Ingrese su Contraseña" name="i_pass"
                             id="i_pass">
-                        <div class="form-group mx-sm-3 text-center olv">
+                            <div class="input-group-append">
+                    <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="form-group mx-sm-3 text-center olv">
                             <span class=""><a href="?c=user&a=Recover" class="olvide">¿Olvide mi
                                     contraseña?</a></span>
-                        </div>
                     </div>
 
                     <div class="form-group mx-sm-5 pb-3">
@@ -99,7 +105,18 @@
 
     <!-- <span class="right-title">Sign up with <br>Social Network</span> -->
     <!-- <i class="bi bi-facebook"></i><button class="social facebook">Log in with Facebook</button> -->
-
+    <script type="text/javascript">
+    function mostrarPassword(){
+		var cambio = document.getElementById("i_pass");
+		if(cambio.type == "password"){
+			cambio.type = "text";
+			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+		}else{
+			cambio.type = "password";
+			$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+		}
+	} 
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
