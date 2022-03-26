@@ -47,7 +47,9 @@
                 </li>
             </ul>
 
-            </ul>
+            <span class="navbar-text">
+        <?php echo $nombre." ".$apellido;?>
+      </span>
 
         </div>
     </div>

@@ -872,6 +872,7 @@ class productscontroller{
         require_once "views/clients/index.php";
     }
     
+    
 
 
 }

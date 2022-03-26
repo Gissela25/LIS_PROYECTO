@@ -111,7 +111,7 @@
                 $consulta2->bindParam(1,$Correo);
                 $consulta2->execute();
                 $filas2= $consulta2->fetchColumn();
-                $sql2=$this->pdo->prepare("SELECT Correo,Clave,Verificado FROM cliente WHERE Correo=?;");
+                $sql2=$this->pdo->prepare("SELECT DUI,Nombre,Apellido,Correo,Clave,Verificado FROM cliente WHERE Correo=?;");
                 $sql2->bindParam(1,$Correo);
                 $sql2->execute();
                 $rc=$sql2->fetch(PDO::FETCH_ASSOC);
@@ -178,10 +178,18 @@
                     $estado2=$rc['Verificado'];        
                    if($estado2==1)
                    {
-                    echo "<ul> <li>Cuenta de usuario activa</li></ul>";
+                    $dui_user=$rc['DUI'];
+                    $name=$rc['Nombre'];
+                    $apellido=$rc['Apellido'];
                     $pwd_client=$rc['Clave'];
                     if(password_verify($this->getPass(),$pwd_client))
                     {
+                        session_start();
+                        $_SESSION['usuario']=$dui_user;
+                        $_SESSION['nombre']=$name;
+                        $_SESSION['apellido']=$apellido;
+                        $_SESSION['correo']=$Correo;
+                        echo "<script>location.href='?c=products&a=inicioc'</script>";
                     }
                     else{
                         echo "<ul> <li>Entrada inválida</li></ul>";
@@ -622,7 +630,7 @@
 
             $consulta1->execute();
             $filas1=$consulta1->fetchColumn();
-            $sql1=$this->pdo->prepare("SELECT Nombre,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
+            $sql1=$this->pdo->prepare("SELECT ID_Usuario,Nombre,Apellido,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
             $sql1->bindParam(1,$Correo);
 
             $sql1->execute();
@@ -634,7 +642,7 @@
 
             $consulta2->execute();
             $filas2= $consulta2->fetchColumn();
-            $sql2=$this->pdo->prepare("SELECT Nombre,Correo,Clave,Verificado FROM cliente WHERE Correo=? ");
+            $sql2=$this->pdo->prepare("SELECT DUI,Nombre,Apellido,Correo,Clave,Verificado FROM cliente WHERE Correo=? ");
             $sql2->bindParam(1,$Correo);
 
             $sql2->execute();
@@ -653,7 +661,12 @@
                 {
                     if($state==1)
                     {
-                        header("Location: ?c=branch&a=branch");
+                        session_start();
+                                $_SESSION['usuario']=$id_user;
+                                $_SESSION['nombre']=$name;
+                                $_SESSION['apellido']=$apellido;
+                                $_SESSION['correo']=$Correo;
+                                echo "<script>location.href='?c=branch&a=inicio'</script>";
                     }
                     else
                     {
@@ -673,7 +686,16 @@
                 }
             }elseif($filas2>0)
             {
-                
+                $dui_user=$rc['DUI'];
+                $name=$rc['Nombre'];
+                $apellido=$rc['Apellido'];
+
+                    session_start();
+                    $_SESSION['usuario']=$dui_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=products&a=inicioc'</script>";
             }
         }
         public function GenerarHash()

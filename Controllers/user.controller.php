@@ -42,4 +42,33 @@ require_once "Models/user.php";
         {
             require_once "Views/Registrar.php";
         }
+
+        public function Main()
+        {
+            require_once "Views/Constant/admin/index.php";
+        }
+        public function Mainss()
+        {
+            require_once "Views/Constant/empleados/index.php";
+        }
+        public function Mainst()
+        {
+            require_once "Views/Constant/empleados/index.php";
+        }
+        public function Mainsa()
+        {
+            require_once "Views/Constant/empleados/index.php";
+        }
+        public function Mainop()
+        {
+            require_once "Views/Constant/empleados/index.php";
+        }
+        public function Mainlo()
+        {
+            require_once "Views/Constant/empleados/index.php";
+        }
+        public function Mainza()
+        {
+            require_once "Views/Constant/empleados/index.php";
+        }
     }
