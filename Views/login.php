@@ -85,7 +85,7 @@
             </div>
             <div class="form-group mx-sm-4 text-center olv">
                 <div class="form-group text-center">
-                    <span><a href="#" class="olvide sing-up"><i class="bi bi-book-half"></i>Registrar</a></span>
+                    <span><a href="?c=user&a=registrar" class="olvide sing-up"><i class="bi bi-book-half"></i>Registrar</a></span>
                 </div>
             </div>
             <div class="form-group text-center">
