@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar</title>
+    <title>Ferreteria Sumersa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/showc.css">
+    <link rel="stylesheet" href="Assets/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
@@ -64,53 +64,66 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-3">
-            <?php
-                   
-                    foreach ($this->modelo->showloall() as $r)
-                     {
-                        $path="img/".$r->Imagen;
-                        if(file_exists($path))
-                        {
-                            ?>
-            <div class="col" id="id_<?=$r->ID_Producto?>">
-                <div class="card shadow-sm">
-                    <?php echo "<img src='img/$r->Imagen' width='300px' height='250px' class='card-img-top'>"?>
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <?=$r->Nombrep?>
-                        </h5>
-                        <p class="card-text">Precio <?=$r->Precio_LO?> $</p>
-                        <?php
-                                    if(($r->Cantidad_LO)>0)
-                                    {
-                                        ?>
-                        <p class="card-text ">Disponibilidad: <span style="color: green;"> en existencia</span></p>
-                        <?php
-                                    }
-                                    else{
-                                        ?>
-                        <p class="card-text ">Disponibilidad: <span class="text-danger"> Fuera de stock</span></p>
-                        <?php
-                                    }
-                                    ?>
-                        <a href="?c=products&a=Detailsst&id=<?=$r->ID_Producto?>"
-                            class="btn btn-primary btn-block boton">Ver
-                            más</a>
+    <div>
+        <div class="d-grid gap-3 mt-3 mx-5">
+
+            <div class="col-xs-6 col-xs-offset-3 tamano">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
                     </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Assets/img/fontaneria.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Assets/img/electrico.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Second slide label</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Assets/img/contruccion.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Assets/img/pintura.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
 
-            <?php
-                        }
-                             
-                    }
-                    ?>
+            </div>
         </div>
-    </div>
-    </div>
-
 </body>
 
 </html>
