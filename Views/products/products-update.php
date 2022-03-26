@@ -2,6 +2,9 @@
 require_once('Core/config.php'); 
  require_once "Views/Constant/admin/const.php";
 ?>
+<?php
+    $codigo_prod=$_GET["id"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
