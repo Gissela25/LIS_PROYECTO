@@ -30,7 +30,7 @@ p{
     padding: 0;
 }
 .logo{
-    position: relative;
-    top: 25%;
+    position: absolute;
+    top: 20%;
     left: 28%;
 }
