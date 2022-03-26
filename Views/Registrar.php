@@ -12,7 +12,7 @@
     </script>
         <link rel="stylesheet" href="Assets/css/registrar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Empleados</title>
+    <title>Cliente</title>
 </head>
 
 <body>
@@ -39,8 +39,8 @@
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">DUI</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su DUI"
-                                        name="i_email" id="i_email">
+                                    <input type="text" class="form-control" placeholder="Ingrese su dui"
+                                        name="dui" id="dui">
                                 </div>
                             </td>
                             <td></td>
@@ -57,8 +57,8 @@
                             <td>
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese su Nombre"
-                                        name="i_email" id="i_email">
+                                    <input type="text" class="form-control" placeholder="Ingrese su nombre"
+                                        name="Nombre" id="Nombre">
                                 </div>
                             </td>
                             <td></td>
@@ -66,7 +66,7 @@
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Clave</label>
                                     <input type="text" class="form-control" placeholder="Ingrese su Clave"
-                                        name="i_email" id="i_email">
+                                        name="Clave" id="Clave">
                                 </div>
                             </td>
                         </tr>
@@ -76,7 +76,7 @@
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Apellido</label>
                                     <input type="text" class="form-control" placeholder="Ingrese Apellido"
-                                        name="i_email" id="i_email">
+                                        name="Apellido" id="Apellido">
                                 </div>
                             </td>
                             <td></td>
@@ -84,7 +84,7 @@
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Confirmar clave</label>
                                     <input type="text" class="form-control" placeholder="Confirme su clave"
-                                        name="i_email" id="i_email">
+                                        name="SPassword" id="SPassword">
                                 </div>
                             </td>
                         </tr>
@@ -94,7 +94,7 @@
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Numero De Telefono</label>
                                     <input type="text" class="form-control" placeholder="Ingrese su numero de telefono"
-                                        name="i_email" id="i_email">
+                                        name="Telefono" id="Telefono">
                                 </div>
                             </td>
                             <td></td>
@@ -108,7 +108,7 @@
                                 <div class="form-group mx-sm-4 pt-3">
                                     <label for="exampleInputPassword1" class="form-label">Direccion</label>
                                     <input type="text" class="form-control" placeholder="Ingrese su direccion"
-                                        name="i_email" id="i_email">
+                                        name="Direccion" id="Direccion">
                                 </div>
                             </td>
                             <td></td>
