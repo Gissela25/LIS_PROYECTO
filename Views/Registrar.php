@@ -101,6 +101,19 @@
                             <td>
                                 <a href="" class="btn btn-primary btn-block boton mx-5">Ingresar</a>
                             </td>
+                            <?php require 'Tools/procesar-datos-registrar.php';?>
+                            <?php
+                                if(count($errores_log)>0&&isset($_POST['ingresar']))
+                                {
+                                    echo "<ul>";
+                                    foreach($errores_log as $error)
+                                    {
+                                    echo "<li>$error</li>";
+                                    }
+                                    echo "</ul>";
+            
+                                }
+                            ?>
                         </tr>
                         <tr>
                             <th scope="row"></th>
