@@ -23,8 +23,19 @@ require_once('Core/config.php');
  require_once "Views/Constant/clientesw/nav.php";
 ?>
     <div>
-        <img src="Assets/img/contruccion.jpg" class="d-block w-100" alt="...">
+        <img src="Assets/img/contruccion.jpg" width= "100%" height="400px" alt="...">
     </div>
+    <div>
+        <h1>QUIENES SOMOS</h1>
+        <p>Sumersa es una empresa importadora y comercializadora de materiales para la construcción,
+            destacándose en la distribución de productos de hierro tales como láminas, ángulos, polines, vigas y canales entre otros.</p>
+
+        <p>Además ofertamos una gran variedad de productos de ferretería y diversos materiales para la construcción de techos y
+             cielos falsos entre los que contamos con lámina Standard de Asbesto Cemento y Amanco Súper Eureka.</p>
+
+        <p>Nuestra empresa cuenta con más de 30 años de experiencia durante los cuales hemos mantenido como política de servicio
+             el valorar a nuestros clientes a partir de un servicio eficaz y personalizado con productos de alta calidad y economía</p>
+    </div> 
 </body>
 
 </html>
