@@ -30,3 +30,26 @@ input[type=submit]:hover {
     background: #F8C045;
     color: black;
 } 
+
+.social
+{
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  font-size: 15px;
+  transition: 0.2s;
+  color: #fff;
+  
+}
+
+.facebook
+{
+  background: #32508e;
+}
+
+.google
+{
+    background: #dd4b39;
+}
