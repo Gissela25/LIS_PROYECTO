@@ -47,10 +47,12 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 
 >Enlace a Mockups-->https://www.figma.com/file/ijKJCJf4Kbbse6vQKKpyNg/Untitled?node-id=0%3A1
 
->Manual Tecnico en la nube-->
+>Manual Tecnico en la nube-->https://drive.google.com/file/d/11H-KXrpjuy--4WlzkntkGsZ7KEXsP2Yh/view?usp=sharing
 
 >Manual de Usuario en la nube-->
 
 >Enlace de la Pagina Web-->
+
+>Enlace pdf Proyecto de catedra fase I-->https://drive.google.com/file/d/1cUzvW5r8MIMaBtieCGu1bCRWwqIN59IJ/view?usp=sharing
 
 >Enlace del video-->
