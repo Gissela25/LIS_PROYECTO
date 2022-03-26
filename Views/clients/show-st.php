@@ -54,7 +54,7 @@ require_once('Core/config.php');
                         <?php
                                     }
                                     ?>
-                        <a href="?c=products&a=Detailsst&id=<?=$r->ID_Producto?>" class="btn btn-primary btn-block boton">Ver
+                        <a href="?c=products&a=Detailsstc&id=<?=$r->ID_Producto?>" class="btn btn-primary btn-block boton">Ver
                             más</a>
                     </div>
                 </div>

@@ -15,16 +15,6 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i> Mi Cuenta
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=Ingresar">Iniciar Sesion</a></li>
-                            <li><a class="dropdown-item" href="#">Registrarse</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-geo-alt-fill"></i> Sucursales
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

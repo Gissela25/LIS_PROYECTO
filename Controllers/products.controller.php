@@ -872,6 +872,35 @@ class productscontroller{
         require_once "views/clients/index.php";
     }
     
+    public function Detailsstc()
+    {
+        require_once "views/clients/details-st.php";
+    }
+
+    public function Detailssac()
+    {
+        require_once "views/clients/details-sa.php";
+    }
+
+    public function Detailsssc()
+    {
+        require_once "views/clients/details-ss.php";
+    }
+
+    public function Detailsloc()
+    {
+        require_once "views/clients/details-lo.php";
+    }
+
+    public function Detailszac()
+    {
+        require_once "views/clients/details-za.php";
+    }
+
+    public function Detailsopc()
+    {
+        require_once "views/clients/details-op.php";
+    }
     
 
 
