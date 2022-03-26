@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
@@ -46,13 +46,16 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=show">Inventario General</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="#">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="#">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="#">Opico</a></li>
-                            <li><a class="dropdown-item" href="#">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="#">Santa Ana</a></li> -->
+                            <li><a class="dropdown-item" href="?c=products&a=stokestad">Santa Tecla</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokessad">San Salvador</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeload">Lourdes</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokeopad">Opico</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokezaad">Zaragoza</a></li>
+                            <li><a class="dropdown-item" href="?c=products&a=stokesaad">Santa Ana</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/"><i class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>
@@ -90,10 +93,11 @@
                             <td><?php echo "<img src='img/$r->Imagen' width='200px' height='200px'>"?></td>
                             <td><?=$r->Nombre?></td>
                             <td>
-                                <a class="edit mx-3" href=""><i class="bi bi-pencil-square"></i> Editar
+                                <a class="edit mx-3" href="?c=products&a=Update&id=<?=$r->ID_Producto?>"><i
+                                        class="bi bi-pencil-square"></i> Editar
                                     <i class="fa fa-lg fa-refresh"></i></a>
-                                <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
-                                    <i class="fa fa-lg fa-refresh"></i></a>
+                                <!-- <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
+                                    <i class="fa fa-lg fa-refresh"></i></a> -->
                             </td>
                         </tr>
                         <?php
@@ -103,4 +107,5 @@
                 </table>
             </div>
 </body>
+
 </html>

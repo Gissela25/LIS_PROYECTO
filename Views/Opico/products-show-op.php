@@ -67,6 +67,9 @@
                             <li><a class="dropdown-item" href="?c=products&a=stokesaop">Santa Ana</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/"><i class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
+                    </li>
                 </ul>
             </div>
         </div>

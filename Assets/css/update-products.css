@@ -1,5 +1,5 @@
 .Te{
-    color: #e7c331;
+    /* color: #e7c331; */
 }
 .edit{
     color: black;
@@ -10,7 +10,7 @@
     border-color: black;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(209, 209, 209, 1);
-    color: white;
+    color: black;
 }
 body{
     

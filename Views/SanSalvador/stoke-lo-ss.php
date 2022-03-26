@@ -58,7 +58,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-archive-fill"></i> Stoke
+                            <i class="bi bi-archive-fill"></i> Stock
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=stokest">Santa Tecla</a></li>
@@ -67,6 +67,10 @@
                             <li><a class="dropdown-item" href="?c=products&a=stokeza">Zaragoza</a></li>
                             <li><a class="dropdown-item" href="?c=products&a=stokesa">Santa Ana</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/"><i
+                                class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>

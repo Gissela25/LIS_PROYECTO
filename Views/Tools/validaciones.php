@@ -16,3 +16,30 @@
     {
         return preg_match('/^[0-9]{6}$/',$variable);
     }
+
+    function isProduct($variable)
+    {
+        return preg_match('/^PROD[0-9]{3}$/',$variable);
+    }
+    function isText($variable)
+    {
+        return preg_match('/^(([a-zA-ZÁÉÍÓÚáéíóúñ0-9_.\-\,()?]+)[ ]?([a-zA-ZÁÉÍÓÚáéíóúñ0-9_.\-\,()?]+)?)+$/',$variable);
+    }
+    function isInteger($variable)
+    {
+        return preg_match('/^[0-9]+$/',$variable);
+    }
+    function isFloat($variable)
+    {
+        return preg_match('/^[0-9]+[.]?([0-9]+)?$/',$variable);
+    }
+    function isAccept($variable)
+    {
+        if(preg_match('/\.(jpe?g|png|webp)$/',$variable))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }

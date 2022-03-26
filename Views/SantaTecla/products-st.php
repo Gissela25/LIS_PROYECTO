@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <img src="Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
@@ -28,7 +28,8 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="?c=products&a=showst">Inventario General</a>
+                        <a class="nav-link active" aria-current="page" href="?c=products&a=showst">Inventario
+                            General</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="?c=products&a=showstall">Santa Tecla</a>
@@ -42,7 +43,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-archive-fill"></i> Stoke
+                            <i class="bi bi-archive-fill"></i> Stock
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="?c=products&a=stokessst">San Salvador</a></li>
@@ -51,7 +52,11 @@
                             <li><a class="dropdown-item" href="?c=products&a=stokezast">Zaragoza</a></li>
                             <li><a class="dropdown-item" href="?c=products&a=stokesast">Santa Ana</a></li>
                         </ul>
-                    </li> 
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="http://localhost/LIS_PROYECTO/"><i
+                                class="bi bi-box-arrow-right"></i> Cerrar Sesion</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -92,9 +97,10 @@
                                     <i class="fa fa-lg fa-refresh"></i></a>
                                 <a class="edit mx-3" href=""><i class="bi bi-trash-fill"></i> Eliminar
                                     <i class="fa fa-lg fa-refresh"></i></a> -->
-                                    <a class="edit mx-3" href="?c=products&a=Insertst&id=<?=$r->ID_Producto?>"><i class="bi bi-box2-fill"></i>Agregar Stoke
+                                <a class="edit mx-3" href="?c=products&a=Insertst&id=<?=$r->ID_Producto?>"><i
+                                        class="bi bi-box2-fill"></i>Agregar Stoke
                                     <i class="fa fa-lg fa-refresh"></i></a>
-                                    
+
                             </td>
                         </tr>
                         <?php
@@ -104,4 +110,5 @@
                 </table>
             </div>
 </body>
+
 </html>

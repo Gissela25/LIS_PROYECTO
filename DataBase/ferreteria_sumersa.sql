@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 18-03-2022 a las 08:04:15
+-- Tiempo de generación: 25-03-2022 a las 07:39:51
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -36,8 +36,18 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `Correo` varchar(255) NOT NULL,
   `Clave` varchar(255) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
+  `Verificado` int(1) NOT NULL DEFAULT '0',
+  `Hash_Active` varchar(100) NOT NULL,
   PRIMARY KEY (`DUI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`DUI`, `Nombre`, `Apellido`, `Telefono`, `Correo`, `Clave`, `Direccion`, `Verificado`, `Hash_Active`) VALUES
+('12345678-9', 'Jony', 'Lopez', '7005-9988', 'jj@gmail.com', '$2y$10$.pmNtBClNzlICB3h31VlD.FayXlYiyO4jrj9J.eSbsrjVb26/Pqm.', 'Ciudad Delgado, San Salvador', 1, '95bf5763251f491480a0c1e5b76a16d8'),
+('9-87654321', 'Justo', 'Lopez', '7755-4433', 'jl@gmail.com', '$2y$10$.pmNtBClNzlICB3h31VlD.FayXlYiyO4jrj9J.eSbsrjVb26/Pqm.', 'Ciudad Delgado, SS', 1, '95bf5763251f491480a0c1e5b76a16d8');
 
 -- --------------------------------------------------------
 
@@ -220,6 +230,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Estado` int(1) NOT NULL DEFAULT '1',
   `Acceso` int(1) NOT NULL DEFAULT '0',
   `ID_Sucursal` int(1) NOT NULL,
+  `Hash_Active` varchar(100) NOT NULL,
   PRIMARY KEY (`ID_Usuario`),
   KEY `ID_Sucursal` (`ID_Sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -228,10 +239,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`) VALUES
-('E215', 'Gissela', 'Serrano', 'gisselaverenice@gmail.com', '$2y$10$LcxLIDlndQTRBNlYeWaXkususjYIcajW5SS6uw6nyeIDA702EHHeW', 0, 0, 0, 3),
-('E486', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$gzmxibaaS/Z/FiJWGaGx/OVrghmrogCt864zFfYNkkOhZJTOAm69C', 0, 0, 0, 3),
-('E802', 'Susan', 'Zelaya', 'susan15@gmail.com', '$2y$10$GgqKR6PHTOfTnGC8oHVRr.6asTKBq06HYrnCztaj3eIGjgmaEey4S', 0, 1, 0, 1);
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `Verificado`, `Estado`, `Acceso`, `ID_Sucursal`, `Hash_Active`) VALUES
+('E182', 'Pedro', 'Castillo', 'pedro@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 0, 5, '4bf2c2304abdd62f7d39a314d478439c'),
+('E318', 'Luis', 'Ulloa', 'serranogissela0@gmail.com', '$2y$10$sfRVYdMS0awPFKwzahdczOLusv5ZmCLoRPjNWksRrhlC1EEaBsV1C', 1, 1, 0, 2, '54ba05ed452c29d13ed7d2a752e2c32f'),
+('E390', 'Santiago', 'Melendez', 'santiago@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 1, 6, '085a2f56bfb27cb2e44ef3c457591b96'),
+('E486', 'Jony', 'Morales', 'jony25@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 0, 3, '95bf5763251f491480a0c1e5b76a16d8'),
+('E494', 'Juan', 'Lopez', 'juan@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 1, 0, 2, '95bf5763251f491480a0c1e5b76a16d8'),
+('E579', 'Gissela', 'Serrano', 'gisselaverenice@gmail.com', '$2y$10$F4.M6xINdXeqrULvzsWc4eXzPIys4U2ktSa607KIriDHgfctuCF/u', 1, 1, 0, 4, '3cfbdf468f0a03187f6cee51a25e5e9a'),
+('E912', 'Pablo', 'gonzalez', 'pablo@gmail.com', '$2y$10$ZluBGt/GyxRDw/cGy1PMSedPOB7TuIZeKzEmgGpeo/A5pkqHmwTbe', 1, 0, 0, 4, '95bf5763251f491480a0c1e5b76a16d8');
 
 --
 -- Restricciones para tablas volcadas
