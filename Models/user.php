@@ -48,7 +48,7 @@
                     $_SESSION['nombre']=$name;
                     $_SESSION['apellido']=$apellido;
                     $_SESSION['correo']=$Correo;
-                    echo "<script>location.href='?c=products&a=showst'</script>";
+                    echo "<script>location.href='?c=user&a=Mainst'</script>";
                     break;
                 case 2:
                     session_start();
@@ -56,7 +56,7 @@
                     $_SESSION['nombre']=$name;
                     $_SESSION['apellido']=$apellido;
                     $_SESSION['correo']=$Correo;
-                    echo "<script>location.href='?c=products&a=showss'</script>";
+                    echo "<script>location.href='?c=user&a=Mainss'</script>";
                     break;
                 case 3:
                     session_start();
@@ -64,7 +64,7 @@
                     $_SESSION['nombre']=$name;
                     $_SESSION['apellido']=$apellido;
                     $_SESSION['correo']=$Correo;
-                    echo "<script>location.href='?c=products&a=showlo'</script>";
+                    echo "<script>location.href='?c=user&a=Mainlo'</script>";
                     break;
                 case 4:
                     session_start();
@@ -72,7 +72,7 @@
                     $_SESSION['nombre']=$name;
                     $_SESSION['apellido']=$apellido;
                     $_SESSION['correo']=$Correo;
-                    echo "<script>location.href='?c=products&a=showop'</script>";
+                    echo "<script>location.href='?c=user&a=Mainop'</script>";
                     break;
                 case 5:
                     session_start();
@@ -80,7 +80,7 @@
                     $_SESSION['nombre']=$name;
                     $_SESSION['apellido']=$apellido;
                     $_SESSION['correo']=$Correo;
-                    echo "<script>location.href='?c=products&a=showza'</script>";
+                    echo "<script>location.href='?c=user&a=Mainza'</script>";
                     break;
                 case 6:
                     session_start();
@@ -88,7 +88,7 @@
                     $_SESSION['nombre']=$name;
                     $_SESSION['apellido']=$apellido;
                     $_SESSION['correo']=$Correo;
-                    echo "<script>location.href='?c=products&a=showsa'</script>";
+                    echo "<script>location.href='?c=user&a=Mainsa'</script>";
                     break;
             }
         }

@@ -1,3 +1,10 @@
+<?php
+require("authentify.php");
+if(isset($_POST['lwg']))
+{
+    echo "<script>location.href='".$client->createAuthUrl()."'</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -68,7 +75,7 @@
                     <div class="form-group mx-sm-5 pb-3">
                         <input type="submit" value="Ingresar" name="ingresar" id="ingresar"
                             class="btn btn-block ingresar">
-                        <button class="google my-2"><i class="bi bi-google"> </i>Log in with Google </button>
+                        <button class="google my-2" id="lwg" name="lwg"><i class="bi bi-google"> </i>Log in with Google </button>
                     </div>
 
 

@@ -901,6 +901,60 @@ class productscontroller{
     {
         require_once "views/clients/details-op.php";
     }
+
+    public function Maintemp()
+    {
+        require_once "Views/temp/index.php";
+    }
+    public function St()
+    {
+        require_once "Views/temp/show-st.php";
+    }
+    public function Sa()
+    {
+        require_once "Views/temp/show-sa.php";
+    }
+    public function Za()
+    {
+        require_once "Views/temp/show-za.php";
+    }
+    public function Lo()
+    {
+        require_once "Views/temp/show-lo.php";
+    }
+    public function Op()
+    {
+        require_once "Views/temp/show-op.php";
+    }
+    public function Ss()
+    {
+        require_once "Views/temp/show-ss.php";
+    }
+
+    public function Dst()
+    {
+        require_once "Views/temp/details-st.php";
+    }
+    public function Dsa()
+    {
+        require_once "Views/temp/details-sa.php";
+    }
+    public function Dza()
+    {
+        require_once "Views/temp/details-za.php";
+    }
+    public function Dlo()
+    {
+        require_once "Views/temp/details-lo.php";
+    }
+    public function Dop()
+    {
+        require_once "Views/temp/details-op.php";
+    }
+    public function Dss()
+    {
+        require_once "Views/temp/details-ss.php";
+    }
     
 
 

@@ -2,6 +2,7 @@
 
 require_once "Models/user.php";
 
+
     class UserController{
         private $modelo;
         public function __construct()
@@ -34,7 +35,7 @@ require_once "Models/user.php";
             
             if(session_destroy())
             {
-             echo "<script>location.href='?c=inicio'</script>";
+                echo "<script>location.href='".PATH."'</script>";
             }
         }
 
@@ -68,4 +69,6 @@ require_once "Models/user.php";
         {
             require_once "Views/Constant/empleados/ZA/index.php";
         }
+
+
     }
