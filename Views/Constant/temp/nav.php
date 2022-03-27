@@ -35,7 +35,7 @@
                         <i class="bi bi-person-fill"></i>Google User
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="<?=PATH?>">Actualizar datos</a></li>
+                        <li><a class="dropdown-item" href="#">Actualizar datos</a></li>
                         <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=close">Cerrar Sesion</a></li>
                     </ul>
                 </li>
