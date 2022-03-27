@@ -1,5 +1,5 @@
 <?php
-/*
+
   require_once 'config.php';
 
 // authenticate code from Google OAuth Flow
@@ -15,5 +15,5 @@ if (isset($_GET['code'])) {
  
   // now you can use this profile info to create account in your website and make user logged in.
 }
-*/
+
 ?>
