@@ -49,7 +49,7 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 
 >Manual Tecnico en la nube-->https://drive.google.com/file/d/11H-KXrpjuy--4WlzkntkGsZ7KEXsP2Yh/view?usp=sharing
 
->Manual de Usuario en la nube-->
+>Manual de Usuario en la nube--> https://drive.google.com/file/d/1rYrrH-lAZve-nrApIPugLaXSg83pEQHc/view?usp=sharing
 
 >Enlace de la Pagina Web-->
 
