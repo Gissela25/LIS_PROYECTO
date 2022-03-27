@@ -49,10 +49,10 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 
 >Manual Tecnico en la nube-->https://drive.google.com/file/d/11H-KXrpjuy--4WlzkntkGsZ7KEXsP2Yh/view?usp=sharing
 
->Manual de Usuario en la nube-->
+>Manual de Usuario en la nube--> https://drive.google.com/file/d/1wF0prHpHDZu8DViMprPsUReVP7oEClWj/view?usp=sharing
 
 >Enlace de la Pagina Web-->
 
->Enlace pdf Proyecto de catedra fase I-->https://drive.google.com/file/d/1cUzvW5r8MIMaBtieCGu1bCRWwqIN59IJ/view?usp=sharing
+>Enlace pdf Proyecto de catedra fase I-->https://drive.google.com/file/d/1gydI1gssJ-N1yqYGU899iUyZ4OCDG90L/view?usp=sharing
 
 >Enlace del video-->
