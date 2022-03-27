@@ -33,21 +33,11 @@
     {
         return preg_match('/^[0-9]+[.]?([0-9]+)?$/',$variable);
     }
-    function isAccept($variable)
-    {
-        if(preg_match('/\.(jpe?g|png|webp)$/',$variable))
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
     function isdui($variable)
     {
-        return preg_match('/^\d{8}[-]\d{1}$/',$variable);
+        return preg_match('/^0[0-9]{7}\-[0-9]{1}$/',$variable);
     }
     function istel($variable)
     {
-        return preg_match('/^\d{4}[-]\d{4}$/',$variable);
+        return preg_match('/^(2|6|7){1}[0-9]{3}\-[0-9]{4}$/',$variable);
     }
