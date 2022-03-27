@@ -55,4 +55,4 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 
 >Enlace pdf Proyecto de catedra fase I-->https://drive.google.com/file/d/1gydI1gssJ-N1yqYGU899iUyZ4OCDG90L/view?usp=sharing
 
->Enlace del video-->
+>Enlace del video-->https://drive.google.com/file/d/1SoPaNpRAbM7hzfmQPau8QSh5CvOQFzVO/view?usp=sharing
