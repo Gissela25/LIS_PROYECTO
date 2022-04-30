@@ -3,6 +3,13 @@
     background-size: cover;
     height: 300px;
 }
+.fondo2{
+    background-image: url(../img/logosumersa.png) ;
+    background-repeat: no-repeat;
+    background-size: 42%;
+    background-position: center;
+    height: 330px;
+}
 h1{
     color: rgb(40, 68, 116);
     font-size: 50px;
@@ -13,24 +20,7 @@ p{
     color: rgb(0, 77, 175);
 
 }
-/* #columna1 {
-    position:absolute;
-    top:450px;
-    left:150px;
-    width:500px;
-    margin-top:10px;
-}
-#columna2 {
-    margin-left:640px;
-    margin-right:20px;
-    margin-top:80px;
-} */
 *{
     margin: 0;
     padding: 0;
-}
-.logo{
-    position: absolute;
-    top: 20%;
-    left: 28%;
 }

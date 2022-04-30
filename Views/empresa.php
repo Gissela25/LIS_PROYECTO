@@ -23,34 +23,39 @@ require_once('Core/config.php');
  require_once "Views/Constant/clientesw/nav.php";
 ?>
         <div>
-        <div class="d-grid gap-3 mt-3 mx-5">
+        <div class="d-grid gap-1 mt-1 mx-1">
 
             <div class="col-xs-6 col-xs-offset-3 tamano">
                 <div class="fondo">
-                    <div class="logo">
-                    <img src="Assets/img/logosumersa.png" height="160px" width="580px">
+                    <div class="fondo2">
                      </div> 
                 </div>
             </div>
+        </div>
             <br>
+        <div class="d-grid gap-1 mt-5 mx-5">
             <div class="row" style="text-align:center">
+            <div class="col-lg-1 col-lg-offset-3 tamano">
+                </div>
                 <div class="col-lg-6 col-lg-offset-3 tamano">
                 <div>   
                 <br>
                 <h1>QUIENES SOMOS</h1>
                 <br>
-        <p>Sumersa es una empresa importadora y comercializadora de materiales para la construcción,
-            destacándose en la distribución de productos de hierro tales como láminas, ángulos, polines, vigas y canales entre otros.</p>
+                 <p>Sumersa es una empresa importadora y comercializadora de materiales para la construcción,
+                     destacándose en la distribución de productos de hierro tales como láminas, ángulos, polines, vigas y canales entre otros.</p>
 
-        <p>Además ofertamos una gran variedad de productos de ferretería y diversos materiales para la construcción de techos y
-             cielos falsos entre los que contamos con lámina Standard de Asbesto Cemento y Amanco Súper Eureka.</p>
+                 <p>Además ofertamos una gran variedad de productos de ferretería y diversos materiales para la construcción de techos y
+                     cielos falsos entre los que contamos con lámina Standard de Asbesto Cemento y Amanco Súper Eureka.</p>
 
-        <p>Nuestra empresa cuenta con más de 30 años de experiencia durante los cuales hemos mantenido como política de servicio
-             el valorar a nuestros clientes a partir de un servicio eficaz y personalizado con productos de alta calidad y economía</p>
-             <br><br><br>                   
+                <p>Nuestra empresa cuenta con más de 30 años de experiencia durante los cuales hemos mantenido como política de servicio
+                     el valorar a nuestros clientes a partir de un servicio eficaz y personalizado con productos de alta calidad y economía</p>
+                     <br><br><br>                   
                 </div>
                 </div>
-                <div class="col-lg-6 col-lg-offset-3 tamano">
+                <div class="col-lg-1 col-lg-offset-3 tamano">
+                </div>
+                <div class="col-lg-3 col-lg-offset-3 tamano">
                 <div>
                 <img src="Assets/img/empresa.png" width = "310px" height = "440px">
                 <br>
