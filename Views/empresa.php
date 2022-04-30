@@ -34,7 +34,7 @@ require_once('Core/config.php');
             </div>
             <br>
             <div class="row" style="text-align:center">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-lg-offset-3 tamano">
                 <div>   
                 <br>
                 <h1>QUIENES SOMOS</h1>
@@ -50,7 +50,7 @@ require_once('Core/config.php');
              <br><br><br>                   
                 </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-lg-offset-3 tamano">
                 <div>
                 <img src="Assets/img/empresa.png" width = "310px" height = "440px">
                 <br>
