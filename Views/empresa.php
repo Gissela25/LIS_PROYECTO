@@ -22,13 +22,21 @@ require_once('Core/config.php');
 <?php 
  require_once "Views/Constant/clientesw/nav.php";
 ?>
-    <div class="fondo">
-        <div class="logo">
-        <img src="Assets/img/logosumersa.png" height="160px" width="580px">
-        </div> 
-    </div>
-    <div style="text-align:center">
-                <div id="columna1">
+        <div>
+        <div class="d-grid gap-3 mt-3 mx-5">
+
+            <div class="col-xs-6 col-xs-offset-3 tamano">
+                <div class="fondo">
+                    <div class="logo">
+                    <img src="Assets/img/logosumersa.png" height="160px" width="580px">
+                     </div> 
+                </div>
+            </div>
+            <br>
+            <div class="row" style="text-align:center">
+                <div class="col-md-6">
+                <div>   
+                <br>
                 <h1>QUIENES SOMOS</h1>
                 <br>
         <p>Sumersa es una empresa importadora y comercializadora de materiales para la construcción,
@@ -41,9 +49,17 @@ require_once('Core/config.php');
              el valorar a nuestros clientes a partir de un servicio eficaz y personalizado con productos de alta calidad y economía</p>
              <br><br><br>                   
                 </div>
-                <div id="columna2">
-                <img src="Assets/img/empresa.png" width = "310px" height = "440px">
                 </div>
-    </div>
+                <div class="col-md-6">
+                <div>
+                <img src="Assets/img/empresa.png" width = "310px" height = "440px">
+                <br>
+                <br><br><br>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+        </div>
 </body>
 </html>
