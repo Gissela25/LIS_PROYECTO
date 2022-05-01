@@ -78,7 +78,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
                                         <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" placeholder="Ingrese su nombre"
+                                        <input type="text" class="form-control" value="<?php echo $nombre ?>"
                                             name="Nombre" id="Nombre">
                                     </div>
                                 </td>
