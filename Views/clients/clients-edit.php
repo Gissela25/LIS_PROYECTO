@@ -60,7 +60,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
                                         <label for="exampleInputPassword1" class="form-label">DUI</label>
-                                        <input type="text" class="form-control" placeholder="00470129-3" name="DUI"
+                                        <input type="text" class="form-control" value="<?php echo $usuario ?>" name="DUI"
                                             id="DUI">
                                     </div>
                                 </td>
@@ -69,7 +69,7 @@ require_once "Views/Constant/clientes/const.php";
                                     <div class="form-group mx-sm-4 pt-3">
                                         <label for="exampleInputPassword1" class="form-label">Correo</label>
                                         <input type="text" class="form-control"
-                                            placeholder="Ingrese su Correo Electronico" name="correo" id="correo">
+                                        value="<?php echo $correo ?>" name="correo" id="correo">
                                     </div>
                                 </td>
                             </tr>
@@ -101,7 +101,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
                                         <label for="exampleInputPassword1" class="form-label">Apellido</label>
-                                        <input type="text" class="form-control" placeholder="Ingrese Apellido"
+                                        <input type="text" class="form-control" value="<?php echo $apellido ?>"
                                             name="Apellido" id="Apellido">
                                     </div>
                                 </td>
