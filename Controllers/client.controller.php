@@ -19,6 +19,11 @@ class clientcontroller{
             require_once "Views/Registrar.php";
         }
 
+    public function editclients()
+        {
+            require_once "views/clients/clients-edit.php";
+        }
+
 //     public function Insert(){
 //         $titulo = "Ingresar";
 //         $p=new client();

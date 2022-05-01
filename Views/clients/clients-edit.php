@@ -42,10 +42,10 @@
                             <tr>
 
                                 <th scope="col"></th>
-                                <th scope="col" style="color:#084594">INFORMACION PERSONAL</th>
+                                <th scope="col" style="color:#084594">ACTUALIZAR INFORMACION PERSONAL</th>
                                 <th scope="col"></th>
                                 <th scope="col" style="color:#084594">
-                                    DATOS DE INICIO DE SESIÓN</th>
+                                    ACTUALIZAR DATOS DE INICIO DE SESIÓN</th>
                             </tr>
                         </thead>
                         <tbody>
