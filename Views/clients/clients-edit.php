@@ -1,3 +1,7 @@
+<?php
+require_once('Core/config.php'); 
+require_once "Views/Constant/clientes/const.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +22,10 @@
 </head>
 
 <body>
-
-    <div class="row mx-5 mt-5 my-4">
+<?php 
+ require_once "Views/Constant/clientes/nav.php";
+?>
+    <div class="row mx-5 mt-1 my-4">
         <div class="col ml-5">
             <div class="row mt-3">
                 <form method="POST" action="<?=PATH?>?c=client&a=add" enctype="multipart/form-data" class="">

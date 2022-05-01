@@ -871,11 +871,6 @@ class productscontroller{
     {
         require_once "views/clients/index.php";
     }
-
-    public function editclients()
-    {
-        require_once "views/clients/clients-edit.php";
-    }
     
     public function Detailsstc()
     {
