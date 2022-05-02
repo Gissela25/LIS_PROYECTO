@@ -48,10 +48,8 @@ require_once "Views/Constant/clientes/const.php";
                             <tr>
 
                                 <th scope="col"></th>
-                                <th scope="col" style="color:#084594">ACTUALIZAR INFORMACION PERSONAL</th>
-                                <th scope="col"></th>
-                                <th scope="col" style="color:#084594">
-                                    ACTUALIZAR DATOS DE INICIO DE SESIÓN</th>
+                                <th scope="col" style="color:#084594">ACTUALIZAR INFORMACION</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -62,6 +60,26 @@ require_once "Views/Constant/clientes/const.php";
                                         <label for="exampleInputPassword1" class="form-label">DUI</label>
                                         <input type="text" class="form-control" value="<?php echo $usuario ?>" name="DUI"
                                             id="DUI">
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                      <div class="form-group mx-sm-4 pt-3">                            
+                                        <label for="exampleInputPassword1" class="form-label">Direccion</label>
+                                        <div class="input-group">
+                                        <input type="text" class="form-control" value="<?php echo $direccion ?>"
+                                            name="Direccion" id="Direccion">
+                                        </div>
+                                        </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>
+                                    <div class="form-group mx-sm-4 pt-3">
+                                        <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" value="<?php echo $nombre ?>"
+                                            name="Nombre" id="Nombre">
                                     </div>
                                 </td>
                                 <td></td>
@@ -77,29 +95,6 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" value="<?php echo $nombre ?>"
-                                            name="Nombre" id="Nombre">
-                                    </div>
-                                </td>
-                                <td></td>
-                                <td>
-                                    <div class="form-group mx-sm-4 pt-3">                            
-                                        <label for="exampleInputPassword1" class="form-label">Clave</label>
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" placeholder="Ingrese su Clave" name="Clave" id="Clave">
-                                        <div class="input-group-append">
-                                        <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()">
-                                         <span class="fa fa-eye-slash icon"></span> </button>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"></th>
-                                <td>
-                                    <div class="form-group mx-sm-4 pt-3">
                                         <label for="exampleInputPassword1" class="form-label">Apellido</label>
                                         <input type="text" class="form-control" value="<?php echo $apellido ?>"
                                             name="Apellido" id="Apellido">
@@ -107,11 +102,6 @@ require_once "Views/Constant/clientes/const.php";
                                 </td>
                                 <td></td>
                                 <td>
-                                    <!-- <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Confirmar clave</label>
-                                        <input type="text" class="form-control" placeholder="Confirme su clave"
-                                            name="SPassword" id="SPassword">
-                                    </div> -->
                                 </td>
                             </tr>
                             <tr>
@@ -130,22 +120,6 @@ require_once "Views/Constant/clientes/const.php";
                                             <input type="submit" name="add" id="add" class="btn boton "></input>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"></th>
-                                <td>
-                                    <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Direccion</label>
-                                        <input type="text" class="form-control" value="<?php echo $direccion ?>"
-                                            name="Direccion" id="Direccion">
-                                    </div>
-                                </td>
-                                <td><div class="form-group mx-sm-4 pt-3">
-                                        <input type="hidden" class="form-control" placeholder="Ingrese su direccion"
-                                            name="Verificar" id="Verificar" value="0">
-                                    </div></td>
-                                <td>
                                 </td>
                             </tr>
                         </tbody>
