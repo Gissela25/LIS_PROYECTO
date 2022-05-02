@@ -111,7 +111,7 @@
                 $consulta2->bindParam(1,$Correo);
                 $consulta2->execute();
                 $filas2= $consulta2->fetchColumn();
-                $sql2=$this->pdo->prepare("SELECT DUI,Nombre,Apellido,Correo,Clave,Verificado FROM cliente WHERE Correo=?;");
+                $sql2=$this->pdo->prepare("SELECT DUI,Nombre,Apellido,Correo,Clave,Verificado,Direccion,Telefono FROM cliente WHERE Correo=?;");
                 $sql2->bindParam(1,$Correo);
                 $sql2->execute();
                 $rc=$sql2->fetch(PDO::FETCH_ASSOC);
@@ -181,6 +181,8 @@
                     $dui_user=$rc['DUI'];
                     $name=$rc['Nombre'];
                     $apellido=$rc['Apellido'];
+                    $telefono=$rc['Telefono'];
+                    $direccion=$rc['Direccion'];
                     $pwd_client=$rc['Clave'];
                     if(password_verify($this->getPass(),$pwd_client))
                     {
@@ -189,6 +191,9 @@
                         $_SESSION['nombre']=$name;
                         $_SESSION['apellido']=$apellido;
                         $_SESSION['correo']=$Correo;
+                        $_SESSION['telefono']=$telefono;
+                        $_SESSION['direccion']=$direccion;
+                        $_SESSION['clave']=$pwd_client;
                         echo "<script>location.href='?c=products&a=inicioc'</script>";
                     }
                     else{
