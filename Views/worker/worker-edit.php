@@ -1,4 +1,6 @@
 <?php
+require_once('Core/config.php');
+ require_once "Views/Constant/admin/const.php";
     $ID_Usuario=$_GET["idu"];
 ?>
 <!DOCTYPE html>

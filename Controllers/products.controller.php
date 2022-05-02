@@ -833,5 +833,129 @@ class productscontroller{
         require_once "views/products/details-op.php";
     }
 
+    public function showstu()
+    {
+        require_once "views/clients/show-st.php";
+    }
+    public function showsau()
+    {
+        require_once "views/clients/show-sa.php";
+    }
+
+    public function showssu()
+    {
+        require_once "views/clients/show-ss.php";
+    }
+
+    public function showzau()
+    {
+        require_once "views/clients/show-za.php";
+    }
+
+    public function showlou()
+    {
+        require_once "views/clients/show-lo.php";
+    }
+
+    public function showopu()
+    {
+        require_once "views/clients/show-op.php";
+    }
+
+    public function empresa()
+    {
+        require_once "views/empresa.php";
+    }
+
+    public function inicioc()
+    {
+        require_once "views/clients/index.php";
+    }
+    
+    public function Detailsstc()
+    {
+        require_once "views/clients/details-st.php";
+    }
+
+    public function Detailssac()
+    {
+        require_once "views/clients/details-sa.php";
+    }
+
+    public function Detailsssc()
+    {
+        require_once "views/clients/details-ss.php";
+    }
+
+    public function Detailsloc()
+    {
+        require_once "views/clients/details-lo.php";
+    }
+
+    public function Detailszac()
+    {
+        require_once "views/clients/details-za.php";
+    }
+
+    public function Detailsopc()
+    {
+        require_once "views/clients/details-op.php";
+    }
+
+    public function Maintemp()
+    {
+        require_once "Views/temp/index.php";
+    }
+    public function St()
+    {
+        require_once "Views/temp/show-st.php";
+    }
+    public function Sa()
+    {
+        require_once "Views/temp/show-sa.php";
+    }
+    public function Za()
+    {
+        require_once "Views/temp/show-za.php";
+    }
+    public function Lo()
+    {
+        require_once "Views/temp/show-lo.php";
+    }
+    public function Op()
+    {
+        require_once "Views/temp/show-op.php";
+    }
+    public function Ss()
+    {
+        require_once "Views/temp/show-ss.php";
+    }
+
+    public function Dst()
+    {
+        require_once "Views/temp/details-st.php";
+    }
+    public function Dsa()
+    {
+        require_once "Views/temp/details-sa.php";
+    }
+    public function Dza()
+    {
+        require_once "Views/temp/details-za.php";
+    }
+    public function Dlo()
+    {
+        require_once "Views/temp/details-lo.php";
+    }
+    public function Dop()
+    {
+        require_once "Views/temp/details-op.php";
+    }
+    public function Dss()
+    {
+        require_once "Views/temp/details-ss.php";
+    }
+    
+
 
 }

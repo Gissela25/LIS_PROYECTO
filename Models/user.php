@@ -39,26 +39,56 @@
             $this-> code_v = $cd;
         }
 
-        public function SelectSucursal($i)
+        public function SelectSucursal($i,$id_user,$name,$apellido,$Correo)
         {
             switch ($i) {
                 case 1:
-                    header("Location: ?c=products&a=showst");
+                    session_start();
+                    $_SESSION['usuario']=$id_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=user&a=Mainst'</script>";
                     break;
                 case 2:
-                    header("Location: ?c=products&a=showss");
+                    session_start();
+                    $_SESSION['usuario']=$id_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=user&a=Mainss'</script>";
                     break;
                 case 3:
-                    header("Location: ?c=products&a=showlo");
+                    session_start();
+                    $_SESSION['usuario']=$id_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=user&a=Mainlo'</script>";
                     break;
                 case 4:
-                    header("Location: ?c=products&a=showop");
+                    session_start();
+                    $_SESSION['usuario']=$id_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=user&a=Mainop'</script>";
                     break;
                 case 5:
-                    header("Location: ?c=products&a=showza");
+                    session_start();
+                    $_SESSION['usuario']=$id_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=user&a=Mainza'</script>";
                     break;
                 case 6:
-                    header("Location: ?c=products&a=showsa");
+                    session_start();
+                    $_SESSION['usuario']=$id_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=user&a=Mainsa'</script>";
                     break;
             }
         }
@@ -71,7 +101,7 @@
                 $consulta1->bindParam(1,$Correo);
                 $consulta1->execute();
                 $filas1= $consulta1->fetchColumn();
-                $sql1=$this->pdo->prepare("SELECT Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
+                $sql1=$this->pdo->prepare("SELECT ID_Usuario,Nombre,Apellido,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
                 $sql1->bindParam(1,$Correo);
                 $sql1->execute();
                 $ru=$sql1->fetch(PDO::FETCH_ASSOC);
@@ -81,7 +111,7 @@
                 $consulta2->bindParam(1,$Correo);
                 $consulta2->execute();
                 $filas2= $consulta2->fetchColumn();
-                $sql2=$this->pdo->prepare("SELECT Correo,Clave,Verificado FROM cliente WHERE Correo=?;");
+                $sql2=$this->pdo->prepare("SELECT DUI,Nombre,Apellido,Correo,Clave,Verificado FROM cliente WHERE Correo=?;");
                 $sql2->bindParam(1,$Correo);
                 $sql2->execute();
                 $rc=$sql2->fetch(PDO::FETCH_ASSOC);
@@ -96,6 +126,9 @@
                     $pwd_user=$ru['Clave'];
                     $ids=$ru['ID_Sucursal'];
                     $state=$ru['Estado'];
+                    $id_user=$ru['ID_Usuario'];
+                    $name=$ru['Nombre'];
+                    $apellido=$ru['Apellido'];
                     if($acceso1==1){
 
                         if(password_verify($this->getPass(),$pwd_user))
@@ -103,7 +136,11 @@
                             //echo "<ul> <li>Entrada válida</li></ul>";
                             if($state==1){
                                 session_start();
-                                header("Location: ?c=branch&a=branch");
+                                $_SESSION['usuario']=$id_user;
+                                $_SESSION['nombre']=$name;
+                                $_SESSION['apellido']=$apellido;
+                                $_SESSION['correo']=$Correo;
+                                echo "<script>location.href='?c=branch&a=inicio'</script>";
                             }
                             else
                             {
@@ -118,10 +155,9 @@
                     elseif($acceso1==0){
                         if(password_verify($this->getPass(),$pwd_user))
                         {
-                            echo "<ul> <li>Entrada válida</li></ul>";
                             if($state==1)
                             {
-                                $this->SelectSucursal($ids);
+                                $this->SelectSucursal($ids,$id_user,$name,$apellido,$Correo);
                             }
                           else{
                             echo "<ul> <li>Su cuenta de empleado ha sido desactivada</li></ul>";
@@ -142,11 +178,18 @@
                     $estado2=$rc['Verificado'];        
                    if($estado2==1)
                    {
-                    echo "<ul> <li>Cuenta de usuario activa</li></ul>";
+                    $dui_user=$rc['DUI'];
+                    $name=$rc['Nombre'];
+                    $apellido=$rc['Apellido'];
                     $pwd_client=$rc['Clave'];
                     if(password_verify($this->getPass(),$pwd_client))
                     {
-                        echo "<ul> <li>Entrada válida</li></ul>";
+                        session_start();
+                        $_SESSION['usuario']=$dui_user;
+                        $_SESSION['nombre']=$name;
+                        $_SESSION['apellido']=$apellido;
+                        $_SESSION['correo']=$Correo;
+                        echo "<script>location.href='?c=products&a=inicioc'</script>";
                     }
                     else{
                         echo "<ul> <li>Entrada inválida</li></ul>";
@@ -587,7 +630,7 @@
 
             $consulta1->execute();
             $filas1=$consulta1->fetchColumn();
-            $sql1=$this->pdo->prepare("SELECT Nombre,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
+            $sql1=$this->pdo->prepare("SELECT ID_Usuario,Nombre,Apellido,Correo,Clave,Verificado,Estado,Acceso,ID_Sucursal FROM usuario WHERE Correo=?;");
             $sql1->bindParam(1,$Correo);
 
             $sql1->execute();
@@ -599,7 +642,7 @@
 
             $consulta2->execute();
             $filas2= $consulta2->fetchColumn();
-            $sql2=$this->pdo->prepare("SELECT Nombre,Correo,Clave,Verificado FROM cliente WHERE Correo=? ");
+            $sql2=$this->pdo->prepare("SELECT DUI,Nombre,Apellido,Correo,Clave,Verificado FROM cliente WHERE Correo=? ");
             $sql2->bindParam(1,$Correo);
 
             $sql2->execute();
@@ -611,11 +654,19 @@
                 $acceso1=$ru['Acceso'];
                 $ids=$ru['ID_Sucursal'];
                 $state=$ru['Estado'];
+                $id_user=$ru['ID_Usuario'];
+                $name=$ru['Nombre'];
+                $apellido=$ru['Apellido'];
                 if($acceso1==1)
                 {
                     if($state==1)
                     {
-                        header("Location: ?c=branch&a=branch");
+                        session_start();
+                                $_SESSION['usuario']=$id_user;
+                                $_SESSION['nombre']=$name;
+                                $_SESSION['apellido']=$apellido;
+                                $_SESSION['correo']=$Correo;
+                                echo "<script>location.href='?c=branch&a=inicio'</script>";
                     }
                     else
                     {
@@ -626,7 +677,7 @@
                 {
                     if($state==1)
                     {
-                    $this->SelectSucursal($ids);
+                    $this->SelectSucursal($ids,$id_user,$name,$apellido,$Correo);
                     }
                     else
                     {
@@ -635,7 +686,16 @@
                 }
             }elseif($filas2>0)
             {
-                
+                $dui_user=$rc['DUI'];
+                $name=$rc['Nombre'];
+                $apellido=$rc['Apellido'];
+
+                    session_start();
+                    $_SESSION['usuario']=$dui_user;
+                    $_SESSION['nombre']=$name;
+                    $_SESSION['apellido']=$apellido;
+                    $_SESSION['correo']=$Correo;
+                    echo "<script>location.href='?c=products&a=inicioc'</script>";
             }
         }
         public function GenerarHash()

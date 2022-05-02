@@ -19,11 +19,11 @@
 
     function isProduct($variable)
     {
-        return preg_match('/^PROD[0-9]{3}$/',$variable);
+        return preg_match('/^PROD[0-9]{5}$/',$variable);
     }
     function isText($variable)
     {
-        return preg_match('/^(([a-zA-ZÁÉÍÓÚáéíóúñ0-9_.\-\,()?]+)[ ]?([a-zA-ZÁÉÍÓÚáéíóúñ0-9_.\-\,()?]+)?)+$/',$variable);
+        return preg_match('/^(([a-zA-ZÁÉÍÓÚÑáéíóúñ0-9_.\-\,\/()?]+)[ ]?([a-zA-ZÁÉÍÓÚÑáéíóúñ0-9_.\-\,\/()?]+)?)+$/',$variable);
     }
     function isInteger($variable)
     {
@@ -33,13 +33,11 @@
     {
         return preg_match('/^[0-9]+[.]?([0-9]+)?$/',$variable);
     }
-    function isAccept($variable)
+    function isdui($variable)
     {
-        if(preg_match('/\.(jpe?g|png|webp)$/',$variable))
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return preg_match('/^0[0-9]{7}\-[0-9]{1}$/',$variable);
+    }
+    function istel($variable)
+    {
+        return preg_match('/^(2|6|7){1}[0-9]{3}\-[0-9]{4}$/',$variable);
     }

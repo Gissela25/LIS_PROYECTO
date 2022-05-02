@@ -18,4 +18,9 @@ class InicioController{
         //$bd = BasedeDatos::Conectar();
         require_once "Views/index.php";
     }
+
+    public function Contacto()
+    {
+        require_once "Views/Contacts.php";
+    }
 }

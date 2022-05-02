@@ -1,0 +1,26 @@
+.fondo{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3),rgba(245, 245, 245, 0.98)), url(../img/contruccion.jpg) ;
+    background-size: cover;
+    height: 300px;
+}
+.fondo2{
+    background-image: url(../img/logosumersa.png) ;
+    background-repeat: no-repeat;
+    background-size: 42%;
+    background-position: center;
+    height: 330px;
+}
+h1{
+    color: rgb(40, 68, 116);
+    font-size: 50px;
+    font-weight: 800;
+}
+p{
+    text-align: justify;
+    color: rgb(0, 77, 175);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}

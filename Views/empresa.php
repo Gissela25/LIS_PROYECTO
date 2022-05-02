@@ -1,3 +1,6 @@
+<?php
+require_once('Core/config.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,62 +14,57 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="Assets/css/index.css">
+    <link rel="stylesheet" href="Assets/css/empresa.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <img src="../Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Quienes Somos</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i> Mi Cuenta
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="?c=user&a=Ingresar">Iniciar Sesion</a></li>
-                            <li><a class="dropdown-item" href="#">Registrarse</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-geo-alt-fill"></i> Sucursales
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="?c=products&a=clientsst">Santa Tecla</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientsss">San Salvador</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientslo">Lourdes</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientsop">Opico</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientsza">Zaragoza</a></li>
-                            <li><a class="dropdown-item" href="?c=products&a=clientssa">Santa Ana</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Views/Contacts.php">Contactanos</a>
-                    </li>
-                </ul>
+<?php 
+ require_once "Views/Constant/clientesw/nav.php";
+?>
+        <div>
+        <div class="d-grid gap-1 mt-1 mx-1">
+
+            <div class="col-xs-6 col-xs-offset-3 tamano">
+                <div class="fondo">
+                    <div class="fondo2">
+                     </div> 
+                </div>
             </div>
         </div>
-    </nav>
-    <div>
-        <img src="../Assets/img/contruccion.jpg" class="d-block w-100" alt="...">
-    </div>
-</body>
+            <br>
+        <div class="d-grid gap-1 mt-5 mx-5">
+            <div class="row" style="text-align:center">
+            <div class="col-lg-1 col-lg-offset-3 tamano">
+                </div>
+                <div class="col-lg-6 col-lg-offset-3 tamano">
+                <div>   
+                <br>
+                <h1>QUIENES SOMOS</h1>
+                <br>
+                 <p>Sumersa es una empresa importadora y comercializadora de materiales para la construcción,
+                     destacándose en la distribución de productos de hierro tales como láminas, ángulos, polines, vigas y canales entre otros.</p>
 
+                 <p>Además ofertamos una gran variedad de productos de ferretería y diversos materiales para la construcción de techos y
+                     cielos falsos entre los que contamos con lámina Standard de Asbesto Cemento y Amanco Súper Eureka.</p>
+
+                <p>Nuestra empresa cuenta con más de 30 años de experiencia durante los cuales hemos mantenido como política de servicio
+                     el valorar a nuestros clientes a partir de un servicio eficaz y personalizado con productos de alta calidad y economía</p>
+                     <br><br><br>                   
+                </div>
+                </div>
+                <div class="col-lg-1 col-lg-offset-3 tamano">
+                </div>
+                <div class="col-lg-3 col-lg-offset-3 tamano">
+                <div>
+                <img src="Assets/img/empresa.png" width = "310px" height = "440px">
+                <br>
+                <br><br><br>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+        </div>
+</body>
 </html>
