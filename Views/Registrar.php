@@ -42,10 +42,10 @@
                             <tr>
 
                                 <th scope="col"></th>
-                                <th scope="col" style="color:#084594">INFORMACION PERSONAL</th>
+                                <th scope="col" style="color:#084594">INFORMACION PERSONAL<i class="bi bi-person-fill"></i></th>
                                 <th scope="col"></th>
                                 <th scope="col" style="color:#084594">
-                                    DATOS DE INICIO DE SESIÓN</th>
+                                    DATOS DE INICIO DE SESIÓN<i class="bi bi-book"></i></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,7 +53,7 @@
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">DUI</label>
+                                        <label for="exampleInputPassword1" class="form-label">DUI<i class="bi bi-card-checklist"></i></label>
                                         <input type="text" class="form-control" placeholder="00470129-3" name="DUI"
                                             id="DUI">
                                     </div>
@@ -61,7 +61,7 @@
                                 <td></td>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Correo</label>
+                                        <label for="exampleInputPassword1" class="form-label">Correo<i class="bi bi-envelope-check"></i></label>
                                         <input type="text" class="form-control"
                                             placeholder="Ingrese su Correo Electronico" name="correo" id="correo">
                                     </div>
@@ -71,7 +71,7 @@
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                                        <label for="exampleInputPassword1" class="form-label">Nombre<i class="bi bi-person-plus"></i></i></label>
                                         <input type="text" class="form-control" placeholder="Ingrese su nombre"
                                             name="Nombre" id="Nombre">
                                     </div>
@@ -79,7 +79,7 @@
                                 <td></td>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">                            
-                                        <label for="exampleInputPassword1" class="form-label">Clave</label>
+                                        <label for="exampleInputPassword1" class="form-label">Clave<i class="bi bi-lock"></i></label>
                                         <div class="input-group">
                                             <input type="password" class="form-control" placeholder="Ingrese su Clave" name="Clave" id="Clave">
                                         <div class="input-group-append">
@@ -94,7 +94,7 @@
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Apellido</label>
+                                        <label for="exampleInputPassword1" class="form-label">Apellido<i class="bi bi-person-plus"></i></label>
                                         <input type="text" class="form-control" placeholder="Ingrese Apellido"
                                             name="Apellido" id="Apellido">
                                     </div>
@@ -112,7 +112,7 @@
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Numero De Telefono</label>
+                                        <label for="exampleInputPassword1" class="form-label">Numero De Telefono<i class="bi bi-telephone"></i></i></label>
                                         <input type="text" class="form-control"
                                             placeholder="7083-6536" name="Telefono" id="Telefono">
                                     </div>
@@ -130,7 +130,7 @@
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Direccion</label>
+                                        <label for="exampleInputPassword1" class="form-label">Direccion<i class="bi bi-compass"></i></label>
                                         <input type="text" class="form-control" placeholder="Ingrese su direccion"
                                             name="Direccion" id="Direccion">
                                     </div>
