@@ -56,7 +56,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label"><i class="bi bi-person-video"></i> DUI</label>
+                                        <label for="exampleInputPassword1" class="form-label"><i class="bi bi-person-square"></i> DUI</label>
                                         <input type="text" class="form-control" readonly value="<?php echo $usuario ?>" readonly name="DUI"
                                             id="DUI">
                                     </div>
