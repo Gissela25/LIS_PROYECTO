@@ -47,7 +47,7 @@ require_once "Views/Constant/clientes/const.php";
                             <tr>
 
                                 <th scope="col"></th>
-                                <th scope="col" style="color:#084594">ACTUALIZAR INFORMACION</th>
+                                <th scope="col" style="color:#084594"><i class="bi bi-pen-fill"></i> ACTUALIZAR INFORMACION</th>
 
                             </tr>
                         </thead>
@@ -56,7 +56,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">DUI</label>
+                                        <label for="exampleInputPassword1" class="form-label"><i class="bi bi-person-video"></i> DUI</label>
                                         <input type="text" class="form-control" readonly value="<?php echo $usuario ?>" readonly name="DUI"
                                             id="DUI">
                                     </div>
@@ -64,7 +64,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td></td>
                                 <td>
                                       <div class="form-group mx-sm-4 pt-3">                            
-                                        <label for="exampleInputPassword1" class="form-label">Direccion</label>
+                                        <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-geo-alt-fill"></i> Direccion</label>
                                         <div class="input-group">
                                         <input type="text" class="form-control" value="<?php echo $direccion ?>"
                                             name="Direccion" id="Direccion">
@@ -76,7 +76,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                                        <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-person-fill"></i> Nombre</label>
                                         <input type="text" class="form-control" value="<?php echo $nombre ?>"
                                             name="Nombre" id="Nombre">
                                     </div>
@@ -84,7 +84,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td></td>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Correo</label>
+                                        <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-envelope-fill"></i> Correo</label>
                                         <input type="text" class="form-control"
                                         value="<?php echo $correo ?>" name="correo" id="correo">
                                     </div>
@@ -94,7 +94,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Apellido</label>
+                                        <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-person-fill"></i> Apellido</label>
                                         <input type="text" class="form-control" value="<?php echo $apellido ?>"
                                             name="Apellido" id="Apellido">
                                     </div>
@@ -107,7 +107,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
-                                        <label for="exampleInputPassword1" class="form-label">Numero De Telefono</label>
+                                        <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-telephone-fill"></i></i> Numero De Telefono</label>
                                         <input type="text" class="form-control"
                                         value="<?php echo $telefono?>" name="Telefono" id="Telefono">
                                     </div>
