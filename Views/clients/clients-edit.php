@@ -17,7 +17,6 @@ require_once "Views/Constant/clientes/const.php";
     <link rel="stylesheet" href="Assets/css/registrar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Cliente</title>
 </head>
 
@@ -28,10 +27,10 @@ require_once "Views/Constant/clientes/const.php";
     <div class="row mx-5 mt-1 my-4">
         <div class="col ml-5">
             <div class="row mt-3">
-                <form method="POST" action="<?=PATH?>?c=client&a=add" enctype="multipart/form-data" class="">
+                <form method="POST" action="<?=PATH?>?c=client&a=update&id=<?=$usuario?>" enctype="multipart/form-data" class="">
                     <?php require 'Views/Tools/procesar-datos-registrar.php'?>
                     <?php
-                    if(count($errores)>0&&isset($_POST['add']))
+                    if(count($errores)>0&&isset($_POST['update']))
                     {
                         echo "<div> <ul>";
                         foreach($errores as $error)
@@ -58,7 +57,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">
                                         <label for="exampleInputPassword1" class="form-label">DUI</label>
-                                        <input type="text" class="form-control" value="<?php echo $usuario ?>" name="DUI"
+                                        <input type="text" class="form-control" readonly value="<?php echo $usuario ?>" readonly name="DUI"
                                             id="DUI">
                                     </div>
                                 </td>
@@ -117,7 +116,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <div class="my-2">
-                                            <input type="submit" name="add" id="add" class="btn boton "></input>
+                                            <input type="submit" value="Editar" name="update" id="update" class="btn boton "></input>
                                         </div>
                                     </div>
                                 </td>
@@ -126,16 +125,4 @@ require_once "Views/Constant/clientes/const.php";
                     </table>
             </div>
             </form>
-            <script type="text/javascript">
-            function mostrarPassword(){
-		    var cambio = document.getElementById("Clave");
-		    if(cambio.type == "password"){
-			cambio.type = "text";
-			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-		    }else{
-			cambio.type = "password";
-			$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-		    }
-	        } 
-            </script>
 </html>

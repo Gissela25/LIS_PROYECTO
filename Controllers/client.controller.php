@@ -19,7 +19,7 @@ class clientcontroller{
             require_once "Views/Registrar.php";
         }
 
-    public function editclients()
+    public function Update()
         {
             require_once "views/clients/clients-edit.php";
         }
@@ -66,7 +66,7 @@ class clientcontroller{
 //         }
 //         require_once "Views/client/client-edit.php";
 //     }
-
+ 
     
 //      public function Saveedit()
 //      {

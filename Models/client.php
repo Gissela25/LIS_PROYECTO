@@ -177,7 +177,7 @@ class client{
            Nombre=?,
            Apellido=?,
            Telefono=?,
-           Correo=?,
+           Correo=?, 
            Clave=?,
            Direccion=?,
            Verificado=?,
@@ -253,6 +253,20 @@ class client{
                 }
 
             }catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
+
+        public function Update_cliente()
+        {
+            try{
+                            $consulta="UPDATE cliente SET Telefono ='{$this->getPro_tel()}',Nombre = '{$this->getPro_nom()}' ,Apellido = '{$this->getPro_ape()}' ,Correo = '{$this->getPro_correo()}'
+                            ,Direccion = '{$this->getPro_address()}' WHERE DUI='{$this->getPro_idc()}';";
+                            $this->pdo->prepare($consulta)->execute(array($this->getPro_idc(), $this->getPro_nom(), $this->getPro_ape(),$this->getPro_tel(),
+                            $this->getPro_correo(),$this->getPro_address()));
+            }
+            catch(Exception $e)
+            {
                 die($e->getMessage());
             }
         }
