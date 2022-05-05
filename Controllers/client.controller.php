@@ -24,6 +24,12 @@ class clientcontroller{
             require_once "views/clients/clients-edit.php";
         }
 
+ public function Psswrd()
+        {
+            require_once "views/clients/Password.php";
+        }
+
+
 //     public function Insert(){
 //         $titulo = "Ingresar";
 //         $p=new client();

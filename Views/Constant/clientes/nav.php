@@ -36,6 +36,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="<?=PATH?>?c=client&a=Update&id=<?=$usuario?>">Editar Cuenta</a></li>
+                        <li><a class="dropdown-item" href="<?=PATH?>?c=client&a=Psswrd&id=<?=$usuario?>">Cambiar Contraseña</a></li>
                         <li><a class="dropdown-item" href="<?=PATH?>?c=user&a=close">Cerrar Sesion</a></li>
                     </ul>
                 </li>
