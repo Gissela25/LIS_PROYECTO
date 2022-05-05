@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 04-05-2022 a las 22:53:35
+-- Tiempo de generación: 05-05-2022 a las 20:50:28
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 8.0.13
 
@@ -29,22 +29,16 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `carrito`;
 CREATE TABLE IF NOT EXISTS `carrito` (
-  `id_session` varchar(255) NOT NULL,
+  `id_carrito` varchar(255) NOT NULL,
+  `correlativo` varchar(10) NOT NULL,
   `codigo_producto` varchar(11) NOT NULL,
   `cantidad` int(4) NOT NULL,
   `id_estado_pago` int(1) NOT NULL DEFAULT '0',
+  `precio` float(11,2) NOT NULL,
+  `siglas_sucursal` varchar(2) NOT NULL,
   KEY `sp_ibfk_1` (`id_estado_pago`),
   KEY `xp_ibfk_1` (`codigo_producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `carrito`
---
-
-INSERT INTO `carrito` (`id_session`, `codigo_producto`, `cantidad`, `id_estado_pago`) VALUES
-('234cb1da43e519cc10a0146bf2bbcf5504e64e85', 'PROD12063', 21, 0),
-('234cb1da43e519cc10a0146bf2bbcf5504e64e85', 'PROD18408', 1, 0),
-('234cb1da43e519cc10a0146bf2bbcf5504e64e85', 'PROD22359', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -87,12 +81,24 @@ DROP TABLE IF EXISTS `detalles`;
 CREATE TABLE IF NOT EXISTS `detalles` (
   `id_session` varchar(255) NOT NULL,
   `codigo_producto` varchar(11) NOT NULL,
+  `codigo_cliente` varchar(125) NOT NULL,
   `cantidad` int(4) NOT NULL,
   `total` float(8,2) NOT NULL,
   `codigo_factura` varchar(11) NOT NULL,
   KEY `cod_prod_ibfk_1` (`codigo_producto`),
+  KEY `facc_client_ibfk_1` (`codigo_cliente`),
   KEY `cod_fac_ibfk_1` (`codigo_factura`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `detalles`
+--
+
+INSERT INTO `detalles` (`id_session`, `codigo_producto`, `codigo_cliente`, `cantidad`, `total`, `codigo_factura`) VALUES
+('d8ed4211d675ad36d8746f91d8bb46d46470ac13', 'PROD50074', '01234234-1', 2, 42.38, 'F906153688'),
+('d8ed4211d675ad36d8746f91d8bb46d46470ac13', 'PROD50074', '01234234-1', 2, 42.38, 'F658945670'),
+('d8ed4211d675ad36d8746f91d8bb46d46470ac13', 'PROD50074', '01234234-1', 1, 21.19, 'F276215445'),
+('541d3d7377a40520278d6e85500e31f3aa75f0a9', 'PROD18408', '02345678-9', 1, 10.50, 'F668880026');
 
 -- --------------------------------------------------------
 
@@ -129,6 +135,16 @@ CREATE TABLE IF NOT EXISTS `facturas` (
   PRIMARY KEY (`id_factura`),
   KEY `fac_client_ibfk_1` (`codigo_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `facturas`
+--
+
+INSERT INTO `facturas` (`id_factura`, `codigo_cliente`, `fecha`) VALUES
+('F276215445', '01234234-1', '2022-05-05 14:33:46'),
+('F658945670', '01234234-1', '2022-05-05 12:23:54'),
+('F668880026', '02345678-9', '2022-05-05 14:40:13'),
+('F906153688', '01234234-1', '2022-05-05 12:03:53');
 
 -- --------------------------------------------------------
 
@@ -344,13 +360,6 @@ INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Correo`, `Clave`, `V
 --
 
 --
--- Filtros para la tabla `carrito`
---
-ALTER TABLE `carrito`
-  ADD CONSTRAINT `sp_ibfk_1` FOREIGN KEY (`id_estado_pago`) REFERENCES `estado_pago` (`id_estado_pago`),
-  ADD CONSTRAINT `xp_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`ID_Producto`);
-
---
 -- Filtros para la tabla `cliente`
 --
 ALTER TABLE `cliente`
@@ -361,7 +370,7 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `detalles`
   ADD CONSTRAINT `cod_fac_ibfk_1` FOREIGN KEY (`codigo_factura`) REFERENCES `facturas` (`id_factura`),
-  ADD CONSTRAINT `cod_prod_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`ID_Producto`);
+  ADD CONSTRAINT `facc_client_ibfk_1` FOREIGN KEY (`codigo_cliente`) REFERENCES `cliente` (`DUI`);
 
 --
 -- Filtros para la tabla `facturas`
