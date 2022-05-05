@@ -59,11 +59,39 @@ require_once('./Views/server_uri.php');
                     <h3 class="text-primary mx-3">$<?=$producto[$precio]?></h3>
                     <p class="card-text text-justify">CODIGO: <?=$producto['ID_Producto']?> / FAMILIA: <?=$producto['Nombre_Familia']?></p>
                     <div class="form-group row ">
+                        <?php
+                        if(isset($_SESSION['login_buffer']['Acceso']))
+                        {
+                            if($_SESSION['login_buffer']['Acceso']==2){
+                        ?>
                         <div class="col-md-2 my-3 "> <input type="number" name="Cantidad" id="Cantidad" class="number">
+                        <?php
+                            }
+                        }elseif(!isset($_SESSION['login_buffer']))
+                        {
+                        ?>
+ <div class="col-md-2 my-3 "> <input type="number" name="Cantidad" id="Cantidad" class="number">
+                        <?php
+                        }
+                        ?>
                         </div>
                         <input type="hidden" name="Precio" id="Precio" value="<?=$producto[$precio]?>">
                             <input type="hidden" name="Existencias" id="Existencias" value="<?=$producto[$cantidad]?>">
+                            <?php
+                            if(isset($_SESSION['login_buffer']['Acceso']))
+                            {
+                                if($_SESSION['login_buffer']['Acceso']==2)
+                                {
+                            ?>
                         <button type="submit" id="Comprar" name="Comprar" class="col-md-8 btn btn-primary btn-block boton"></i>Agregar al Carrito</button>
+                            <?php }}
+                            elseif(!isset($_SESSION['login_buffer']))
+                            {                          
+                            ?>
+                        <button type="submit" id="Iniciar" name="Iniciar" class="col-md-8 btn btn-primary btn-block boton"></i>Agregar al Carrito</button>
+                            <?php
+                            }
+                            ?>
                     </div>
 
                 </form>
