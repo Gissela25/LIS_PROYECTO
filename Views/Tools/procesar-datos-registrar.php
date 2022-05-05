@@ -77,3 +77,61 @@
             header("location:?c=inicio");
         }
     }
+
+    $errores_upt=array();
+    if(isset($_POST['update']))
+    {
+    extract($_POST);
+    if(!isset($Nombre)||isVoid($Nombre))
+    {
+        array_push($errores,"Debes ingresar un Nombre");
+    }
+    elseif(!isText($Nombre))
+    {
+        array_push($errores,"Debes ingresar un Nombre valido");
+    }
+    if(!isset($Apellido)||isVoid($Apellido))
+    {
+        array_push($errores,"Debes ingresar una Apellido");
+    }
+    elseif(!isText($Apellido))
+    {
+        array_push($errores,"Debes ingresar un Apellido valido");
+    }
+    if(!isset($Telefono)||isVoid($Telefono))
+    {
+        array_push($errores,"Debes ingresar un telefono");
+    }
+    elseif(!istel($Telefono))
+    {
+        array_push($errores,"Debes ingresar un telefono valido");
+    }
+    if(!isset($correo)||isVoid($correo))
+    {
+        array_push($errores,"Debes ingresar una dirección de correo");
+    }
+    elseif(!isMail($correo))
+    {
+        array_push($errores,"Debes ingresar una dirección de correo válida");
+    }
+    if(!isset($Direccion)||isVoid($Direccion))
+    {
+        array_push($errores,"Debes ingresar una Direccion");
+    }
+    elseif(!isText($Direccion))
+    {
+        array_push($errores,"Debes ingresar una Direccion valida");
+    }
+    if(isMail($correo)&&isdui($DUI)&&istel($Telefono)&&isText($Nombre)&&isText($Apellido)&&isText($Direccion))
+    {             
+        $modelo = new client();
+        $modelo->setPro_idc($DUI);
+        $modelo->setPro_nom($Nombre);
+        $modelo->setPro_ape($Apellido);
+        $modelo->setPro_tel($Telefono);
+        $modelo->setPro_correo($correo);
+        $modelo->setPro_address($Direccion);
+        $modelo->Update_cliente();
+    }
+}
+?>
