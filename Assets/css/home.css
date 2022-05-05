@@ -1,0 +1,43 @@
+.navbar {
+    background-color: white;
+}
+
+.navbar:hover {
+    background-color: white;
+}
+
+.carousel-inner {
+    height: 500px;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+}
+
+.title {
+    background-color: #C2C2C2;
+    text-align: center;
+    padding: 1%;
+}
+
+.titl {
+    background-color: #D9D9D9;
+    text-align: center;
+    padding: 1%;
+}
+
+.list-group-item {
+    text-align: center;
+}
+
+.carta:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
