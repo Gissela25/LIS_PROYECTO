@@ -133,5 +133,37 @@
         $modelo->setPro_address($Direccion);
         $modelo->Update_cliente();
     }
+
+
+    $errores_upt=array();
+    if(isset($_POST['psswrd']))
+    {
+    extract($_POST);
+    if(!isset($Clave)||isVoid($Clave))
+        {
+            array_push($errores,"Debes ingresar una contraseña");
+        }
+        elseif(!isPass($Clave))
+        {
+            array_push($errores,"Debes ingresar una contraseña válida");
+        }
+    if(!isset($Clave2)||isVoid($Clave2))
+        {
+            array_push($errores,"Debes ingresar una contraseña");
+        }
+        elseif(!isPass($Clave2))
+        {
+            array_push($errores,"Debes ingresar una contraseña válida");
+        }
+    if(isPass($Clave)&&isPass($Clave2))
+    {    
+        $pwd_encrypt=  password_hash($Clave2,PASSWORD_DEFAULT, ['cost' => 10]);    
+        $modelo = new client();
+        $modelo->setPro_Clave2($Clave2);
+        $modelo->setPro_address($Direccion);
+        $modelo->setPro_Clave2($pwd_encrypt);
+        $modelo->Update_psswrd();
+    }
 }
+    }
 ?>

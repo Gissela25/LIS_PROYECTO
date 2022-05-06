@@ -27,10 +27,10 @@ require_once "Views/Constant/clientes/const.php";
     <div class="row mx-5 mt-1 my-4">
         <div class="col ml-5">
             <div class="row mt-3">
-                <form method="POST" action="<?=PATH?>?c=client&a=update&id=<?=$usuario?>" enctype="multipart/form-data" class="">
+                <form method="POST" action="<?=PATH?>?c=client&a=psswrd&id=<?=$usuario?>" enctype="multipart/form-data" class="">
                     <?php require 'Views/Tools/procesar-datos-registrar.php'?>
                     <?php
-                    if(count($errores)>0&&isset($_POST['update']))
+                    if(count($errores)>0&&isset($_POST['psswrd']))
                     {
                         echo "<div> <ul>";
                         foreach($errores as $error)
@@ -56,7 +56,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                     <div class="form-group mx-sm-4 pt-3">                            
-                                        <label for="exampleInputPassword1" class="form-label">Clave Actual</label>
+                                        <label for="exampleInputPassword1" class="form-label"><i class="bi bi-lock"></i> Clave Actual</label>
                                         <div class="input-group">
                                             <input type="password" class="form-control" placeholder="Ingrese su Clave Actual" name="Clave" id="Clave">
                                         <div class="input-group-append">
@@ -72,9 +72,9 @@ require_once "Views/Constant/clientes/const.php";
                                 <th scope="row"></th>
                                 <td>
                                 <div class="form-group mx-sm-4 pt-3">                            
-                                        <label for="exampleInputPassword1" class="form-label">Clave Nueva</label>
+                                        <label for="exampleInputPassword1" class="form-label"><i class="bi bi-lock-fill"></i> Clave Nueva</label>
                                         <div class="input-group">
-                                            <input type="password" class="form-control" placeholder="Ingrese su Clave Nueva" name="ClaveNew" id="ClaveNew">
+                                            <input type="password" class="form-control" placeholder="Ingrese su Clave Nueva" name="Clave2" id="Clave2">
                                         <div class="input-group-append">
                                         <button id="show_password" class="btn btn-primary" type="button" onclick="mostrrPassword()">
                                          <span class="fa fa-eye-slash icon"></span> </button>
@@ -89,7 +89,7 @@ require_once "Views/Constant/clientes/const.php";
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <div class="my-2">
-                                            <input type="submit" value="Cambiar Contraseña" name="add" id="add" class="btn boton "></input>
+                                            <input type="submit" value="Cambiar Contraseña" name="psswrd" id="psswrd" class="btn boton "></input>
                                         </div>
                                     </div>
                                 </td>
@@ -110,7 +110,7 @@ require_once "Views/Constant/clientes/const.php";
 		    }
             }
             function mostrrPassword(){
-            var cambioPww = document.getElementById("ClaveNew");
+            var cambioPww = document.getElementById("Clave2");
 		    if(cambioPww.type == "password"){
 			cambioPww.type = "text";
 			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');

@@ -86,6 +86,15 @@ class client{
         $this->Clave=$clave;
     }
 
+    public function getPro_Clave2(): ?string{
+        return $this->Clave2;
+
+    }
+
+    public function setPro_Clave2(string $clave2){
+        $this->Clave2=$clave2;
+    }
+
    public function getPro_address(): ?string{
         return $this->Direccion;
 
@@ -264,6 +273,18 @@ class client{
                             ,Direccion = '{$this->getPro_address()}' WHERE DUI='{$this->getPro_idc()}';";
                             $this->pdo->prepare($consulta)->execute(array($this->getPro_idc(), $this->getPro_nom(), $this->getPro_ape(),$this->getPro_tel(),
                             $this->getPro_correo(),$this->getPro_address()));
+            }
+            catch(Exception $e)
+            {
+                die($e->getMessage());
+            }
+        }
+
+        public function Update_psswrd()
+        {
+            try{
+                            $consulta="UPDATE cliente SET Clave ='{$this->getPro_Clave2()}'";
+                            $this->pdo->prepare($consulta)->execute(array($this->getPro_Clave2()));
             }
             catch(Exception $e)
             {
