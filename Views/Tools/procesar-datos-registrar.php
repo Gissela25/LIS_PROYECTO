@@ -157,11 +157,10 @@
         }
     if(isPass($Clave)&&isPass($Clave2))
     {    
-        $pwd_encrypt=  password_hash($Clave2,PASSWORD_DEFAULT, ['cost' => 10]);    
+        $pwd_encrypt2=  password_hash($Clave2,PASSWORD_DEFAULT, ['cost' => 10]);    
         $modelo = new client();
         $modelo->setPro_Clave2($Clave2);
-        $modelo->setPro_address($Direccion);
-        $modelo->setPro_Clave2($pwd_encrypt);
+        $modelo->setPro_Clave2($pwd_encrypt2);
         $modelo->Update_psswrd();
     }
 }
