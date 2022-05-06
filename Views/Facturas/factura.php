@@ -11,17 +11,18 @@ ob_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factura</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body{
-    margin: 0 auto;
-    padding: 0px;
-    width: 100%;
-    min-width: 650px;
-    font-size: 10;
-}
+    body {
+        margin: 0 auto;
+        padding: 0px;
+        width: 100%;
+        min-width: 650px;
+        font-size: 10;
+    }
 
-.table{float: center;}
+    /* .table{float: center;}
 #header{
     width: 100%;
     height: 20%;
@@ -56,18 +57,6 @@ ob_start();
     border: 0;
     margin: auto;
     background-color: white;
-}
-
-#empresa{
-    width: auto;
-    height: auto;
-    padding: 3px;
-    border: 0;
-    margin: 0;
-    text-align: center;
-    position: absolute;
-    left:590px;
-    top: 25px;
 }
 
 #tipofactura{
@@ -113,8 +102,8 @@ ob_start();
 #pago{
     left: 600px;
 }
-/* 
-#st{
+
+st{
     width: auto;
     height: auto;
     padding: 3px;
@@ -125,8 +114,7 @@ ob_start();
     position: absolute;
     left:570px;
     top: 25px;
-} */
-
+} 
 #st{
     width: auto;
     height: auto;
@@ -187,40 +175,161 @@ ob_start();
     left: 810px;
     text-align: center;
     top: 575px;
-}
+}  */
+    #empresa {
+        color: #214673;
+        font-size: 30px;
+    }
 
+    #dc {
+        font-size: 20px;
+        text-align: center;
+    }
 
+    #ad {
+        text-align: right;
+        font-size: 10px
+    }
+
+    #top {
+        width: 25%;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid #000;
+        border-spacing: 0;
+    }
+
+    #info {
+        width: 100%;
+        border: 1px solid #000;
+    }
+
+    #pro {}
+
+    /* #tipofactura{
+    position: absolute;
+    top: 70px;
+} */
+    #total {
+        font-size: 15px
+    }
+
+    #gra {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    #st {
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border: 0;
+        margin: 0;
+        background-color: white;
+        text-align: center;
+        position: absolute;
+        left: 100px;
+        top: 750px;
+    }
+
+    #ss {
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border: 0;
+        margin: 0;
+        background-color: white;
+        text-align: center;
+        position: absolute;
+        left: 400px;
+        top: 750px;
+    }
+
+    #za {
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border: 0;
+        margin: 0;
+        background-color: white;
+        text-align: center;
+        position: absolute;
+        left: 100px;
+        top: 800px;
+    }
+
+    #sa {
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border: 0;
+        margin: 0;
+        background-color: white;
+        text-align: center;
+        position: absolute;
+        left: 455px;
+        top: 800px;
+    }
+
+    #op {
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border: 0;
+        margin: 0;
+        background-color: white;
+        text-align: center;
+        position: absolute;
+        left: 100px;
+        top: 850px;
+    }
+
+    #lo{
+        width: auto;
+        height: auto;
+        padding: 3px;
+        border: 0;
+        margin: 0;
+        background-color: white;
+        text-align: center;
+        position: absolute;
+        left: 350px;
+        top: 850px;
+    }
+
+    
     </style>
 </head>
 
 <body>
     <div class="container">
-    <?php foreach($datos as $dato)
+        <?php foreach($datos as $dato)
     {?>
-    <fieldset style="width:850px; height: 600px; margin: auto; margin-top: 2px;">
 
         <div id="header">
-            <div id="logo">
-                <img src="<?=PATH?>Views/Facturas/logo.PNG" height="65px" width="200px">
-            </div>
-
             <div id="empresa">
                 Ferreteria Sumersa<br>
-                Tel:2277-0823<br>
-                El Salvador<br>
+                <div id="ad">
+                    (503) 2250-7200 / (503) 2286-4000<br>
+                    (503) 2250-7204 / (503) 7039-1262<br>
+                    Email:info@sumersa.com.sv<br>
+                </div>
+                <hr>
             </div>
 
             <div id="tipofactura">
-                <h3>Factura</h3>
                 <table border="0">
                     <tr>
-                        <td><?=$dato['codigo_factura']?></td>
-                        <td colspan="2" border="1">1</td>
+
+                        <td>NÚMERO DE FACTURA:</td>
+                        <td></td>
+                        <td colspan="2" border="1"><?=$dato['codigo_factura']?></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td><?=$dato['fecha']?></td>
-                        <td colspan="2" border="1">04/05/2022</td>
+                        <td>FECHA Y HORA:</td>
+                        <td></td>
+                        <td colspan="2" border="1"><?=$dato['fecha']?></td>
                         <td></td>
                     </tr>
                 </table>
@@ -229,31 +338,37 @@ ob_start();
         </div>
 
         <div id="container">
-            <fieldset style="width: 660px; border-radius: 0.5%; height: 150px; margin: auto;">
-                <div id="datoscliente">
-                    <table style="min-width: 660px; border: 0px; padding: 1px; margin: 3px;">
-                        <tr>
-                            <td colspan="4">
-                                <h3 align="center">Datos Cliente</h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cliente:</td>
-                            <td class="recuadro"><?=$dato['Nombre']?> <?=$dato['Apellido']?></td>
-                            <td>DUI:</td>
-                            <td class="recuadro"><?=$dato['DUI']?></td>
-                        </tr>
-                        <tr>
-                            <td>Direccion:</td>
-                            <td class="recuadro">San Salvador,El Salvador</td>
-                            <td>Telefono:</td>
-                            <td class="recuadro">7083-5687</td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
-            <!-- <fieldset style="width: 660px; border-radius: 4%;"> -->
-            <div id="lineasfactura">
+            <div id="datoscliente">
+                <table style="min-width: 500px; border: 0px; padding: 1px; margin: 3px;">
+                    <tr>
+                        <td colspan="4">
+                            <div id="dc">
+                                <br>DATOS CLIENTE<br><br>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CLIENTE:</td>
+                        <td class="recuadro"><?=$dato['Nombre']?> <?=$dato['Apellido']?></td>
+
+                    </tr>
+                    <tr>
+                        <td>DIRRECIÓN:</td>
+                        <td class="recuadro">San Salvador,El Salvador</td>
+                    </tr>
+                    <tr>
+                        <td>DUI:</td>
+                        <td class="recuadro"><?=$dato['DUI']?></td>
+                    </tr>
+                    <tr>
+                        <td>TELEFONO:</td>
+                        <td class="recuadro"><?=$dato['Telefono']?></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+
+            <!-- <div id="lineasfactura">
                 <table style="min-width: 660px; border: 1px; padding: 1px; margin: auto;" border="1">
                     <tr>
                         <td>Cantidad</td>
@@ -272,25 +387,43 @@ ob_start();
                     </tr>
 
                 </table>
-            </div>
+            </div>  -->
+            <div id="pro">
+                <table id="info">
+                    <tr id="top">
+                        <td id="text"><strong>CANTIDAD</strong></td>
+                        <td id="pro"><strong>PRODUCTO</strong></td>
+                        <td id="text"><strong>PRECIO</strong></td>
+                        <td id="text"><strong>SUBTOTAL</strong></td>
+                    </tr>
 
+                    <tr id="top">
+                        <td id="text"><?=$dato['cantidad']?></td>
+                        <td id="pro"><?=$dato['Nombrep']?></td>
+                        <td id="text">$<?=$precio?></td>
+                        <td id="text">$<?=$dato['total']?></td>
+                    </tr>
+                </table>
+            </div>
             <div id="pago">
-                <table style="margin-left: 510px; margin-top: 20px; margin-bottom: 0%;">
+                <table style="margin-left: 410px; margin-top: 20px; margin-bottom: 0%;">
                     <tr>
                         <td></td>
-                        <td></td>
-                        <td>
-                            <h2>Total</h2>
-                        </td>
-                        <td>
-                            <h2>$<?=$dato['total']?></h2>
+                        <td id="total">
+                            <br>TOTAL: $<?=$dato['total']?><br> <br>
                         </td>
                     </tr>
                 </table>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr>
                 <div>
-                    <p style="text-align: center;">¡Gracias por su Compra!</p>
-                    <p style="text-align: center;">Email:info@sumersa.com.sv</p>
-
+                    <p id="gra">¡Gracias por su Compra!</p>
                     <div id="st">
                         Santa Tecla<br>
                         2da Calle Pte entre 12 y 14 Av Sur No 7<br>
@@ -309,7 +442,7 @@ ob_start();
                     </div>
                     <div id="lo">
                         Lourdes Colon<br>
-                        4ª. Calle Poniente No. 1-15<br>
+                        4ª. Calle Poniente No. 1-15, contiguo al Banco Agrícola<br>
                     </div>
                     <div id="op">
                         Opico<br>
@@ -317,11 +450,11 @@ ob_start();
                     </div>
                 </div>
             </div>
-            <!-- </fieldset> -->
+
         </div>
 
-    </fieldset>
-    <?php 
+
+        <?php 
     }?>
     </div>
 </body>
