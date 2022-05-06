@@ -139,21 +139,21 @@
     if(isset($_POST['psswrd']))
     {
     extract($_POST);
-    if(!isset($Clave)||isVoid($Clave))
+    if (password_verify($Clave, $pwd_encrypt))
         {
-            array_push($errores,"Debes ingresar una contraseña");
+            array_push($errores,"Debes ingresar contraseña actual");
         }
         elseif(!isPass($Clave))
         {
-            array_push($errores,"Debes ingresar una contraseña válida");
+            array_push($errores,"La contraseña actual no coincide");
         }
     if(!isset($Clave2)||isVoid($Clave2))
         {
-            array_push($errores,"Debes ingresar una contraseña");
+            array_push($errores,"Debes ingresar una contraseña nueva");
         }
         elseif(!isPass($Clave2))
         {
-            array_push($errores,"Debes ingresar una contraseña válida");
+            array_push($errores,"Debes ingresar una contraseña nueva válida");
         }
     if(isPass($Clave)&&isPass($Clave2))
     {    
