@@ -29,6 +29,7 @@ require_once('./Core/config.php');
             foreach($productos as $producto)
             {
             ?>
+
             <form method="POST" action="<?=PATH?>Productos/Editando/<?=$producto['ID_Producto']?>" enctype="multipart/form-data"
                 class="formulario">
                 <?php
@@ -88,16 +89,18 @@ require_once('./Core/config.php');
 							?>
 
 
-                                <?php if($famila['Nombre_Familia']==$producto['Nombre_Familia'])
+                                <?php if($producto['Nombre_Familia']==$familia['Nombre_Familia'])
 							{
+
 								?>
-                                <option selected value="<?=$producto['ID_Familia']?>"><?=$producto['Nombre_Familia']?></option>
+                                <option selected value="<?=$familia['ID_Familia']?>"><?=$familia['Nombre_Familia']?></option>
                                 <?php
 							} 
 							else
 							{
 								?>
-                                <option value="<?=$producto['ID_Familia']?>"><?=$producto['Nombre_Familia']?></option>
+                                
+                                <option value="<?=$familia['ID_Familia']?>"><?=$familia['Nombre_Familia']?></option>
                                 <?php
 							}
 							?>

@@ -51,7 +51,7 @@ class UsuariosModel extends ModelPDO{
     }
     public function update($arreglo=array()){
         extract($arreglo);
-        $query = "UPDATE usuario SET Nombre=:Nombre, Apellido=:Apellido, Correo=:Correo, Clave=:Clave, Acceso=:Acceso, ID_Sucursal=:ID_Sucursal WHERE ID_Usuario=:ID_Usuario;";
+        $query = "UPDATE usuario SET Nombre=:Nombre, Apellido=:Apellido, Correo=:Correo, Acceso=:Acceso, ID_Sucursal=:ID_Sucursal WHERE ID_Usuario=:ID_Usuario;";
         return $this->set_query($query,$arreglo);
     }
 

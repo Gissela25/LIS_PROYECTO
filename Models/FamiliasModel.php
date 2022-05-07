@@ -24,7 +24,7 @@ class FamiliasModel extends ModelPDO{
         return $this->set_query($query,[":ID_Familia"=>$id]);
     }
     public function update($arreglo=array()){
-        $query = "UPDATE familia SET NombreFamilia=:NombreFamilia WHERE ID_Familia=:ID_Familia;";
+        $query = "UPDATE familia SET Nombre_Familia=:Nombre_Familia WHERE ID_Familia=:ID_Familia;";
         return $this->set_query($query,$arreglo);
     }
 

@@ -54,7 +54,7 @@ class CarritosModel extends ModelPDO{
                 return $this->get_query($query,[":nombre_producto"=>$nombre,":id_carrito"=>$id]);
     }
     public function create($arreglo=array()){
-        $query="INSERT INTO carrito(id_carrito, correlativo, codigo_producto, cantidad, precio, siglas_sucursal) VALUES (:id_carrito, :correlativo, :codigo_producto, :cantidad, :precio, :siglas_sucursal)";
+        $query="INSERT INTO carrito(id_carrito, correlativo, codigo_producto, cantidad, precio, siglas_sucursal) VALUES(:id_carrito, :correlativo, :codigo_producto, :cantidad, :precio, :siglas_sucursal)";
         return $this->set_query($query,$arreglo);
     }
     public function delete($arreglo=array()){

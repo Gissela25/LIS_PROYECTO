@@ -152,6 +152,8 @@
                 if(count($errores)>0)
                 {
                     $viewBag=[];
+                    $id_carrito=sha1($_SESSION['login_buffer']['DUI']);
+                    $viewBag['carritos']=$carritosModel->CountQuantity($id_carrito);
                     $viewBag['errores']=$errores;
                     $viewBag['productos']=$this->modelo->getByID($ID_Sucursal,$ID_Producto);
                     $this->render("Clientes/detalles.php",$viewBag);

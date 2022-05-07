@@ -153,8 +153,11 @@ class CarritosController extends Controller {
             }
             else{
 
-                if($this->modelo->update($carrito)>0)
+                if(($this->modelo->update($carrito))>0)
                 {
+                    header('Location: '.PATH.'Carritos');
+                }
+                else{
                     header('Location: '.PATH.'Carritos');
                 }
             }

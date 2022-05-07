@@ -70,7 +70,7 @@ require_once('./Views/server_uri.php');
                         }elseif(!isset($_SESSION['login_buffer']))
                         {
                         ?>
- <div class="col-md-2 my-3 "> <input type="number" name="Cantidad" id="Cantidad" class="number">
+                        <div class="col-md-2 my-3 "> <input type="number" name="cantidad" id="cantidad" class="number">
                         <?php
                         }
                         ?>
