@@ -15,13 +15,35 @@ class CarritosController extends Controller {
 
     public function Index()
     {
-        $productosModel = new ProductosModel();
-        $pcs = $productosModel->getPrecioCantidad();
-        $viewBag['pcs']=$pcs;
-        $id_carrito=sha1($_SESSION['login_buffer']['DUI']);
-        $viewBag['carritos']=$this->modelo->CountQuantity($id_carrito);
-        $viewBag['productos']=$this->modelo->get($id_carrito);
-        $this->render("index.php",$viewBag);
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==2){
+                $productosModel = new ProductosModel();
+                $pcs = $productosModel->getPrecioCantidad();
+                $viewBag['pcs']=$pcs;
+                $id_carrito=sha1($_SESSION['login_buffer']['DUI']);
+                $viewBag['carritos']=$this->modelo->CountQuantity($id_carrito);
+                $viewBag['productos']=$this->modelo->get($id_carrito);
+                $this->render("index.php",$viewBag);
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==1)
+                {
+                    header('Location: '.PATH.'Usuarios/Home');
+                }
+            }
+        }
+        else
+        {
+            header('Location: '.PATH);
+        }
+
+     
     }
 
     public function Accion()
@@ -91,6 +113,9 @@ class CarritosController extends Controller {
 
     public function Actualizar($ID_Sucursal,$ID_Producto)
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==2){
         $productosModel = new  ProductosModel();
         if(isset($_POST['Comprar']))
         {
@@ -135,9 +160,28 @@ class CarritosController extends Controller {
             }
         }
     }
+    else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==1)
+                {
+                    header('Location: '.PATH.'Usuarios/Home');
+                }
+            }
+} else
+{
+    header('Location: '.PATH);
+}
+    }
 
     public function Editar($siglas,$id)
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==2){
         $productosModel = new ProductosModel();
         $id_carrito=sha1($_SESSION['login_buffer']['DUI']);
         $viewBag['carritos']=$this->modelo->CountQuantity($id_carrito);
@@ -146,5 +190,21 @@ class CarritosController extends Controller {
         $viewBag['familias']=$productosModel->get($id);
         $viewBag['existencias']=$existencias;
         $this->render("editar.php",$viewBag);
+            }else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==1)
+                {
+                    header('Location: '.PATH.'Usuarios/Home');
+                }
+            }
+        }else
+        {
+            header('Location: '.PATH);
+        }
+        
     }
 }

@@ -13,17 +13,60 @@ class SucursalesController extends Controller{
 
     public function Index()
     {
-        $viewBag = [];
-        $viewBag['sucursales']=$this->modelo->get();
-        $this->render("index.php",$viewBag);
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==1)
+            {
+                $viewBag = [];
+                $viewBag['sucursales']=$this->modelo->get();
+                $this->render("index.php",$viewBag);
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
+            }
+        }
+        else
+        {
+            header('Location: '.PATH);
+        }
+       
     }
 
     public function Editar($id)
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==1)
+            {
         $viewBag = [];
         $viewBag['sucursales'] = $this->modelo->get($id);
         $viewBag['acciones']="3";
         $this->render("editar.php",$viewBag);
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
+            }
+        }
+        else
+        {
+            header('Location: '.PATH);
+        }
     }
 
     public function Operaciones($id)
@@ -47,6 +90,10 @@ class SucursalesController extends Controller{
 
     public function Guardar($id)
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==1)
+            {
         $viewBag = array();
         $errores = array();
         if(isset($_POST['Actualizar']))
@@ -75,6 +122,23 @@ class SucursalesController extends Controller{
             $viewBag['sucursales']=$this->modelo->get();
             $this->render("index.php",$viewBag);
             }
+        }
+           }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
+            }
+        }
+        else
+        {
+          header('Location: '.PATH);
         }
     
     }

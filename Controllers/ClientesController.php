@@ -29,12 +29,33 @@ require_once './Controllers/CarritosController.php';
 
         public function Editar()
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==2)
+                {
             $carritosModel = new CarritosModel();
             $id_carrito=sha1($_SESSION['login_buffer']['DUI']);
             $viewBag['carritos']=$carritosModel->CountQuantity($id_carrito);
             $clientes=$this->modelo->get($_SESSION['login_buffer']['DUI']);
             $viewBag['clientes']=$clientes;
             $this->render("editar.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==1)
+                    {
+                        header('Location: '.PATH.'Usuarios/Home');
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function Actualizando()

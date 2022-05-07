@@ -13,16 +13,58 @@ class FamiliasController extends Controller{
 
     public function Index()
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==1)
+            {
         $viewBag = [];
         $viewBag['familias']= $this->modelo->get();
         $this->render("index.php",$viewBag);
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
+            }
+        }
+        else
+        {
+            header('Location: '.PATH);
+        }
+        
     }
 
     public function Editar($id)
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==1)
+            {
         $viewBag = [];
         $viewBag['familias']= $this->modelo->get($id);
         $this->render("editar.php",$viewBag);
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
+            }
+        }else
+        {
+            header('Location: '.PATH);
+        }
     }
 
     public function GenerarCodigo()
@@ -44,6 +86,10 @@ class FamiliasController extends Controller{
     }
     public function Guardar()
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==1)
+            {
         $viewBag = array();
         $errores = array();
         if(isset($_POST['Guardar']))
@@ -78,13 +124,51 @@ class FamiliasController extends Controller{
             }
         }
     }
+    else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
+            }
+}else
+{
+    header('Location: '.PATH);
+}
+    }
 
     public function Agregar()
     {
+        
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==1)
+            {
         $viewBag=array();
         $familia['ID_Familia']=$this->GenerarCodigo();
         $viewBag['familia']=$familia;
         $this->render("insertar.php",$viewBag);
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
+            }
+        }
+        else
+        {
+            header('Location: '.PATH);
+        }
     }
     public function Operaciones($id)
     {

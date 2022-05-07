@@ -13,15 +13,38 @@ class FacturasController extends Controller{
     }
     public function Ver($id)
     {
-
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==2)
+            {
             $viewBag=[];
             $viewBag['datos']=$this->modelo->GetSpecificSales($id);
             $this->render("factura.php",$viewBag);
-        
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==1)
+                {
+                    header('Location: '.PATH.'Usuarios/Home');
+                }
+            }
+        }
+        else
+        {
+            header('Location: '.PATH);
+        }
     }
 
     public function Index()
     {
+        if(isset($_SESSION['login_buffer']))
+        {
+            if($_SESSION['login_buffer']['Acceso']==2)
+            {
         $viewBag = array();
         if(isset($_SESSION['login_buffer']))
         {
@@ -32,6 +55,24 @@ class FacturasController extends Controller{
         $id_carrito=sha1($_SESSION['login_buffer']['DUI']);
         $viewBag['facturas']=$this->modelo->GetMySales($id_carrito);
         $this->render("index.php",$viewBag);
+            }
+            else
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==1)
+                {
+                    header('Location: '.PATH.'Usuarios/Home');
+                }
+            }
+        }
+        else
+        {
+            header('Location: '.PATH);
+        }
+
     }
 }
 ?>

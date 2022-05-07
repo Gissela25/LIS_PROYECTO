@@ -14,9 +14,31 @@ require_once './Models/SucursalesModel.php';
 
         public function Index()
         {
-            $viewBag = [];
-            $viewBag['empleados'] = $this->modelo->get();
-            $this->render("Empleados/listado.php",$viewBag);
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
+                    $viewBag = [];
+                    $viewBag['empleados'] = $this->modelo->get();
+                    $this->render("Empleados/listado.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+                
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function Login()
@@ -33,12 +55,55 @@ require_once './Models/SucursalesModel.php';
 
         public function Inicio()
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
             $this->render("Empleados/index.php");
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==1)
+                    {
+                        header('Location: '.PATH.'Usuarios/Home');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
+
         }
 
         public function Home()
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $this->render("Administradores/index.php");
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function Details($id)
@@ -63,12 +128,33 @@ require_once './Models/SucursalesModel.php';
 
         public function Editar($id)
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $sucursalesModel = new SucursalesModel();
             $viewBag = [];
             $viewBag['empleados'] = $this->modelo->get($id);
             $viewBag['usuarios'] = $this->modelo->getTipoUsuario();
             $viewBag['sucursales']=$sucursalesModel->getSucursalNotNull();
             $this->render("actualizar.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function GenerarCodigo()
@@ -91,12 +177,33 @@ require_once './Models/SucursalesModel.php';
 
         public function Agregar()
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $sucursalesModel = new SucursalesModel();
             $viewBag = [];
             $empleado['ID_Usuario']=$this->GenerarCodigo();
             $viewBag['empleado'] = $empleado;
             $viewBag['sucursales']=$sucursalesModel->getSucursalNotNull();
             $this->render("insertar.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
 
@@ -290,10 +397,34 @@ require_once './Models/SucursalesModel.php';
 
         public function Actualizar()
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $clientes=$this->modelo->get($_SESSION['login_buffer']['ID_Usuario']);
             $viewBag['usuarios']=$clientes;
             $this->render("editar.php",$viewBag);
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    $clientes=$this->modelo->get($_SESSION['login_buffer']['ID_Usuario']);
+                    $viewBag['usuarios']=$clientes;
+                    $this->render("editar.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
+        
 
         public function Modificando()
         {

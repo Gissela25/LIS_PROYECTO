@@ -15,17 +15,59 @@
 
         public function index()
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $viewBag = [];
             $viewBag['productos'] = $this->modelo->get();
             $this->render("index.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function Editar($id)
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $familiasModel = new FamiliasModel();
             $viewBag['familias'] = $familiasModel->getNotNull();
             $viewBag['productos'] = $this->modelo->get($id);
             $this->render("editar.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function Anexando($siglas,$id)
@@ -131,6 +173,12 @@
 
         public function Anexar($sucursal,$id)
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    if($_SESSION['login_buffer']['Siglas']==$sucursal)
+                    {
             $sucursalesModel = new SucursalesModel();
             $sucursal= $sucursalesModel->get();
             $productos=$this->modelo->get($id);
@@ -138,6 +186,28 @@
             $viewBag['productos']=$productos;
             $viewBag['sucursales']=$sucursal;
             $this->render("Empleados/agregar.php",$viewBag);
+                    }
+                    else
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==1)
+                    {
+                        header('Location: '.PATH.'Usuarios/Home');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function Editando($id)
@@ -399,17 +469,39 @@
 
         public function Agregar()
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $familiasModel = new FamiliasModel();
             $producto['ID_Producto']=$this->GenerarCodigo();
             $viewBag['familias'] = $familiasModel->getNotNull();
             $viewBag['producto']=$producto;
             $this->render("insertar.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
 
 
         public function Available($sucursal)
         {
+            
             $viewBag=[];
             if(isset($_SESSION['login_buffer']))
             {
@@ -418,6 +510,17 @@
                 $carritosModel = new CarritosModel();
                 $id_carrito=sha1($_SESSION['login_buffer']['DUI']);
                 $viewBag['carritos']=$carritosModel->CountQuantity($id_carrito);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==0)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==1)
+                    {
+                        header('Location: '.PATH.'Usuarios/Home');
+                    }
                 }
             }
 
@@ -445,23 +548,102 @@
 
         public function Inventario($var)
         {
-            $viewBag=[];
-            $viewBag['productos']=$this->modelo->getNull($var);
-            $this->render("Empleados/index.php",$viewBag);
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    if($_SESSION['login_buffer']['Siglas']==$var)
+                    {
+                        $viewBag=[];
+                        $viewBag['productos']=$this->modelo->getNull($var);
+                        $this->render("Empleados/index.php",$viewBag);
+                    }
+                    else
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==1)
+                    {
+                        header('Location: '.PATH.'Usuarios/Home');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
+        
 
         public function Disponibles($var)
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    if($_SESSION['login_buffer']['Siglas']==$var)
+                    {
             $viewBag=[];
             $viewBag['productos']=$this->modelo->getBySucursal($var);
             $this->render("Empleados/disponibles.php",$viewBag);
+                    }
+                    else
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==1)
+                    {
+                        header('Location: '.PATH.'Usuarios/Home');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
 
         public function Stock($var)
         {
+            if(isset($_SESSION['login_buffer']))
+            {
+                if($_SESSION['login_buffer']['Acceso']==1)
+                {
             $viewBag=[];
             $viewBag['productos']=$this->modelo->getBySucursal($var);
             $this->render("Empleados/stock.php",$viewBag);
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==0){
+                    $viewBag=[];
+            $viewBag['productos']=$this->modelo->getBySucursal($var);
+            $this->render("Empleados/stock.php",$viewBag);
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                }
+            }
+            else
+            {
+                header('Location: '.PATH);
+            }
         }
     }
 
