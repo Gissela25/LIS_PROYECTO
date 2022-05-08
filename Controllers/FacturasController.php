@@ -15,7 +15,7 @@ class FacturasController extends Controller{
     {
         if(isset($_SESSION['login_buffer']))
         {
-            if($_SESSION['login_buffer']['Acceso']==2)
+            if($_SESSION['login_buffer']['Acceso']==2||$_SESSION['login_buffer']['Acceso']==1)
             {
             $viewBag=[];
             $viewBag['datos']=$this->modelo->GetSpecificSales($id);
@@ -23,13 +23,10 @@ class FacturasController extends Controller{
             }
             else
             {
+
                 if($_SESSION['login_buffer']['Acceso']==0)
                 {
                     header('Location: '.PATH.'Usuarios/Inicio');
-                }
-                elseif($_SESSION['login_buffer']['Acceso']==1)
-                {
-                    header('Location: '.PATH.'Usuarios/Home');
                 }
                 elseif($_SESSION['login_buffer']['Acceso']==4)
                 {
@@ -40,6 +37,29 @@ class FacturasController extends Controller{
         else
         {
             header('Location: '.PATH);
+        }
+    }
+
+    public function Listado()
+    {
+        if($_SESSION['login_buffer']['Acceso']==1)
+        {
+        $viewBag['facturas']=$this->modelo->getAllSales();
+        $this->render("listado.php",$viewBag);
+        }
+        else{
+            if($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Inicio');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==2)
+                {
+                    header('Location: '.PATH);
+                }
         }
     }
 

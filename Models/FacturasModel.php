@@ -16,6 +16,13 @@ class FacturasModel extends ModelPDO{
         return $this->get_query($query,[":id_categoria"=>$id]);
     }
 
+    public function getAllSales()
+    {
+        $query= "SELECT * FROM detalles D INNER JOIN cliente C ON D.codigo_cliente=C.DUI
+        INNER JOIN facturas F ON D.codigo_factura=F.id_factura 
+        INNER JOIN producto P ON D.codigo_producto=P.ID_Producto";
+        return $this->get_query($query);
+    }
     public function GetMySales($id)
     {
         $query= "SELECT * FROM detalles D INNER JOIN cliente C ON D.codigo_cliente=C.DUI
