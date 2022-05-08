@@ -131,7 +131,7 @@
                 $errores=array();
                 $viewBag=array();
                 extract($_POST);
-                $carritosModel = new CarritosModel();
+                //$carritosModel = new CarritosModel();
                 if(!isset($Cantidad)||estaVacio($Cantidad))
                 {
                 array_push($errores,"No haz ingresado la cantidad que deseas de este producto");
