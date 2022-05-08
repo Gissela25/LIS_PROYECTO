@@ -1,10 +1,5 @@
 <?php
 include_once './Core/config.php';
-include_once 'authentify.php';
-if(isset($_POST['lwg']))
-{
-    echo "<script>location.href='".$client->createAuthUrl()."'</script>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -75,7 +70,14 @@ if(isset($_POST['lwg']))
                     <div class="form-group mx-sm-5 pb-3">
                         <input type="submit" value="Ingresar" name="Ingresar" id="Ingresar"
                             class="btn btn-block ingresar">
-                        <button class="google my-2" id="lwg" name="lwg"><i class="bi bi-google"> </i>Log in with Google </button>
+                            <?php 
+                            if(!isset($_SESSION['login_buffer'])||$_SESSION['login_buffer']['Acceso']!=4)
+                            {
+                            require_once('authentify.php'); ?>
+                        <a class="google my-2 btn btn-block" href="<?php echo $client->createAuthUrl() ?>" id="lwg" name="lwg"><i class="bi bi-google"> </i>Log in with Google </a>
+                    <?php
+                            }
+                    ?>
                     </div>
 
 
@@ -91,7 +93,17 @@ if(isset($_POST['lwg']))
                 </div>
             </div>
             <div class="form-group text-center">
+            <?php 
+                            if(!isset($_SESSION['login_buffer'])||$_SESSION['login_buffer']['Acceso']!=4)
+                            { ?>
                         <a href="<?=PATH?>" class="edit"><i class="bi bi-reply-fill"></i>Regresar</a>
+                        <?php }elseif(isset($_SESSION['login_buffer'])&&$_SESSION['login_buffer']['Acceso']==4)
+                        {
+                        ?>
+                        <a href="<?=PATH?>Usuarios/Main" class="edit"><i class="bi bi-reply-fill"></i>Regresar</a>
+                        <?php
+                        }
+                        ?>
             </div>
             </form>
         </div>

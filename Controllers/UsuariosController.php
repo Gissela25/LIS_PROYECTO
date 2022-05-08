@@ -12,6 +12,16 @@ require_once './Models/SucursalesModel.php';
            $this->modelo = new UsuariosModel();
         }
 
+        public function Invitado()
+        {
+            $this->render("google.php");
+        }
+
+        public function Main()
+        {
+            $this->render("Google/index.php");
+        }
+
         public function Index()
         {
             if(isset($_SESSION['login_buffer']))

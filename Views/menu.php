@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
-            <a href="<?=PATH?>"><img src="<?=PATH?>Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top"></a>
+            <a><img src="<?=PATH?>Assets/img/logo.PNG" alt="" width="150" height="50" class="d-inline-block align-text-top"></a>
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,14 @@
                         <a class="nav-link active" aria-current="page" href="<?=PATH?>">Inicio</a>
                     </li>
                     <?php
-                    }
+                }
+                if(isset($_SESSION['login_buffer'])&&$_SESSION['login_buffer']['Acceso']==4){
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?=PATH?>Usuarios/Main">Inicio</a>
+                    </li>
+                    <?php
+                }
                     ?>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?=PATH?>Index/Empresa">Quienes Somos</a>
@@ -129,9 +136,14 @@
                             ?>
                             <li><a class="dropdown-item" href="<?=PATH?>Clientes/Editar">Editar Cuenta</a></li>
                             <?php
-                                             }elseif($_SESSION['login_buffer']['Acceso']!=2){
+                                             }elseif($_SESSION['login_buffer']['Acceso']==1||$_SESSION['login_buffer']['Acceso']==0){
                             ?>
                             <li><a class="dropdown-item" href="<?=PATH?>Usuarios/Actualizar">Editar Cuenta</a></li>
+                            <?php
+                                             }elseif($_SESSION['login_buffer']['Acceso']==4)
+                                             {
+                            ?>
+                            <li><a class="dropdown-item" href="<?=PATH?>Clientes/Singin">Registrarse</a></li>
                             <?php
                                              }
                             ?>
@@ -142,7 +154,7 @@
                         </ul>
                     </li>
                     <?php
-                    if(!isset($_SESSION['login_buffer'])||$_SESSION['login_buffer']['Acceso']==2){
+                    if(isset($_SESSION['login_buffer'])&&$_SESSION['login_buffer']['Acceso']==2||isset($_SESSION['login_buffer'])&&$_SESSION['login_buffer']['Acceso']==4){
                     ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -168,7 +180,7 @@
                     </li>
                     <?php }
                     elseif(isset($_SESSION['login_buffer'])){
-                        if($_SESSION['login_buffer']['Acceso']==2||$_SESSION['login_buffer']['Acceso']==0)
+                        if($_SESSION['login_buffer']['Acceso']==2||$_SESSION['login_buffer']['Acceso']==0||$_SESSION['login_buffer']['Acceso']==4)
                         {
                     ?>
                      <li class="nav-item">
