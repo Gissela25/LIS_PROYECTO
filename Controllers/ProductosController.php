@@ -286,7 +286,7 @@
                             $dir=$path.'/'.$producto['Imagen'];
                             if(move_uploaded_file($temp,$dir))
                             {
-                        if($this->modelo->update($producto)>0){
+                        if($this->modelo->update($producto)>=0){
                         header('Location: '.PATH.'Productos');}
                         }
                         else{

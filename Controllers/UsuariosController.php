@@ -19,7 +19,25 @@ require_once './Models/SucursalesModel.php';
 
         public function Main()
         {
+            if($_SESSION['login_buffer']['Acceso']==4)
+                {
             $this->render("Google/index.php");
+                }
+                else
+                {
+                    if($_SESSION['login_buffer']['Acceso']==1)
+                    {
+                        header('Location: '.PATH.'Usuarios/Inicio');
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==2)
+                    {
+                        header('Location: '.PATH);
+                    }
+                    elseif($_SESSION['login_buffer']['Acceso']==0)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
+                }
         }
 
         public function Index()
@@ -42,6 +60,10 @@ require_once './Models/SucursalesModel.php';
                     {
                         header('Location: '.PATH);
                     }
+                    elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
                 }
                 
             }
@@ -81,6 +103,10 @@ require_once './Models/SucursalesModel.php';
                     {
                         header('Location: '.PATH);
                     }
+                    elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
                 }
             }
             else
@@ -108,6 +134,10 @@ require_once './Models/SucursalesModel.php';
                     {
                         header('Location: '.PATH);
                     }
+                    elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
                 }
             }
             else
@@ -159,6 +189,10 @@ require_once './Models/SucursalesModel.php';
                     {
                         header('Location: '.PATH);
                     }
+                    elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
                 }
             }
             else
@@ -208,6 +242,10 @@ require_once './Models/SucursalesModel.php';
                     {
                         header('Location: '.PATH);
                     }
+                    elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
                 }
             }
             else
@@ -427,6 +465,10 @@ require_once './Models/SucursalesModel.php';
                     {
                         header('Location: '.PATH);
                     }
+                    elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
                 }
             }
             else

@@ -31,6 +31,10 @@ class FamiliasController extends Controller{
                 {
                     header('Location: '.PATH);
                 }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
             }
         }
         else
@@ -59,6 +63,10 @@ class FamiliasController extends Controller{
                 elseif($_SESSION['login_buffer']['Acceso']==2)
                 {
                     header('Location: '.PATH);
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
                 }
             }
         }else
@@ -134,6 +142,10 @@ class FamiliasController extends Controller{
                 {
                     header('Location: '.PATH);
                 }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
             }
 }else
 {
@@ -162,6 +174,10 @@ class FamiliasController extends Controller{
                 elseif($_SESSION['login_buffer']['Acceso']==2)
                 {
                     header('Location: '.PATH);
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
                 }
             }
         }

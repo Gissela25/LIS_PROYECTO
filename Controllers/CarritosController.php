@@ -36,6 +36,10 @@ class CarritosController extends Controller {
                 {
                     header('Location: '.PATH.'Usuarios/Home');
                 }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
             }
         }
         else
@@ -191,6 +195,10 @@ class CarritosController extends Controller {
                 {
                     header('Location: '.PATH.'Usuarios/Home');
                 }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
             }
 } else
 {
@@ -220,6 +228,10 @@ class CarritosController extends Controller {
                 elseif($_SESSION['login_buffer']['Acceso']==1)
                 {
                     header('Location: '.PATH.'Usuarios/Home');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
                 }
             }
         }else
