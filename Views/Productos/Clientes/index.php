@@ -44,7 +44,7 @@ require_once('./Views/server_uri.php');
                      {
                         if(isset($sear) && !empty($sear))
                         {
-                            foreach ($r as $rd) {
+                            foreach ($producto as $rd) {
                                 //Reconoce un string que contenga la palabra
                                 if (strpos($rd, $sear) !== false && !(strpos($rd, 'PROD') !== false)) {
                                     $word = $rd;
@@ -53,7 +53,7 @@ require_once('./Views/server_uri.php');
                             }
                         }
 
-                        if(($producto->Nombrep == $word) | ($all==true))
+                        if(($producto['Nombrep'] == $word) | ($all==true))
                         {
                         $img=$producto['Imagen'];
                         $path="img/".$img;
