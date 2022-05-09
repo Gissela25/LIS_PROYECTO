@@ -43,7 +43,9 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 >Zelaya Flores, Susan Abigail -Diseño y Manuales 02T
 
 # Enlaces de Interes 
->Tablero en Trello-->https://trello.com/b/WO81pgA7/primera-fase
+>Tablero en Trello
+>Primera Fase-->https://trello.com/invite/b/WO81pgA7/e70814d4caecd9f7e18f1a23bcc52357/primera-fase
+>Segunda Fase-->https://trello.com/invite/b/i6Yyy4gO/e3134b916c3370b678183e6b3c6b502e/segunda-fase
 
 >Enlace a Mockups-->https://www.figma.com/file/ijKJCJf4Kbbse6vQKKpyNg/Untitled?node-id=0%3A1
 
