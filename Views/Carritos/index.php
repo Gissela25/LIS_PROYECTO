@@ -86,11 +86,17 @@ foreach($pcs as $pc){}
                         <form action="<?=PATH?>Carritos/Accion" method="post">
                         <center>
                             <?php
-                            $cantidad_campo="Cantidad_".$producto['siglas_sucursal'];
-                            $cantidad=$pc[$cantidad_campo];
+                            $var = "Cantidad_".$producto['siglas_sucursal'];
+                            // $cantidad=$pc[$cantidad_campo];
+                            foreach($pcs as $pc){
+                                if($producto['codigo_producto']==$pc['ID_Producto'])
+                                {
+                                    $quantity = $pc[$var];
+                                }
+                            }
                             ?>
-                            <input type="hidden" name="Existencias" id="Existencias" value="<?=$cantidad?>" >
-                            <input type="hidden" name="N_Existencias" id="N_Existencias" value="<?=$cantidad_campo?>" >
+                            <input type="hidden" name="Existencias" id="Existencias" value="<?=$quantity?>">
+                            <input type="hidden" name="Cantidad_Actual" id="Cantidad_Actual" value="<?=$var?>" >
                             <input type="hidden" name="Correlativo" id="Correlativo" value="<?=$producto['correlativo']?>">
                             <input type="hidden" name="Total" id="Total" value="<?=$total?>">
                             <input type="hidden" name="ID_Sucursal" id="ID_Sucursal" value="<?=$producto['siglas_sucursal']?>">

@@ -131,7 +131,7 @@
                 $errores=array();
                 $viewBag=array();
                 extract($_POST);
-                $carritosModel = new CarritosModel();
+                //$carritosModel = new CarritosModel();
                 if(!isset($Cantidad)||estaVacio($Cantidad))
                 {
                 array_push($errores,"No haz ingresado la cantidad que deseas de este producto");
@@ -286,7 +286,7 @@
                             $dir=$path.'/'.$producto['Imagen'];
                             if(move_uploaded_file($temp,$dir))
                             {
-                        if($this->modelo->update($producto)>0){
+                        if($this->modelo->update($producto)>=0){
                         header('Location: '.PATH.'Productos');}
                         }
                         else{

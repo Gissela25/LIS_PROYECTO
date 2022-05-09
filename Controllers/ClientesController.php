@@ -50,6 +50,10 @@ require_once './Controllers/CarritosController.php';
                     {
                         header('Location: '.PATH.'Usuarios/Home');
                     }
+                    elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
                 }
             }
             else

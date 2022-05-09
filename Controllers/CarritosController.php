@@ -36,6 +36,10 @@ class CarritosController extends Controller {
                 {
                     header('Location: '.PATH.'Usuarios/Home');
                 }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
             }
         }
         else
@@ -66,10 +70,26 @@ class CarritosController extends Controller {
         }
         if(isset($_POST['Pagar']))
         {
+            $productosModel = new ProductosModel();
             extract($_POST);
             $id_factura = $this->GenerarFactura();
             $factura['id_factura']=$id_factura;
             $factura['codigo_cliente'] = $DUI;
+            // $cantidadactual = $cantidad_actual;
+            // $cant = $Cantidad;
+            // $restar = $cantidadactual - $cant;
+            // $pc['ID_Producto'] = $ID_Producto;
+            // $pc[$Campo] = $restar;
+            // if($facturasModel->updatepc($pc))
+            // {
+
+            // }
+            $restar = $Existencias - $Cantidad;
+            $pc['ID_Producto'] = $ID_Producto;
+            $pc[$Cantidad_Actual] = $restar;
+
+            if($productosModel->updatepc($pc,$Cantidad_Actual)>0)
+            {    
             if($facturasModel->create($factura)>0)
             {
                 $detalle['id_session']=$id_carrito;
@@ -88,6 +108,8 @@ class CarritosController extends Controller {
                         header('Location: '.PATH.'Facturas');
                     }
                 }
+            }
+            
             }
         }
         
@@ -173,6 +195,10 @@ class CarritosController extends Controller {
                 {
                     header('Location: '.PATH.'Usuarios/Home');
                 }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
             }
 } else
 {
@@ -202,6 +228,10 @@ class CarritosController extends Controller {
                 elseif($_SESSION['login_buffer']['Acceso']==1)
                 {
                     header('Location: '.PATH.'Usuarios/Home');
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
                 }
             }
         }else

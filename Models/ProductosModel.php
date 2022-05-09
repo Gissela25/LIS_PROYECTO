@@ -74,6 +74,11 @@ class ProductosModel extends ModelPDO{
         return $this->set_query($query,$arreglo);
     }
 
+    public function updatepc($arreglo=array(),$Cantidad_Actual){
+        $query = "UPDATE precio_cantidad SET $Cantidad_Actual=:$Cantidad_Actual WHERE ID_Producto=:ID_Producto;";
+        return $this->set_query($query,$arreglo);
+    }
+
     public function updateImgNone($arreglo=array()){
         $query = "UPDATE producto SET Nombrep=:Nombrep, Descripcion=:Descripcion, ID_Familia=:ID_Familia WHERE ID_Producto=:ID_Producto;";
         return $this->set_query($query,$arreglo);

@@ -31,6 +31,10 @@ class SucursalesController extends Controller{
                 {
                     header('Location: '.PATH);
                 }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
+                }
             }
         }
         else
@@ -60,6 +64,10 @@ class SucursalesController extends Controller{
                 elseif($_SESSION['login_buffer']['Acceso']==2)
                 {
                     header('Location: '.PATH);
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
                 }
             }
         }
@@ -133,6 +141,10 @@ class SucursalesController extends Controller{
                 elseif($_SESSION['login_buffer']['Acceso']==2)
                 {
                     header('Location: '.PATH);
+                }
+                elseif($_SESSION['login_buffer']['Acceso']==4)
+                {
+                    header('Location: '.PATH.'Usuarios/Main');
                 }
             }
         }

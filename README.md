@@ -43,16 +43,18 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 >Zelaya Flores, Susan Abigail -Diseño y Manuales 02T
 
 # Enlaces de Interes 
->Tablero en Trello-->https://trello.com/b/WO81pgA7/primera-fase
+>Tablero en Trello
+>Primera Fase-->https://trello.com/invite/b/WO81pgA7/e70814d4caecd9f7e18f1a23bcc52357/primera-fase
+>Segunda Fase-->https://trello.com/invite/b/i6Yyy4gO/e3134b916c3370b678183e6b3c6b502e/segunda-fase
 
 >Enlace a Mockups-->https://www.figma.com/file/ijKJCJf4Kbbse6vQKKpyNg/Untitled?node-id=0%3A1
 
->Manual Tecnico en la nube-->https://drive.google.com/file/d/11H-KXrpjuy--4WlzkntkGsZ7KEXsP2Yh/view?usp=sharing
+>Manual Tecnico en la nube-->https://drive.google.com/file/d/1_ssJtcChdlM54CyGVkP_nEo_uVct4BfQ/view
 
->Manual de Usuario en la nube--> https://drive.google.com/file/d/1wF0prHpHDZu8DViMprPsUReVP7oEClWj/view?usp=sharing
+>Manual de Usuario en la nube-->https://drive.google.com/file/d/1h-R8P0w8bbnv1DDv95ud-wKEeEUdZPNV/view
 
 >Enlace de la Pagina Web-->https://matronly-strap.000webhostapp.com/
 
->Enlace pdf Proyecto de catedra fase I-->https://drive.google.com/file/d/1gydI1gssJ-N1yqYGU899iUyZ4OCDG90L/view?usp=sharing
+>Enlace pdf Proyecto de catedra fase II-->https://drive.google.com/file/d/1ujtLjLZfdJ4ihKSHOQrFSZ9Ao9t2CGcJ/view
 
 >Enlace del video-->https://drive.google.com/file/d/1SoPaNpRAbM7hzfmQPau8QSh5CvOQFzVO/view?usp=sharing
