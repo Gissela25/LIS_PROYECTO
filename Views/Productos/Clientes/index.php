@@ -20,15 +20,41 @@ require_once('./Views/server_uri.php');
 </head>
 
 <body>
-<?php 
+    <?php 
  require_once "./Views/menu.php";
 ?>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 my-3">
             <?php
-                   
+                      //Definiendo si el buscador ha sido usado
+            $sear='';
+            if(isset($_POST['look']))
+            {
+                $sea=$_POST['look'];
+                $sear=strtoupper($sea);
+            }
+            $word='';
+            $all=true;
+            //Definir si deben mostrar todos los productos
+            if ($sear != '') {
+                $all=false;
+                echo "<div class='col-12'><h5>Resultados para: " . $sear . "</h5><h6>Para eliminar la selección vuelva a la barra de búsqueda y de enter, sin ingresar texto</h6></div><br>";
+            }
                     foreach ($productos as $producto)
                      {
+                        if(isset($sear) && !empty($sear))
+                        {
+                            foreach ($r as $rd) {
+                                //Reconoce un string que contenga la palabra
+                                if (strpos($rd, $sear) !== false && !(strpos($rd, 'PROD') !== false)) {
+                                    $word = $rd;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(($producto->Nombrep == $word) | ($all==true))
+                        {
                         $img=$producto['Imagen'];
                         $path="img/".$img;
                         if(file_exists($path))
@@ -57,7 +83,8 @@ require_once('./Views/server_uri.php');
                         <?php
                                     }
                                     ?>
-                        <a href="<?=PATH?>Productos/Detalles/<?=$sucursal?>/<?=$producto['ID_Producto']?>" class="btn btn-primary btn-block boton">Ver
+                        <a href="<?=PATH?>Productos/Detalles/<?=$sucursal?>/<?=$producto['ID_Producto']?>"
+                            class="btn btn-primary btn-block boton">Ver
                             más</a>
                     </div>
                 </div>
@@ -67,6 +94,7 @@ require_once('./Views/server_uri.php');
                         }
                              
                     }
+                }
                     ?>
 
         </div>
@@ -75,7 +103,7 @@ require_once('./Views/server_uri.php');
     <?php
     include_once './Views/footer.php';
     ?>
-    
+
 </body>
 
 </html>
