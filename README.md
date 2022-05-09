@@ -51,10 +51,10 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 
 >Manual Tecnico en la nube-->https://drive.google.com/file/d/1_ssJtcChdlM54CyGVkP_nEo_uVct4BfQ/view
 
->Manual de Usuario en la nube--> https://drive.google.com/file/d/1wF0prHpHDZu8DViMprPsUReVP7oEClWj/view?usp=sharing
+>Manual de Usuario en la nube-->https://drive.google.com/file/d/1h-R8P0w8bbnv1DDv95ud-wKEeEUdZPNV/view
 
 >Enlace de la Pagina Web-->https://matronly-strap.000webhostapp.com/
 
->Enlace pdf Proyecto de catedra fase II-->https://drive.google.com/file/d/1XmkKfiNaK2zAqyveK0yno2jXJbndpkMq/view
+>Enlace pdf Proyecto de catedra fase II-->https://drive.google.com/file/d/1ujtLjLZfdJ4ihKSHOQrFSZ9Ao9t2CGcJ/view
 
 >Enlace del video-->https://drive.google.com/file/d/1SoPaNpRAbM7hzfmQPau8QSh5CvOQFzVO/view?usp=sharing
