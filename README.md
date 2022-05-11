@@ -49,9 +49,9 @@ No hay restricciones adicionales — No puede aplicar términos legales o medida
 
 >Enlace a Mockups-->https://www.figma.com/file/ijKJCJf4Kbbse6vQKKpyNg/Untitled?node-id=0%3A1
 
->Manual Tecnico en la nube-->https://drive.google.com/file/d/1_ssJtcChdlM54CyGVkP_nEo_uVct4BfQ/view
+>Manual Tecnico en la nube-->https://drive.google.com/file/d/1phMBwTmKP8yGRngT8Dsl_lxLKlY0aoDB/view?usp=sharing
 
->Manual de Usuario en la nube-->https://drive.google.com/file/d/1h-R8P0w8bbnv1DDv95ud-wKEeEUdZPNV/view
+>Manual de Usuario en la nube-->https://drive.google.com/file/d/1uLw3vFE7hY8a613NAvjGJbjAcYMSSy_y/view?usp=sharing
 
 >Enlace de la Pagina Web-->https://matronly-strap.000webhostapp.com/
 
