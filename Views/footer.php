@@ -12,7 +12,7 @@
                 <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
                  Contacto
              </h5>
-             <i class="fas fa-home mr-3">2da Calle Pte entre 12 y 13 Av Sur No 7 Santa Tecla, La Libertad, El Salvador, C.A.</i>
+             <i class="fas fa-home mr-3">2da Calle Pte entre 12 y 14 Av Sur No 7 Santa Tecla, La Libertad, El Salvador, C.A.</i>
              <i class="fas fa-envelope mr-3">Email:info@sumersa.com.sv</i>
          </div>
          <hr class="mb-4">
